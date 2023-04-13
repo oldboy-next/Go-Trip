@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#title>div:nth-child(1) {
+    /* background-color: aquamarine; */
+    width: 100%;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+#log {
+    /* background-color: coral; */
+    height: 100%;
+    width: 33%;
+    float: left;
+}
+
+#link {
+    /* background-color: gray; */
+    float: left;
+    height: auto;
+    width: auto;
+    text-align: center;
+    margin-top: 73px;
+    margin-left: 3rem;
+}
+
+#log img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    margin-left: 1rem;
+    font-size: 22px;
+    margin-right: 1rem;
+}
+
+#back-image {
+    /* TODO: 整体高度(4320/1080),宽度 */
+    width: 90%;
+    height: 3200px;
+    margin: 0 auto;
+    border: solid rgb(66, 134, 117) 5px;
+    margin-top: 2rem;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#back-image>div:nth-child(1) {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 5px rgb(34, 62, 54);
+}
+
+#back-image>div:nth-child(2) {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 5px rgb(34, 62, 54);
+}
+
+#back-image>div:nth-child(3) {
+    width: 100%;
+    height: 25%;
+    border-bottom: solid 5px rgb(34, 62, 54);
+}
+
+#back-image>div:nth-child(4) {
+    width: 100%;
+    height: 25%;
+    border-bottom: none;
+}
+
+#back-image>div>img {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+#foot {
+    margin: 0 auto;
+    height: 250px;
+    width: 90%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: monospace, 'Courier New', Courier;
+}
