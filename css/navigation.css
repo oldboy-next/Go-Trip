@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+.header-nav {
+    position: absolute;
+    width: 100%;
+    position: fixed;
+    height: 85px;
+    box-sizing: border-box;
+    background-color: rgba(223, 223, 223, 0.2);
+    z-index: 100;
+}
+
+body {
+    background: rgb(19, 19, 19);
+}
+
+
+#logo-img {
+    float: left;
+    width: 65px;
+}
+
+
+
+#logo-font {
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    padding-top: 8px;
+}
+
+.logo {
+    display: flex;
+}
+
+.link-top {
+    width: 400px;
+    height: 100%;
+    margin-left: 20%;
+    margin-top: 10px;
+
+}
+
+.link-nav>a {
+    vertical-align: middle;
+    color: whitesmoke;
+    letter-spacing: 8px;
+    margin-right: 1rem;
+    opacity: 0;
+}
+
+.link-nav>a:nth-child(5) {
+    margin-right: 100px;
+}
+
+.link-nav {
+    margin-right: 5%;
+    margin-top: 30px;
+    height: 40px;
+}
+
+.link-nav>a:nth-child(6)>img {
+    width: 30px;
+    /* margin-left: 200px;   */
+    vertical-align: bottom;
+}
+
+.link-nav>a:nth-child(6)>span {
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+
+#search {
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+}
+
+#display {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.home-img>img {
+    width: 100%;
+    /* height: 1300px; */
+}
+
+/* 动画 */
+.link-nav>a:hover {
+    color: rgb(235, 145, 42);
+}
