@@ -8,6 +8,8 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="./js/animation.js"></script>
     <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/email.css">
+    <script src="./js/style.js"></script>
     <title>Go trip</title>
 </head>
 
@@ -42,10 +44,73 @@
                 </a>
             </div>
         </nav>
-        <div class="home-img">
-            <img src="./img/9.jpg" alt="">
+        <!-- 图片 -->
+        <div class="home">
+            <div class="box">
+                <img draggable="false" src="./img/9.jpg" alt="">
+                <img draggable="false" src="./img/10.jpg" alt="">
+                <img draggable="false" src="./img/b4.jpg" alt="">
+                <img draggable="false" src="./img/b5.jpg" alt="">
+                <button type="button">button</button>
+            </div>
         </div>
     </header>
+
+    <!-- email -->
+    <div class="email">
+        <div class="email-title">
+            <span>获得专家计划的最佳假期！</span>
+        </div>
+        <div class="email-content">
+            <parame>如果你想了解一个国家或城市，请不要去查资料，而应该用自己的脚步、眼睛和心灵去看。
+            </parame>
+        </div>
+        <div class="email-form">
+            <!-- TODO:提交 -->
+            <form action="">
+                <div class="name">
+                    <label for="username">名称</label>
+                    <input class="input-item" type="text" name="username" placeholder="名称">
+                </div>
+                <div class="region">
+                    <label for="region">目的地</label>
+                    <input class="input-item" type="text" name="region" placeholder="目的地">
+                </div>
+                <div class="activity">
+                    <label for="region">活动</label>
+                    <select class="input-item" name="region" id="">
+                        <option value="0">任何</option>
+                        <option value="1">城市观光</option>
+                        <option value="2">文化与主题旅游</option>
+                        <option value="3">家庭友好之旅</option>
+                        <option value="4">假日和季节性旅游</option>
+                        <option value="5">放纵和豪华旅游</option>
+                        <option value="6">户外活动</option>
+                        <option value="7">休闲之旅</option>
+                    </select>
+                </div>
+                <br>
+                <div class="day">
+                    <label for="day">期间</label>
+                    <select class="input-item" name="day" id="">
+                        <option value="0">任何</option>
+                        <option value="1">1日游</option>
+                        <option value="2">2-4日游</option>
+                        <option value="3">5-7日游</option>
+                        <option value="4">7+日游</option>
+                    </select>
+                </div>
+                <div class="time">
+                    <label for="time">时间</label>
+                    <input class="input-item" type="text" name="time" placeholder="2023/04/01">
+                </div>
+                <div class="email-submit">
+                    <label for="submit">提交</label>
+                    <button class="input-item" type="submit" name="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

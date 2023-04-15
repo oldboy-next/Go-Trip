@@ -15,7 +15,7 @@ function Awake()
     top.hide(0).slideDown(1000, () =>
     {
         icon.fadeIn(1000);
-        font.fadeIn(2000)
+        font.fadeIn(2000);
 
         $(".link-nav>a").animate({
             opacity: "1"
@@ -32,13 +32,15 @@ function down()
     if (window.scrollY < 50 && play === true)
     {
         console.log("up");
-        top.css("background", "rgba(255, 255, 255, 0.2)")
+        top.css("background", "rgba(255, 255, 255, 0.2)");
+        top.css("height", "85px")
         play = false;
     }
     if (window.scrollY > 50 && play === false)
     {
         console.log("down");
         top.css("background", "rgb(19, 19, 19)")
+        top.css("height", "110px")
         play = true;
     }
 }

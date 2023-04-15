@@ -1,0 +1,84 @@
+.email label::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.email label {
+    font-size: 15px;
+    font-weight: bold;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+
+.email-title {
+    width: 500px;
+    height: 50px;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bolder;
+    color: whitesmoke;
+    padding: 10px 10px;
+}
+
+.email-content {
+    font-size: 15px;
+    font-weight: lighter;
+    width: 500px;
+    letter-spacing: 5px;
+    line-height: 25px;
+    color: rgb(163, 163, 163);
+    padding: 10px 10px;
+    padding-bottom: 50px;
+}
+
+.name,
+.region,
+.activity {
+    display: inline-block;
+    width: 320px;
+    height: 100px;
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.day,
+.time,
+.email-submit {
+    display: inline-block;
+    width: 320px;
+    height: 100px;
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.input-item {
+    border: none;
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 12px;
+    transition: all 0.3s;
+
+}
+
+.email-submit>.input-item {
+    background: rgb(92, 179, 204);
+}
+
+.email-submit>.input-item:hover {
+    background: rgb(251, 218, 65)
+}
+
+.input-item:hover {
+    transform: translate(2px, 10px) scale(1.12);
+}
+
+.email {
+    width: 1000px;
+    padding-left: 18px;
+    margin: 80px auto;
+}
