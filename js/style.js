@@ -1,4 +1,4 @@
-var sWidth = window.innerWidth;
+var sWidth = window.innerWidth - 17;
 var sHeight = window.innerHeight - 60;
 
 $(() =>

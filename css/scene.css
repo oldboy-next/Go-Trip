@@ -1,0 +1,128 @@
+.scene {
+    color: whitesmoke;
+    width: 100%;
+    height: 860px;
+    background-color: black;
+}
+
+.scene-master {
+    width: 50%;
+    height: 860px;
+    float: left;
+}
+
+/*  */
+.scene-master>p,
+.scene-master>img,
+.scene-master>span {
+    position: absolute;
+}
+
+.scene-item-up>p,
+.scene-item-up>img,
+.scene-item-up>span {
+    position: absolute;
+}
+
+.scene-item-down>p,
+.scene-item-down>img,
+.scene-item-down>span {
+    position: absolute;
+}
+
+.scene-content {
+    transition: all 1s;
+}
+
+/* 图片大小 */
+.scene-master>.scene-img {
+    width: 50%;
+    height: 860px;
+    opacity: 0.5;
+}
+
+.scene-item-up>.scene-img {
+    width: 50%;
+    height: 430px;
+    opacity: 0.5;
+}
+
+.scene-item-down>.scene-img {
+    width: 50%;
+    height: 430px;
+    opacity: 0.5;
+}
+
+/* 字体 */
+.scene-title {
+    font-size: 30px;
+    font-weight: bolder;
+    padding-left: 50px;
+    text-shadow: 5px 8px 5px rgb(15, 15, 15);
+}
+
+.scene-content {
+    line-height: 30px;
+    height: 100px;
+    width: 25%;
+    font-size: 15px;
+    font-weight: lighter;
+    padding-left: 50px;
+    width: 500px;
+    height: 60px;
+    text-shadow: 5px 8px 5px rgb(56, 56, 56);
+}
+
+/* master */
+.scene-master>p {
+    margin-top: 430px;
+    padding-left: 50px;
+}
+
+.scene-master>span {
+
+    margin-top: 500px;
+    padding-left: 50px;
+}
+
+/* right */
+.scene-right {
+    width: 50%;
+    height: 860px;
+    position: absolute;
+    margin-left: 50%;
+}
+
+/* item up box*/
+.scene-item-up {
+    float: left;
+    height: 430px;
+    width: 50%;
+}
+
+.scene-item-up>span,
+.scene-item-down>span {
+    margin-top: 370px;
+}
+
+.scene-item-up>p,
+.scene-item-down>p {
+    margin-top: 320px;
+}
+
+/* item down box*/
+.scene-item-down {
+    float: left;
+    height: 430px;
+    width: 50%;
+}
+
+/* 动画 */
+.scene-content:hover {
+    transform: scale(1.12) translate(5px, 5px);
+}
+
+.scene-title>a:hover {
+    color: rgb(251, 218, 65);
+    text-shadow: 0px 0px 12px rgb(177, 155, 59);
+}
