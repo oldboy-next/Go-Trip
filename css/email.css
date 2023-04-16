@@ -11,7 +11,8 @@
 }
 
 
-.email-title {
+.email-title,
+.region-title {
     width: 500px;
     height: 50px;
     text-align: left;
@@ -21,7 +22,8 @@
     padding: 10px 10px;
 }
 
-.email-content {
+.email-content,
+.region-content {
     font-size: 15px;
     font-weight: lighter;
     width: 500px;

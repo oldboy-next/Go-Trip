@@ -1,0 +1,178 @@
+.goods {
+    width: 1000px;
+    padding-left: 18px;
+    margin: 80px auto;
+}
+
+.region-content-box {
+    width: 1100px;
+    height: 500px;
+}
+
+/* 外盒子 */
+.region-box {
+    background-color: rgb(57, 55, 51);
+    width: 330px;
+    height: 450px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* 图片盒子 */
+.region-img {
+    width: 90%;
+    height: 45%;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+/* 图片大小 */
+.region-img>img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 信息盒子 */
+.region-info {
+    width: 90%;
+    height: 28%;
+    margin: 10px auto;
+}
+
+/* 信息标题 */
+.info-title {
+    color: white;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+/* 信息人数 */
+.region-info ion-icon,
+.region-info .info-time,
+.region-info .info-count {
+    color: rgb(168, 168, 168);
+    font-size: 14px;
+    font-weight: lighter;
+    vertical-align: middle;
+}
+
+/* 浮点盒子 时间加 人数 */
+.info-time,
+.info-count {
+    width: 50%;
+    float: left;
+}
+
+.info-time {
+    padding-top: 10px;
+    text-align: left;
+}
+
+.info-count {
+    padding-top: 10px;
+    text-align: right;
+}
+
+/*  */
+.info-content {
+    margin-top: 40px;
+    font-size: 15px;
+    line-height: 25px;
+    color: rgb(168, 168, 168);
+}
+
+/* 价格信息 */
+.region-account {
+    margin-top: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+    color: rgb(99, 187, 208);
+    font-weight: bolder;
+}
+
+/* 显示在一行 价格+按钮 */
+.account,
+.go {
+    display: inline-block;
+}
+
+/* 价格+按钮 并排 */
+.go ion-icon,
+.account {
+    vertical-align: middle;
+}
+
+.account {
+    padding-right: 50%;
+}
+
+/* 价格按钮样式 */
+.go ion-icon {
+    font-size: 35px;
+    color: whitesmoke;
+    transition: 1s;
+}
+
+/* 阅读 */
+.readme-img>div,
+.readme-info {
+    width: 500px;
+    height: 360px;
+    border-radius: 20px;
+    margin: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 10px rgba(211, 208, 208, 0.1)
+}
+
+.readme-img,
+.readme-info {
+    float: left;
+}
+
+.region-readme {
+    width: 1100px;
+    height: 400px;
+    padding: 20px 10px;
+}
+
+.readme-img>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+.readme-info>.region-content {
+    padding-top: 70px;
+    width: 480px;
+}
+
+.readme-button>button {
+    background: rgb(56, 145, 170);
+    border: none;
+    border-radius: 10px;
+    width: 110px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    font-weight: bolder;
+    transition: all 1s;
+}
+
+/* 动画 */
+.go ion-icon:hover {
+    background-color: rgb(254, 184, 7);
+    border-radius: 35px;
+    color: gray;
+    box-shadow: 0px 0px 20px 10px rgba(254, 184, 7, 0.3);
+}
+
+.readme-button>button:hover {
+    background: rgb(196, 164, 24);
+}
+
+.region-img:hover {
+    transform: scale(1.2);
+}
