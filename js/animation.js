@@ -20,27 +20,24 @@ function Awake()
         $(".link-nav>a").animate({
             opacity: "1"
         }, 1000);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
 
-var play = true;
 // 导航栏颜色
 function down()
 {
     var top = $(".header-nav");
-    if (window.scrollY < 50 && play === true)
+    if (window.scrollY === 0)
     {
-        console.log("up");
+        // console.log("up");
         top.css("background", "rgba(255, 255, 255, 0.2)");
         top.css("height", "85px")
-        play = false;
     }
-    if (window.scrollY > 50 && play === false)
+    if (window.scrollY > 0)
     {
-        console.log("down");
+        // console.log("down");
         top.css("background", "rgb(19, 19, 19)")
         top.css("height", "110px")
-        play = true;
     }
 }

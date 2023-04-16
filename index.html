@@ -19,22 +19,22 @@
 
 <body>
     <!-- 头导航 -->
-    <header>
+    <header id="top">
         <nav class="header-nav">
             <div class="logo">
                 <!-- TODO:导航logo -->
                 <div class="link-top">
-                    <a href="">
+                    <a href="#top">
                         <img id="logo-img" src="./img/icon/logo.png" alt="logo">
                         <h1 id="logo-font">Go Trip</h1>
                     </a>
                 </div>
                 <!-- TODO:导航链接功能 -->
                 <div class="link-nav">
-                    <a href="">主页</a>
-                    <a href="">邮箱</a>
-                    <a href="">景点</a>
-                    <a href="">地点</a>
+                    <a href="#top">主页</a>
+                    <a href="#email">邮箱</a>
+                    <a href="#scene">景点</a>
+                    <a href="#region">地点</a>
                     <a href="">尾景</a>
                     <a href="" id="phone">
                         <img src="./img/icon/dianhua.png" alt="电话">
@@ -62,6 +62,7 @@
     </header>
 
     <!-- 消息 -->
+    <hr id="email">
     <div class="email">
         <div class="email-title">
             <span>获得专家计划的最佳假期！</span>
@@ -113,53 +114,55 @@
                     <label for="submit">提交</label>
                     <button class="input-item" type="submit" name="submit">提交</button>
                 </div>
+                <b id="scene"></b>
             </form>
         </div>
     </div>
     <!-- TODO:a 改图，链接 景点 -->
     <div class="scene">
         <div class="scene-master">
-            <img class="scene-img" src="./img/blog6.png" alt="1">
+            <img class="scene-img" src="./img/guiling/scene1.jpg" alt="1">
             <p class="scene-title">
-                <a href="">光之城</a>
+                <a href="">夜之景</a>
             </p>
             <span class="scene-content">
-                Moll itia placeat modi volup tatem tenetur conse quatur.Conseq tenetur conse quatur adipi sicing elit.
+                桂林山水秀美，素有“天下独奇”的美誉。它的山是险峻而多姿多彩的，有层峦叠嶂、云雾缭绕的世外桃源形象；它的水则沁人心脾，碧绿，清澈，婉约，有水墨画般的一片轻盈。
             </span>
         </div>
         <div class="scene-right">
             <div class="scene-item-up">
-                <img class="scene-img" src="./img/blog1.jpg" alt="1">
+                <img class="scene-img" src="./img/guiling/s2.jpg" alt="1">
                 <p class="scene-title">
-                    <a href="">法属-波利尼西亚</a>
+                    <a href="">奇峰突</a>
                 </p>
-                <span class="scene-content">Lorem ipsum dolor sit amet sed consectetur adipisicing elit.</span>
+                <span class="scene-content">东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。</span>
             </div>
             <div class="scene-item-up">
-                <img class="scene-img" src="./img/blog2.jpg" alt="1">
+                <img class="scene-img" src="./img/guiling/s3.jpg" alt="1">
                 <p class="scene-title">
-                    <a href="">白金汉宫</a>
+                    <a href="">恍如境</a>
                 </p>
-                <span class="scene-content">Lorem ipsum dolor sit amet sed consectetur adipisicing elit.</span>
+                <span class="scene-content">人们尽情欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。</span>
             </div>
             <br>
             <div class="scene-item-down">
-                <img class="scene-img" src="./img/blog3.jpg" alt="1">
+                <img class="scene-img" src="./img/guiling/s4.jpg" alt="1">
                 <p class="scene-title">
-                    <a href="">澳大利亚自然</a>
+                    <a href="">水如画</a>
                 </p>
-                <span class="scene-content">Lorem ipsum dolor sit amet sed consectetur adipisicing elit.</span>
+                <span class="scene-content">这是二千多年前的桂林，仙人在此游山玩水、吟诗作画，留下了无数动人心魄的故事和不朽佳话。</span>
             </div>
             <div class="scene-item-down">
-                <img class="scene-img" src="./img/blog5.jpg" alt="1">
+                <img class="scene-img" src="./img/guiling/s5.jpg" alt="1">
                 <p class="scene-title">
-                    <a href="">土耳其自然</a>
+                    <a href="">青山间</a>
                 </p>
-                <span class="scene-content">Lorem ipsum dolor sit amet sed consectetur adipisicing elit.</span>
+                <span class="scene-content">黄布倒影、牛角塘、龙潭等处，更是赏到了壮美、静美、动人和神秘的自然景观</span>
             </div>
         </div>
     </div>
     <!-- TODO:链接 地点 -->
+    <hr id="region">
     <div class="goods">
         <div class="region-title">
             <span>热门旅游目的地</span>
@@ -173,10 +176,10 @@
             <!-- 盒子内容1 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/b1.jpg" alt="1">
+                    <img src="./img/t1/t1.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">南岛</p>
+                    <p class="info-title">象鼻山</p>
                     <div class="info-time">
                         <ion-icon name="time-outline"></ion-icon>
                         <span>7天</span>
@@ -186,13 +189,12 @@
                         <span>最多人数：500</span>
                     </div>
                     <div class="info-content">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet itaque
-                            labor.
+                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
                         </span>
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 $525 起</span>
+                            <span>从 ￥55 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -205,10 +207,10 @@
             <!-- 盒子内容2 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/b1.jpg" alt="1">
+                    <img src="./img/t1/t2.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">南岛</p>
+                    <p class="info-title">漓江</p>
                     <div class="info-time">
                         <ion-icon name="time-outline"></ion-icon>
                         <span>7天</span>
@@ -218,13 +220,12 @@
                         <span>最多人数：500</span>
                     </div>
                     <div class="info-content">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet itaque
-                            labor.
+                        <span>天上飞来堆翠云，半岩半树暮霞分。桂林山水如画里，登高一望可掬瑶池。
                         </span>
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 $525 起</span>
+                            <span>从 ￥55 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -237,10 +238,10 @@
             <!-- 盒子内容3 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/b1.jpg" alt="1">
+                    <img src="./img/t1/t3.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">南岛</p>
+                    <p class="info-title">阳朔</p>
                     <div class="info-time">
                         <ion-icon name="time-outline"></ion-icon>
                         <span>7天</span>
@@ -250,13 +251,12 @@
                         <span>最多人数：500</span>
                     </div>
                     <div class="info-content">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet itaque
-                            labor.
+                        <span>山青水秀处处闲，琴声扬起惹游人。桂林山水有灵气，动人心魄意难平。
                         </span>
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 $525 起</span>
+                            <span>从 ￥55 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -270,7 +270,7 @@
         <div class="region-readme">
             <div class="readme-img">
                 <div>
-                    <img src="./img/b8.jpg" alt="">
+                    <img src="./img/t1/t4.jpg" alt="">
                 </div>
             </div>
             <div class="readme-info">

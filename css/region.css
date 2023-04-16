@@ -173,6 +173,12 @@
     background: rgb(196, 164, 24);
 }
 
+hr {
+    height: 20px;
+    border: none;
+    background-color: rgba(150, 150, 150, 0.1);
+}
+
 .region-img:hover {
     transform: scale(1.2);
 }

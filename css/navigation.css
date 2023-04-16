@@ -99,6 +99,10 @@ body {
     text-shadow: 0px 0px 12px rgb(177, 155, 59);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* TODO:home 页面 */
 .box>img {
     float: left;
