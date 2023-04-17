@@ -1,0 +1,197 @@
+div.ended-box {
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 图片 */
+div.ended-box>img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+/* 图片文字盒子 */
+.ended-box-item {
+    position: absolute;
+    z-index: 10;
+}
+
+/* 标题 -> Navigation */
+.box-item-title.ended {
+    /* background-color: plum; */
+    width: 27vw;
+    height: 9vh;
+    font-size: 40px;
+}
+
+/* 内容 -> Navigation */
+.box-item-content.ended {
+    /* background-color: salmon; */
+    height: 8vh;
+    width: 27vw;
+    font-size: 18px;
+}
+
+/* 按钮 -> Navigation */
+.subscribe.ended {
+    /* background-color: skyblue; */
+    height: 5vh;
+    width: 27vw;
+    margin-top: 50px;
+}
+
+/* 文字盒子 */
+.ended-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 结尾 */
+
+/* --联系菜单-- */
+footer .menu {
+    /* background-color: plum; */
+    text-align: left;
+    width: 400px;
+}
+
+.menu ion-icon,
+.menu span {
+    vertical-align: middle;
+    font-size: 16px;
+    color: rgba(214, 214, 214, 0.7);
+}
+
+.menu>div:last-child ion-icon {
+    font-size: 30px;
+    background-color: rgba(32, 32, 32, 0.7);
+    border-radius: 5px;
+    color: whitesmoke;
+    transition: all 0.5s;
+}
+
+.menu div {
+    margin-bottom: 19px;
+}
+
+/* 联系菜单动画*/
+.menu>div:last-child ion-icon:first-child:hover {
+    background: rgb(28, 138, 153);
+}
+
+.menu>div:last-child ion-icon:nth-child(2):hover {
+    background: rgb(204, 23, 144);
+}
+
+.menu>div:last-child ion-icon:nth-child(3):hover {
+    background: rgb(223, 193, 24);
+}
+
+.menu>div:last-child ion-icon:last-child:hover {
+    background: rgb(17, 115, 196);
+}
+
+/* 类型面板 */
+.type {
+    /* background-color: skyblue; */
+    width: 100px;
+    text-align: center;
+}
+
+/* .type>div:last-child {
+    background-color: green;
+} */
+
+.type li {
+    margin-top: 19px;
+    list-style: none;
+}
+
+.type a {
+    color: rgba(214, 214, 214, 0.7);
+}
+
+/* 图片面板 */
+.new-img {
+    /* background-color: plum; */
+    width: 400px;
+}
+
+.new-img img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+.new-img>.title {
+    padding-left: 10px;
+}
+
+table tr td {
+    width: 200px;
+    height: 90px;
+}
+
+tr td {
+    padding: 5px;
+}
+
+.new-img img:hover {
+    transform: scale(2);
+    cursor: pointer;
+}
+
+/* 所有的标题 */
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.container>div {
+    height: 240px;
+}
+
+.container {
+    /* background-color: yellow; */
+    height: 280px;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu,
+.type,
+.new-img {
+    float: left;
+}
+
+/* 末尾-> 版本信息 */
+.version {
+    /* background-color: coral; */
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+
+.version>span:nth-child(3) {
+    font-size: 15px;
+    color: gray;
+}
+
+.version>span:nth-child(5) {
+    font-size: 16px;
+    color: rgb(185, 185, 185);
+}
+
+.version hr {
+    margin: 0 auto;
+    height: 2px;
+    width: 1010px;
+    border: none;
+    background-color: rgba(88, 88, 88, 0.8);
+}

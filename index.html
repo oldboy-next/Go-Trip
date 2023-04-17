@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="./js/animation.js"></script>
-    <script src="./js/operation.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="./js/operation.js"></script>
     <link rel="stylesheet" href="./css/navigation.css">
     <link rel="stylesheet" href="./css/email.css">
     <link rel="stylesheet" href="./css/scene.css">
     <link rel="stylesheet" href="./css/region.css">
+    <link rel="stylesheet" href="./css/ended.css">
     <title>Go trip</title>
 </head>
 
@@ -32,15 +33,15 @@
                 <!-- TODO:导航链接功能 -->
                 <div class="link-nav">
                     <a href="#top">主页</a>
-                    <a href="#email">邮箱</a>
+                    <a href="#email">订阅</a>
                     <a href="#scene">景点</a>
                     <a href="#region">地点</a>
-                    <a href="">尾景</a>
+                    <a href="#ended">尾景</a>
                     <a href="#" id="phone">
                         <ion-icon name="call-outline"></ion-icon>
                         <span>18877305825</span>
                     </a>
-                    <a href="#" id="search">
+                    <a href="javascript:void(0)" id="search">
                         <ion-icon name="search-outline"></ion-icon>
                     </a>
                 </div>
@@ -75,7 +76,7 @@
                         </div>
                         <div class="subscribe">
                             <button type="button">
-                                <a href="#">预订您的旅行</a>
+                                <a href="#email">预订您的旅行</a>
                             </button>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                         </div>
                         <div class="subscribe">
                             <button type="button">
-                                <a href="#">预订您的旅行</a>
+                                <a href="#email">预订您的旅行</a>
                             </button>
                         </div>
                     </div>
@@ -113,7 +114,7 @@
                         </div>
                         <div class="subscribe">
                             <button type="button">
-                                <a href="#">预订您的旅行</a>
+                                <a href="#email">预订您的旅行</a>
                             </button>
                         </div>
                     </div>
@@ -132,7 +133,7 @@
                         </div>
                         <div class="subscribe">
                             <button type="button">
-                                <a href="#">预订您的旅行</a>
+                                <a href="#email">预订您的旅行</a>
                             </button>
                         </div>
                     </div>
@@ -151,7 +152,7 @@
                         </div>
                         <div class="subscribe">
                             <button type="button">
-                                <a href="#">预订您的旅行</a>
+                                <a href="#email">预订您的旅行</a>
                             </button>
                         </div>
                     </div>
@@ -162,7 +163,7 @@
     </header>
 
     <!-- 消息 -->
-    <hr id="email">
+    <hr id="email" class="point">
     <div class="email">
         <div class="email-title">
             <span>获得专家计划的最佳假期！</span>
@@ -173,7 +174,7 @@
         </div>
         <div class="email-form">
             <!-- TODO:提交 -->
-            <form action="">
+            <form action="/" method="post">
                 <div class="name">
                     <label for="username">名称</label>
                     <input class="input-item" type="text" name="username" placeholder="名称">
@@ -211,8 +212,9 @@
                     <input class="input-item" type="text" name="time" placeholder="2023/04/01">
                 </div>
                 <div class="email-submit">
+                    <!-- TODO:表单提交功能 -->
                     <label for="submit">提交</label>
-                    <button class="input-item" type="submit" name="submit">提交</button>
+                    <button title="服务尚未开发" class="input-item" type="submit">提交</button>
                 </div>
                 <b id="scene"></b>
             </form>
@@ -233,7 +235,7 @@
             <div class="scene-item-up">
                 <img class="scene-img" src="./img/guiling/s2.jpg" alt="1">
                 <p class="scene-title">
-                    <a href="">奇峰突</a>
+                    <a href="">奇峰峭</a>
                 </p>
                 <span class="scene-content">东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。</span>
             </div>
@@ -262,7 +264,7 @@
         </div>
     </div>
     <!-- TODO:链接 地点 -->
-    <hr id="region">
+    <hr id="region" class="point">
     <div class="goods">
         <div class="region-title">
             <span>热门旅游目的地</span>
@@ -391,6 +393,137 @@
             </div>
         </div>
     </div>
+    <!-- 尾页 -->
+    <hr id="ended" class="point">
+    <div class="ended">
+        <div class="ended-box">
+            <div class="ended-box-item">
+                <div class="box-item-title ended">
+                    我们与您在旅程的每个
+                    <br>
+                    阶段都与您同在
+                </div>
+                <div class="box-item-content ended">
+                    无论是寻找刺激、挑战自我，还是追求放松、享受生活，我们都能为您提供最好的旅游体验。快来加入我们的旅行队伍，让心灵穿越时空，在旅途中找到属于自己的那片天地。
+                </div>
+                <div class="subscribe ended">
+                    <button type="button">
+                        <a href="#">预订您的旅行</a>
+                    </button>
+                </div>
+            </div>
+            <img src="./img/guiling/ended.jpg" alt="1">
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="menu">
+                <div class="title">联系我们</div>
+                <div class="positions">
+                    <ion-icon name="compass-outline"></ion-icon>
+                    <span>中国广西桂林,块， #54**00 桂林桂林 桂林漓江景区。</span>
+                </div>
+                <div class="phones">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>+86 188******25</span>
+                </div>
+                <div class="emails">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>EmailG-animator70@outlook.com</span>
+                </div>
+                <div class="icons">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="albums-outline"></ion-icon>
+                    <ion-icon name="camera-outline"></ion-icon>
+                    <ion-icon name="car-outline"></ion-icon>
+                </div>
+            </div>
+            <!--  -->
+            <div class="type">
+                <div class="title">类别</div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#">活动旅行</a>
+                        </li>
+                        <li>
+                            <a href="#">假日旅行</a>
+                        </li>
+                        <li>
+                            <a href="#">度假套餐</a>
+                        </li>
+                        <li>
+                            <a href="#">团体旅游</a>
+                        </li>
+                        <li>
+                            <a href="#">间隔年</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  -->
+            <div class="new-img">
+                <div class="title">
+                    最新图库
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="/img/other/l1.jpg" alt="1"></a>
+                        </td>
+                        <td>
+                            <a href="#"><img src="/img/other/l2.jpg" alt="1"></a>
+                        </td>
+                        <td>
+                            <a href="#"><img src="/img/other/l3.jpg" alt="1"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="/img/other/l4.jpg" alt="1"></a>
+                        </td>
+                        <td>
+                            <a href="#"><img src="/img/other/l5.jpg" alt="1"></a>
+                        </td>
+                        <td>
+                            <a href="#"><img src="/img/other/l6.jpg" alt="1"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--  -->
+            <div class="type">
+                <div class="title">旅游</div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#">漓江游玩</a>
+                        </li>
+                        <li>
+                            <a href="#">四湖环城</a>
+                        </li>
+                        <li>
+                            <a href="#">世外桃源</a>
+                        </li>
+                        <li>
+                            <a href="#">银子岩</a>
+                        </li>
+                        <li>
+                            <a href="#">遇龙河</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 版本信息 -->
+        <div class="version">
+            <hr>
+            <br>
+            <span>&copy;` 2023 去旅行。</span>
+            <ion-icon name="leaf-outline"></ion-icon>
+            <span>徐家国 | 网页作业</span>
+        </div>
+    </footer>
 </body>
 
 </html>
