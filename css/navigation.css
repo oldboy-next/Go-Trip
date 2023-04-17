@@ -75,6 +75,8 @@ html {
 .link-nav {
     margin-right: 5%;
     margin-top: 40px;
+    /* background-color: plum; */
+    display: flex;
     /* display: flex; */
 }
 
@@ -98,6 +100,11 @@ html {
     font-size: 30px;
 }
 
+#search {
+    height: 30px;
+    width: 30px;
+}
+
 /* 显示按钮 */
 #display {
     width: 50px;
@@ -106,7 +113,7 @@ html {
     position: relative;
     align-items: center;
     justify-content: center;
-    right: 100px;
+    right: 150px;
     margin: 25px auto;
 }
 
@@ -126,7 +133,7 @@ html {
 .search-frame {
     position: relative;
     right: 100px;
-    top: 22px;
+    top: 18px;
     width: 300px;
     height: 70px;
     display: flex;
