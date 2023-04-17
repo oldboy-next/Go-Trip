@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="./js/animation.js"></script>
-    <script src="./js/style.js"></script>
+    <script src="./js/operation.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./css/navigation.css">
@@ -36,27 +36,127 @@
                     <a href="#scene">景点</a>
                     <a href="#region">地点</a>
                     <a href="">尾景</a>
-                    <a href="" id="phone">
-                        <img src="./img/icon/dianhua.png" alt="电话">
+                    <a href="#" id="phone">
+                        <ion-icon name="call-outline"></ion-icon>
                         <span>18877305825</span>
                     </a>
-                    <a href="">
-                        <img id="search" src="./img/icon/search.png" alt="搜索">
+                    <a href="#" id="search">
+                        <ion-icon name="search-outline"></ion-icon>
                     </a>
                 </div>
-                <a href="">
-                    <img id="display" src="./img/icon/drak.png" alt="主题">
-                </a>
+                <!-- 搜索框 -->
+                <div class="search-frame">
+                    <input onblur="onSearch()" disabled type="text" placeholder="请输出内容">
+                    <a href="javascript:void(0)">
+                        <ion-icon name="search-circle-outline"></ion-icon>
+                    </a>
+                </div>
+                <div id="display">
+                    <a href="#">
+                        <ion-icon name="moon-outline"></ion-icon>
+                        <ion-icon name="sunny-outline"></ion-icon>
+                    </a>
+                </div>
             </div>
         </nav>
-        <!-- 图片 -->
-        <div class="home">
+        <!-- 主页图片 -->
+        <div class="view">
             <div class="box">
-                <img draggable="false" src="./img/9.jpg" alt="">
-                <img draggable="false" src="./img/10.jpg" alt="">
-                <img draggable="false" src="./img/b4.jpg" alt="">
-                <img draggable="false" src="./img/b5.jpg" alt="">
-                <button type="button">button</button>
+                <div class="a">
+                    <div class="box-item">
+                        <div class="box-item-title">
+                            欢迎来到
+                            <br>
+                            旅行吧
+                        </div>
+                        <div class="box-item-content">
+                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                        </div>
+                        <div class="subscribe">
+                            <button type="button">
+                                <a href="#">预订您的旅行</a>
+                            </button>
+                        </div>
+                    </div>
+                    <img draggable="false" src="./img/bg/bg1.jpg" alt="">
+                </div>
+                <div class="b">
+                    <div class="box-item">
+                        <div class="box-item-title">
+                            欢迎来到
+                            <br>
+                            旅行吧
+                        </div>
+                        <div class="box-item-content">
+                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                        </div>
+                        <div class="subscribe">
+                            <button type="button">
+                                <a href="#">预订您的旅行</a>
+                            </button>
+                        </div>
+                    </div>
+                    <img draggable="false" src="./img/bg/bg2.jpg" alt="">
+                </div>
+                <div class="c">
+                    <div class="box-item">
+                        <div class="box-item-title">
+                            欢迎来到
+                            <br>
+                            旅行吧
+                        </div>
+                        <div class="box-item-content">
+                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                        </div>
+                        <div class="subscribe">
+                            <button type="button">
+                                <a href="#">预订您的旅行</a>
+                            </button>
+                        </div>
+                    </div>
+                    <img draggable="false" src="./img/bg/bg3.jpg" alt="">
+                </div>
+                <div class="d">
+                    <div class="box-item">
+                        <div class="box-item-title">
+                            欢迎来到
+                            <br>
+                            旅行吧
+                        </div>
+                        <div class="box-item-content">
+                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                        </div>
+                        <div class="subscribe">
+                            <button type="button">
+                                <a href="#">预订您的旅行</a>
+                            </button>
+                        </div>
+                    </div>
+                    <img draggable="false" src="./img/bg/bg4.jpg" alt="">
+                </div>
+                <div class="a">
+                    <div class="box-item">
+                        <div class="box-item-title">
+                            欢迎来到
+                            <br>
+                            旅行吧
+                        </div>
+                        <div class="box-item-content">
+                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                        </div>
+                        <div class="subscribe">
+                            <button type="button">
+                                <a href="#">预订您的旅行</a>
+                            </button>
+                        </div>
+                    </div>
+                    <img draggable="false" src="./img/bg/bg1.jpg" alt="">
+                </div>
             </div>
         </div>
     </header>

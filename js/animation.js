@@ -1,11 +1,13 @@
 // logo 入场动画
 
+// jquery
 $(document).ready(() =>
 {
     Awake();
     window.addEventListener("scroll", down);
 })
 
+// 出初化
 function Awake()
 {
     var icon = $("#logo-img").hide();

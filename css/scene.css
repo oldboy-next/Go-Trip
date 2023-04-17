@@ -62,15 +62,15 @@
 }
 
 .scene-content {
-    line-height: 30px;
+    line-height: 25px;
     height: 100px;
     width: 25%;
     font-size: 15px;
     font-weight: lighter;
     padding-left: 50px;
-    width: 500px;
-    height: 60px;
     text-shadow: 5px 8px 5px rgb(56, 56, 56);
+    width: 20vw;
+    height: 1vh;
 }
 
 /* master */
