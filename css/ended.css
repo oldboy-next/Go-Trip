@@ -177,6 +177,9 @@ tr td {
     padding-bottom: 70px;
 }
 
+.version ion-icon {
+    color: rgb(185, 185, 185);
+}
 
 .version>span:nth-child(3) {
     font-size: 15px;
