@@ -7,15 +7,18 @@
 
 body {
     background: rgb(19, 19, 19);
+    font-family: '微软雅黑,黑体,楷体';
 }
 
 a {
     color: whitesmoke;
     transition: all 1s;
+    -webkit-transition: all 1s;
 }
 
 html {
     scroll-behavior: smooth;
+    /* font-size: 16px; */
 }
 
 /* 导航栏页面 */
@@ -24,7 +27,8 @@ html {
     width: 100%;
     position: fixed;
     height: 85px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    -webkit-transition: all 1s;
     transition: all, 1s;
     background-color: rgba(223, 223, 223, 0.2);
     z-index: 100;
@@ -99,10 +103,11 @@ html {
     width: 50px;
     height: 50px;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
-    padding-right: 20px;
+    right: 100px;
+    margin: 25px auto;
 }
 
 #display a {
