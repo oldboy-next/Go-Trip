@@ -3,170 +3,338 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-family: sans-serif;
 }
 
 body {
     background: rgb(19, 19, 19);
-    font-family: '微软雅黑,黑体,楷体';
+    /* background: #fff; */
 }
 
 a {
-    color: whitesmoke;
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    color: #fff;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 html {
     scroll-behavior: smooth;
-    /* font-size: 16px; */
 }
 
 /* 导航栏页面 */
 .header-nav {
-    /* position: absolute; */
+    background-color: rgba(255, 255, 255, 0.18);
     width: 100%;
     position: fixed;
     height: 85px;
-    /* box-sizing: border-box; */
     -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
     transition: all, 1s;
-    background-color: rgba(223, 223, 223, 0.2);
     z-index: 100;
 }
 
-/* logo 图标 */
-#logo-img {
-    float: left;
-    width: 65px;
-}
-
-/* logo 标题字体 */
-#logo-font {
-    font-size: 40px;
-    font-weight: bolder;
-    color: white;
-    padding-top: 8px;
-}
-
-.logo {
-    display: flex;
-}
-
-.link-top {
-    width: 400px;
+/* nav 导航栏 */
+.nav {
+    /* border: red 1px solid; */
     height: 100%;
-    margin-left: 20%;
-    margin-top: 10px;
-}
-
-/*所有a链接 */
-.link-nav a {
-    vertical-align: middle;
-    color: whitesmoke;
-    letter-spacing: 8px;
-    margin-right: 1rem;
-    opacity: 0;
-}
-
-.link-nav>a:nth-child(5) {
-    margin-right: 100px;
-}
-
-.link-nav {
-    margin-right: 5%;
-    margin-top: 40px;
-    /* background-color: plum; */
+    width: 100%;
     display: flex;
-    /* display: flex; */
+    justify-content: space-around;
+    align-items: stretch;
 }
 
-/* 手机号 */
-#phone>ion-icon,
-#phone>span {
-    vertical-align: middle;
+/* logo */
+.link-top {
+    /* background-color: red; */
+    height: 85px;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
 }
 
-#phone>ion-icon {
-    font-size: 25px;
+.link-top>div:first-child {
+    /* background-color: skyblue; */
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-#phone>span {
-    letter-spacing: 0px;
+.link-top>div:last-child {
+    width: 160px;
+    height: 75px;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.link-top>div:first-child img {
+    width: 100%;
+    height: 100%;
+}
+
+.link-top>div:last-child h1 {
+    font-size: 43px;
+    color: #fff;
+}
+
+/*导航所有链接 */
+.link-nav {
+    /* background-color: skyblue; */
+    width: 400px;
+    height: 85px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-nav ul li {
+    /* border: red 1px solid; */
+    list-style: none;
+    display: inline-block;
+    margin: 0 13px;
+    letter-spacing: 5px;
     font-size: 18px;
+    font-weight: 500;
+    vertical-align: bottom;
+    margin-top: 20px;
 }
 
-/* 搜索按钮 */
-#search>ion-icon {
+/* 搜索界面 */
+.search {
+    /* background-color: plum; */
+    width: 340px;
+    height: 85px;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search .search-btn {
+    /* border: red 1px solid; */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .frame {
+    /* border: red 1px solid; */
+    width: 230px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    -webkit-transition: 0.3s all linear;
+    transition: 0.3s all linear;
+}
+
+.search .frame input {
+    width: 230px;
+    height: 40px;
+    position: absolute;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search .frame a {
+    /* border: red 1px solid; */
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    color: rgb(107, 107, 107);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .frame a:hover {
+    color: black;
+}
+
+.search .search-btn a {
+    /* border: red 1px solid; */
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 用户界面 */
+.user {
+    /* background-color: palevioletred; */
+    width: 400px;
+    height: 85px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user .phone {
+    /* border: red 1px solid; */
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.user .display a {
+    /* border: red 1px solid; */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
 }
 
-#search {
-    height: 30px;
-    width: 30px;
-}
-
-/* 显示按钮 */
-#display {
-    width: 50px;
-    height: 50px;
+/* 头像 */
+.user .user-icon {
+    width: 65px;
+    height: 65px;
+    /* border: red solid 1px; */
     display: flex;
     position: relative;
-    align-items: center;
     justify-content: center;
-    right: 150px;
-    margin: 25px auto;
-}
-
-#display a {
-    font-size: 40px;
-}
-
-#display a>ion-icon:first-child {
-    display: block;
-}
-
-#display a>ion-icon:last-child {
-    display: none;
-}
-
-/* 搜索框 */
-.search-frame {
-    position: relative;
-    right: 100px;
-    top: 18px;
-    width: 300px;
-    height: 70px;
-    display: flex;
     align-items: center;
-    justify-content: left;
+    transition: all 0.5s;
+}
+
+.user .user-icon .user-frame {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    z-index: 2;
+    -webkit-transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.user .user-icon .user-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.user .user-icon .user-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.user .user-icon .user-frame img {
+    width: 100%;
+    height: 100%;
+}
+
+.user-icon:hover>.user-frame,
+.user-icon:hover>.user-image {
+    transform: scale(1.8) translateY(23px);
+    cursor: pointer;
+}
+
+.user-icon:hover>.infos {
+    height: 380px;
+    opacity: 1;
+    top: 100px;
+}
+
+/* 用户详细面板 */
+.infos {
+    width: 260px;
+    height: 0px;
     opacity: 0;
-    transition: all 1s;
+    background-image: linear-gradient(to top, #dfe9f3 10%, white 100%);
+    overflow: hidden;
+    position: fixed;
+    border-radius: 12px;
+    top: 80px;
+    z-index: 0;
+    -webkit-transition: 0.4s 0.2s all linear;
+    transition: 0.4s 0.2s all linear;
 }
 
-.search-frame input {
-    border: none;
-    width: 10vw;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 15px;
-}
-
-.search-frame input:focus {
-    outline-color: rgba(172, 232, 255, 0.603);
-}
-
-.search-frame a>ion-icon {
+.infos a span {
+    color: #000;
     vertical-align: middle;
-    font-size: 45px;
-    color: white;
-    transition: all 1s;
-    cursor: default;
+    font-size: 16px;
 }
 
-.search-frame a:hover>ion-icon {
-    cursor: default;
-    transform: scale(1.2);
-    color: skyblue;
+.infos a ion-icon {
+    color: #000;
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.infos .username,
+.infos .user-phone,
+.option ul li {
+    /* border: red 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    position: relative;
+}
+
+.infos .username {
+    width: 100px;
+    height: 40px;
+    top: 40px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.infos .user-phone {
+    width: 200px;
+    height: 60px;
+    top: 50px;
+    background-color: rgb(51, 160, 233);
+    box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.infos .user-phone:hover {
+    background-color: rgb(111, 187, 238);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+.option ul li {
+    width: 200px;
+    height: 50px;
+    top: 60px;
+    letter-spacing: 3px;
+    transition: all 0.2s;
+}
+
+.option ul li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
 /* 主页面文字 */

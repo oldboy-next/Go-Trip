@@ -22,41 +22,114 @@
     <!-- 头导航 -->
     <header id="top">
         <nav class="header-nav">
-            <div class="logo">
+            <div class="nav">
                 <!-- TODO:导航logo -->
                 <div class="link-top">
-                    <a href="#top">
-                        <img id="logo-img" src="./img/icon/logo.png" alt="logo">
-                        <h1 id="logo-font">Go Trip</h1>
-                    </a>
+                    <div>
+                        <img src="./img/icon/logo.png" alt="logo">
+                    </div>
+                    <div>
+                        <h1>Go Trip</h1>
+                    </div>
                 </div>
                 <!-- TODO:导航链接功能 -->
                 <div class="link-nav">
-                    <a href="#top">主页</a>
-                    <a href="#email">订阅</a>
-                    <a href="#scene">景点</a>
-                    <a href="#region">地点</a>
-                    <a href="#ended">尾景</a>
-                    <a href="#" id="phone">
-                        <ion-icon name="call-outline"></ion-icon>
-                        <span>18877305825</span>
-                    </a>
-                    <a href="javascript:void(0)" id="search">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </a>
+                    <ul>
+                        <li>
+                            <a href="#top">主页</a>
+                        </li>
+                        <li>
+                            <a href="#email">订阅</a>
+                        </li>
+                        <li>
+                            <a href="#scene">景点</a>
+                        </li>
+                        <li>
+                            <a href="#region">地点</a>
+                        </li>
+                        <li>
+                            <a href="#ended">尾景</a>
+                        </li>
+                    </ul>
                 </div>
                 <!-- 搜索框 -->
-                <div class="search-frame">
-                    <input onblur="onSearch()" disabled type="text" placeholder="请输出内容">
-                    <a href="javascript:void(0)">
-                        <ion-icon name="search-circle-outline"></ion-icon>
-                    </a>
+                <div class="search">
+                    <div class="search-btn">
+                        <a href="javascript:void(0)" id="search">
+                            <ion-icon name="search-circle-outline"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="frame" id="frame">
+                        <input type="text" disabled placeholder="请输入内容">
+                        <a href="javascript:void(0)" onclick="onSearch()">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </a>
+                    </div>
                 </div>
-                <div id="display">
-                    <a href="#">
-                        <ion-icon name="moon-outline"></ion-icon>
-                        <ion-icon name="sunny-outline"></ion-icon>
-                    </a>
+                <!-- 用户界面 -->
+                <div class="user">
+                    <div class="phone">
+                        <a href="#" id="phone">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <span>188****5825</span>
+                        </a>
+                    </div>
+                    <div class="user-icon">
+                        <div class="user-frame">
+                            <img src="./img/user/if.png" alt="if">
+                        </div>
+                        <div class="user-image">
+                            <img src="./img/user/icon.jpg" alt="icon">
+                        </div>
+                        <div class="infos">
+                            <!-- 用户名 -->
+                            <div class="username">
+                                <span>ThisName</span>
+                            </div>
+                            <!-- 手机号 -->
+                            <div class="user-phone">
+                                <a href="#">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                    <span>+86 188****5825</span>
+                                </a>
+                            </div>
+                            <!-- 数据 -->
+                            <div class="option">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <ion-icon name="person-outline"></ion-icon>
+                                            <span>个人中心</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <ion-icon name="book-outline"></ion-icon>
+                                            <span>我的订阅</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <ion-icon name="bulb-outline"></ion-icon>
+                                            <span>推介服务</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <ion-icon name="exit-outline"></ion-icon>
+                                            <span>退出登录</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display">
+                        <a href="#">
+                            <ion-icon name="moon-outline"></ion-icon>
+                            <ion-icon name="sunny-outline" style="display: none;"></ion-icon>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -432,17 +505,20 @@
                     <span>EmailG animator70@outlook.com</span>
                 </div>
                 <div class="icons">
-                    <a href="https://github.com/oldboy-next/Go-Trip.git" target="_blank">
+                    <a title="GitHup" href="https://github.com/oldboy-next/Go-Trip/tree/dev" target="_blank">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
-                    <a href="#">
+                    <a href="#" title="热门拍照">
                         <ion-icon name="camera-outline"></ion-icon>
                     </a>
-                    <a href="#">
+                    <a href="#" title="微信">
                         <ion-icon name="logo-wechat"></ion-icon>
                     </a>
-                    <a href="#">
+                    <a href="#" title="支付宝">
                         <ion-icon name="logo-alipay"></ion-icon>
+                    </a>
+                    <a href="#" title="仅支持PC端">
+                        <ion-icon name="logo-windows"></ion-icon>
                     </a>
                 </div>
             </div>
@@ -527,7 +603,7 @@
         <div class="version">
             <hr>
             <br>
-            <span>&copy;` 2023 去旅行。v4.5.0</span>
+            <span>&copy;` 2023 去旅行。v4.6.0</span>
             <ion-icon name="leaf-outline"></ion-icon>
             <span>徐家国 | 网页</span>
         </div>

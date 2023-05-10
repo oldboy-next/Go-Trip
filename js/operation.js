@@ -1,10 +1,10 @@
-
-
+// 搜索框
 var display = true;
 $(() =>
 {
+    Awake();
     const searchBtn = $("#search");
-    const searchFrame = $(".search-frame");
+    const searchFrame = $("#frame");
 
     searchBtn.click(() =>
     {
@@ -25,7 +25,7 @@ $(() =>
 // 设置按钮状态
 function setButton(disabled)
 {
-    var input = document.querySelector(".search-frame input");
+    let input = document.querySelector(".frame input");
     // var button = document.querySelector(".search-frame button");
     if (disabled)
     {
@@ -42,23 +42,44 @@ function setButton(disabled)
 // 搜索功能
 function onSearch()
 {
-    var value = document.querySelector(".search-frame input");;
-    var action = document.querySelector(".search-frame a");
-    if (!value.value)
+    let input = document.querySelector(".frame input");
+    // window.location.href = "https://www.writingo.net/document?source=new1";   
+
+    // let action = document.querySelector(".frame a");
+    if (!input.value)
     {
-        action.removeAttribute("target")
+        // action.removeAttribute("target")
         console.log("null");
-        action.href = "javascript:void(0)";
+        // action.href = "javascript:void(0)";
         return false;
 
     }
     else
     {
-        action.setAttribute("target", "_blank");
-        var url = `https://cn.bing.com/search?q=${value.value}`;
-        action.href = url;
+        let url = `https://cn.bing.com/search?q=${input.value}`;
+        // action.setAttribute("target", "_blank");
+        // action.href = url;
         console.log(url);
+        window.open(url);
         return true;
     }
 
-};
+}
+
+// 初始化函数
+function Awake()
+{
+    document.querySelector(".frame input").addEventListener("keyup", Enter);
+}
+
+// 回车搜索
+function Enter(event)
+{
+    if (event instanceof Event)
+    {
+        if (event.key === "Enter")
+        {
+            onSearch();
+        }
+    }
+}

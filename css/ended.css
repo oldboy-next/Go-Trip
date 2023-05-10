@@ -90,8 +90,12 @@ footer .menu {
     background: rgb(102, 193, 140);
 }
 
-.menu>div:last-child>a:last-child ion-icon:hover {
+.menu>div:last-child>a:nth-child(4) ion-icon:hover {
     background: rgb(17, 115, 196);
+}
+
+.menu>div:last-child>a:last-child ion-icon:hover {
+    background: rgb(73, 131, 179);
 }
 
 /* 类型面板 */

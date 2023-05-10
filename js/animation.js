@@ -3,43 +3,51 @@
 // jquery
 $(document).ready(() =>
 {
-    Awake();
     window.addEventListener("scroll", down);
+
+    let iter = gen();
+
+    try
+    {
+        for (const value of iter)
+        {
+            iter.next();
+        }
+    } catch (error)
+    {
+        console.log("Error");
+    }
 })
 
-// 出初化
-function Awake()
+// 动画序列
+function* gen()
 {
-    var icon = $("#logo-img").hide();
-    var font = $("h1").hide();
+    yield $(".link-top").hide().slideDown(500,);
+    yield $(".link-nav").hide().slideDown(600);
+    yield $(".search").hide().slideDown(700);
+    yield $(".phone").hide().slideDown(800);
 
-    var top = $(".header-nav");
-    top.hide(0).slideDown(1000, () =>
-    {
-        icon.fadeIn(1000);
-        font.fadeIn(2000);
-
-        $(".link-nav>a").animate({
-            opacity: "1"
-        }, 1000);
-        // window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    return "END ANIM";
 }
 
 // 导航栏颜色
+let isScroll = false;
 function down()
 {
-    var top = $(".header-nav");
-    if (window.scrollY === 0)
+    if (window.scrollY === 0 && isScroll === true)
     {
-        // console.log("up");
+        let top = $(".header-nav");
+        console.log("up");
         top.css("background", "rgba(255, 255, 255, 0.2)");
         top.css("height", "85px")
+        isScroll = false;
     }
-    if (window.scrollY > 0)
+    if (window.scrollY > 0 && isScroll === false)
     {
-        // console.log("down");
+        let top = $(".header-nav");
+        console.log("down");
         top.css("background", "rgb(19, 19, 19)")
         top.css("height", "110px")
+        isScroll = true;
     }
 }
