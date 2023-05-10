@@ -69,7 +69,7 @@ footer .menu {
     background-color: rgba(32, 32, 32, 0.7);
     border-radius: 5px;
     color: whitesmoke;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .menu div {
@@ -77,19 +77,20 @@ footer .menu {
 }
 
 /* 联系菜单动画*/
-.menu>div:last-child ion-icon:first-child:hover {
-    background: rgb(28, 138, 153);
+.menu>div:last-child>a:first-child ion-icon:hover {
+    background: rgb(80, 80, 136);
 }
 
-.menu>div:last-child ion-icon:nth-child(2):hover {
-    background: rgb(204, 23, 144);
+.menu>div:last-child>a:nth-child(2) ion-icon:hover {
+    background: rgb(226, 193, 124);
+    color: #000;
 }
 
-.menu>div:last-child ion-icon:nth-child(3):hover {
-    background: rgb(223, 193, 24);
+.menu>div:last-child>a:nth-child(3) ion-icon:hover {
+    background: rgb(102, 193, 140);
 }
 
-.menu>div:last-child ion-icon:last-child:hover {
+.menu>div:last-child>a:last-child ion-icon:hover {
     background: rgb(17, 115, 196);
 }
 
@@ -140,7 +141,7 @@ tr td {
 }
 
 .new-img img:hover {
-    transform: scale(2);
+    transform: scale(1.2);
     cursor: pointer;
 }
 
