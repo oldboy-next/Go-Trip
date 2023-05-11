@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="./css/scene.css">
     <link rel="stylesheet" href="./css/region.css">
     <link rel="stylesheet" href="./css/ended.css">
+    <style>
+        body {
+            --title-text-color: #fff;
+            --title-font-size: 40px;
+
+            --content-text-color: rgb(163, 163, 163);
+            --content-font-size: 15px;
+
+            --background-color-light: rgb(233, 233, 233);
+            --background-color-dark: rgb(19, 19, 19);
+        }
+    </style>
     <title>Go trip</title>
 </head>
 
@@ -238,58 +250,62 @@
     <!-- 消息 -->
     <hr id="email" class="point">
     <div class="email">
-        <div class="email-title">
-            <span>获得专家计划的最佳假期！</span>
+        <div class="email-top">
+            <div class="email-title">
+                <span>获得专家计划的最佳假期！</span>
+            </div>
+            <div class="email-content">
+                <span>如果你想了解一个国家或城市，请不要去查资料,请不要去查资料，而应该用自己的脚步、眼睛和心灵去看。
+                </span>
+            </div>
         </div>
-        <div class="email-content">
-            <span>如果你想了解一个国家或城市，请不要去查资料，而应该用自己的脚步、眼睛和心灵去看。
-            </span>
-        </div>
-        <div class="email-form">
+        <div class="email-data">
             <!-- TODO:提交 -->
             <form action="/" method="post">
-                <div class="name">
-                    <label for="username">名称</label>
-                    <input class="input-item" type="text" name="username" placeholder="名称">
+                <div class="email-data-up">
+                    <div class="name">
+                        <label for="username">名称</label>
+                        <input class="input-item" type="text" name="username" placeholder="名称">
+                    </div>
+                    <div class="region">
+                        <label for="region">目的地</label>
+                        <input class="input-item" type="text" name="region" placeholder="目的地">
+                    </div>
+                    <div class="activity">
+                        <label for="region">活动</label>
+                        <select class="input-item" name="region" id="">
+                            <option value="0">任何</option>
+                            <option value="1">城市观光</option>
+                            <option value="2">文化与主题旅游</option>
+                            <option value="3">家庭友好之旅</option>
+                            <option value="4">假日和季节性旅游</option>
+                            <option value="5">放纵和豪华旅游</option>
+                            <option value="6">户外活动</option>
+                            <option value="7">休闲之旅</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="region">
-                    <label for="region">目的地</label>
-                    <input class="input-item" type="text" name="region" placeholder="目的地">
+                <div class="email-data-down">
+                    <div class="day">
+                        <label for="day">期间</label>
+                        <select class="input-item" name="day" id="">
+                            <option value="0">任何</option>
+                            <option value="1">1日游</option>
+                            <option value="2">2~4日游</option>
+                            <option value="3">5~7日游</option>
+                            <option value="4">7+日游</option>
+                        </select>
+                    </div>
+                    <div class="time">
+                        <label for="time" id="scene">时间</label>
+                        <input class="input-item" type="date" name="time" placeholder="年/月/日">
+                    </div>
+                    <div class="email-submit">
+                        <!-- TODO:表单提交功能 -->
+                        <label for="submit">提交</label>
+                        <button title="服务尚未开发" class="input-item" type="submit">提交</button>
+                    </div>
                 </div>
-                <div class="activity">
-                    <label for="region">活动</label>
-                    <select class="input-item" name="region" id="">
-                        <option value="0">任何</option>
-                        <option value="1">城市观光</option>
-                        <option value="2">文化与主题旅游</option>
-                        <option value="3">家庭友好之旅</option>
-                        <option value="4">假日和季节性旅游</option>
-                        <option value="5">放纵和豪华旅游</option>
-                        <option value="6">户外活动</option>
-                        <option value="7">休闲之旅</option>
-                    </select>
-                </div>
-                <br>
-                <div class="day">
-                    <label for="day">期间</label>
-                    <select class="input-item" name="day" id="">
-                        <option value="0">任何</option>
-                        <option value="1">1日游</option>
-                        <option value="2">2-4日游</option>
-                        <option value="3">5-7日游</option>
-                        <option value="4">7+日游</option>
-                    </select>
-                </div>
-                <div class="time">
-                    <label for="time">时间</label>
-                    <input class="input-item" type="text" name="time" placeholder="2023/04/01">
-                </div>
-                <div class="email-submit">
-                    <!-- TODO:表单提交功能 -->
-                    <label for="submit">提交</label>
-                    <button title="服务尚未开发" class="input-item" type="submit">提交</button>
-                </div>
-                <b id="scene"></b>
             </form>
         </div>
     </div>
@@ -339,13 +355,15 @@
     <!-- TODO:链接 地点 -->
     <hr id="region" class="point">
     <div class="goods">
-        <div class="region-title">
-            <span>热门旅游目的地</span>
-        </div>
-        <div class="region-content">
-            <span>旅游经历中最重要的事情不是拍照，而是体验感受和收集回忆。
-                到了一个陌生的城市，首先要做的不是找交通，而是找美食。
-            </span>
+        <div class="goods-top">
+            <div class="region-title">
+                <span>热门旅游目的地</span>
+            </div>
+            <div class="region-content">
+                <span>旅游经历中最重要的事情不是拍照，而是体验感受和收集回忆。
+                    到了一个陌生的城市，首先要做的不是找交通，而是找美食。
+                </span>
+            </div>
         </div>
         <div class="region-content-box">
             <!-- 盒子内容1 -->
@@ -356,12 +374,14 @@
                 <div class="region-info">
                     <p class="info-title">象鼻山</p>
                     <div class="info-time">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <span>7天</span>
-                    </div>
-                    <div class="info-count">
-                        <ion-icon name="airplane-outline"></ion-icon>
-                        <span>最多人数：500</span>
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
                     </div>
                     <div class="info-content">
                         <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
@@ -369,7 +389,7 @@
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 ￥55 起</span>
+                            <span>从￥<b>55</b> 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -382,25 +402,27 @@
             <!-- 盒子内容2 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/t1/t2.jpg" alt="1">
+                    <img src="./img/t1/t1.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">漓江</p>
+                    <p class="info-title">象鼻山</p>
                     <div class="info-time">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <span>7天</span>
-                    </div>
-                    <div class="info-count">
-                        <ion-icon name="airplane-outline"></ion-icon>
-                        <span>最多人数：500</span>
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
                     </div>
                     <div class="info-content">
-                        <span>天上飞来堆翠云，半岩半树暮霞分。桂林山水如画里，登高一望可掬瑶池。
+                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
                         </span>
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 ￥55 起</span>
+                            <span>从￥<b>55</b> 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -413,25 +435,27 @@
             <!-- 盒子内容3 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/t1/t3.jpg" alt="1">
+                    <img src="./img/t1/t1.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">阳朔</p>
+                    <p class="info-title">象鼻山</p>
                     <div class="info-time">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <span>7天</span>
-                    </div>
-                    <div class="info-count">
-                        <ion-icon name="airplane-outline"></ion-icon>
-                        <span>最多人数：500</span>
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
                     </div>
                     <div class="info-content">
-                        <span>山青水秀处处闲，琴声扬起惹游人。桂林山水有灵气，动人心魄意难平。
+                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
                         </span>
                     </div>
                     <div class="region-account">
                         <div class="account">
-                            <span>从 ￥55 起</span>
+                            <span>从￥<b>55</b> 起</span>
                         </div>
                         <div class="go">
                             <a href="#">
@@ -441,18 +465,17 @@
                     </div>
                 </div>
             </div>
+            <!-- 4 -->
         </div>
-        <div class="region-readme">
+        <div class="region-readme-box">
             <div class="readme-img">
-                <div>
-                    <img src="./img/t1/t4.jpg" alt="">
-                </div>
+                <img src="./img/t1/t4.jpg" alt="1">
             </div>
             <div class="readme-info">
-                <div class="region-title">
+                <div class="readme-title">
                     <span>为您提供独家度假套餐和旅行服务。</span>
                 </div>
-                <div class="region-content">
+                <div class="readme-content">
                     <span>在旅途中，如果你错过了一个城市，也许你只是错过了一个地方。
                         古往今来，三百六十行，走得最多的一种就是旅游。
                 </div>
@@ -494,7 +517,7 @@
                 <div class="title">联系我们</div>
                 <div class="positions">
                     <ion-icon name="compass-outline"></ion-icon>
-                    <span>中国广西桂林市， #54**00 桂林桂林 桂林漓江景区。</span>
+                    <span>中国广西桂林市，象山区， #54**00 桂林桂林 桂林漓江景区。</span>
                 </div>
                 <div class="phones">
                     <ion-icon name="call-outline"></ion-icon>
@@ -517,7 +540,7 @@
                     <a href="#" title="支付宝">
                         <ion-icon name="logo-alipay"></ion-icon>
                     </a>
-                    <a href="#" title="仅支持PC端">
+                    <a href="#" title="暂时仅支持PC端">
                         <ion-icon name="logo-windows"></ion-icon>
                     </a>
                 </div>
@@ -603,7 +626,7 @@
         <div class="version">
             <hr>
             <br>
-            <span>&copy;` 2023 去旅行。v4.6.0</span>
+            <span>&copy;` 2023 去旅行。v4.7.0</span>
             <ion-icon name="leaf-outline"></ion-icon>
             <span>徐家国 | 网页</span>
         </div>

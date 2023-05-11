@@ -1,151 +1,251 @@
 .goods {
-    width: 1000px;
-    padding-left: 18px;
+    /* border: red solid 1px; */
+    width: 1100px;
+    height: 1200px;
     margin: 80px auto;
 }
 
+/* 顶部盒子 */
+.goods-top {
+    /* background-color: green; */
+    width: 100%;
+    height: 15%;
+}
+
+/* 标题盒子 */
+.goods-top .region-title {
+    /* background-color: skyblue; */
+    width: 60%;
+    height: 40%;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    color: var(--title-text-color, #fff);
+    font-size: var(--title-font-size, 15px);
+}
+
+/* 标题文字盒子 */
+.goods-top .region-content {
+    /* background-color: pink; */
+    width: 60%;
+    height: 60%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    line-height: 25px;
+    color: var(--content-text-color, rgb(124, 124, 124));
+    font-size: var(--content-font-size);
+}
+
+/* 内容盒子 */
 .region-content-box {
-    width: 1100px;
-    height: 500px;
+    /* background-color: chocolate; */
+    width: 100%;
+    height: calc((100% - 15%) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* 外盒子 */
 .region-box {
     background-color: rgb(57, 55, 51);
-    width: 330px;
-    height: 450px;
+    width: 29%;
+    height: 90%;
     border-radius: 20px;
-    display: inline-block;
-    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    margin: 20px 20px;
 }
 
 /* 图片盒子 */
-.region-img {
-    width: 90%;
+.region-box .region-img {
+    /* border: red 1px solid; */
+    width: 93%;
     height: 45%;
-    margin: 20px auto;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.5s;
-}
-
-/* 图片大小 */
-.region-img>img {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    top: 10px;
 }
 
 /* 信息盒子 */
-.region-info {
-    width: 90%;
-    height: 28%;
-    margin: 10px auto;
+.region-box .region-info {
+    /* border: blue 1px solid; */
+    width: 93%;
+    height: 45%;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
 }
 
-/* 信息标题 */
-.info-title {
-    color: white;
+/* 标题 */
+.region-info .info-title {
+    /* background-color: skyblue; */
     font-size: 22px;
     font-weight: bolder;
+    width: 100%;
+    height: 17%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--title-text-color);
 }
 
-/* 信息人数 */
-.region-info ion-icon,
-.region-info .info-time,
-.region-info .info-count {
-    color: rgb(168, 168, 168);
-    font-size: 14px;
-    font-weight: lighter;
-    vertical-align: middle;
-}
-
-/* 浮点盒子 时间加 人数 */
-.info-time,
-.info-count {
-    width: 50%;
-    float: left;
-}
-
+/* 时间信息 */
 .info-time {
-    padding-top: 10px;
-    text-align: left;
+    /* border: red 1px solid; */
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.info-count {
-    padding-top: 10px;
-    text-align: right;
-}
-
-/*  */
-.info-content {
-    margin-top: 40px;
-    font-size: 15px;
-    line-height: 25px;
-    color: rgb(168, 168, 168);
-}
-
-/* 价格信息 */
-.region-account {
-    margin-top: 10px;
-    padding-top: 20px;
-    font-size: 20px;
-    color: rgb(99, 187, 208);
-    font-weight: bolder;
-}
-
-/* 显示在一行 价格+按钮 */
-.account,
-.go {
-    display: inline-block;
-}
-
-/* 价格+按钮 并排 */
-.go ion-icon,
-.account {
-    vertical-align: middle;
-}
-
-.account {
-    padding-right: 50%;
-}
-
-/* 价格按钮样式 */
-.go ion-icon {
-    font-size: 35px;
-    color: whitesmoke;
-    transition: 1s;
-}
-
-/* 阅读 */
-.readme-img>div,
-.readme-info {
-    width: 500px;
-    height: 360px;
-    border-radius: 20px;
-    margin: 12px;
+/* 天 */
+.info-time .info-day {
+    /* background-color: plum; */
     overflow: hidden;
-    box-shadow: 0px 0px 20px 10px rgba(211, 208, 208, 0.1)
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--content-text-color, #fff);
+    font-size: 14px;
 }
 
-.readme-img,
-.readme-info {
-    float: left;
+/* 人数 */
+.info-time .info-count {
+    overflow: hidden;
+    /* background-color: green; */
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: var(--content-text-color, #fff);
+    font-size: 14px;
 }
 
-.region-readme {
-    width: 1100px;
-    height: 400px;
-    padding: 20px 10px;
+/* 描述 */
+.region-info .info-content {
+    /* background-color: chocolate; */
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    color: var(--content-text-color, #fff);
+    font-size: 16px;
 }
 
-.readme-img>div>img {
+/* 价格 */
+.region-info .region-account {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 30%;
+    display: flex;
+}
+
+.region-account .account {
+    /* background-color: skyblue; */
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bolder;
+    color: rgb(8, 161, 243);
+}
+
+.region-account .go {
+    /* background-color: green; */
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    line-height: 22px;
+    font-size: 40px;
+}
+
+/* 图片 */
+.region-box .region-img img {
     width: 100%;
     height: 100%;
 }
 
-.readme-info>.region-content {
-    padding-top: 70px;
-    width: 480px;
+/* 底部盒子 */
+.region-readme-box {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: calc((100% - 15%) / 2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.region-readme-box .readme-img {
+    /* border: red 1px solid; */
+    overflow: hidden;
+    width: 46%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.region-readme-box .readme-info {
+    /* border: red 1px solid; */
+    width: 46%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 10px rgba(57, 55, 51, 0.25);
+}
+
+.region-readme-box .readme-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.region-readme-box .readme-info .readme-title {
+    /* background-color: plum; */
+    width: 100%;
+    height: 15%;
+    font-size: 30px;
+    color: var(--title-text-color);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.region-readme-box .readme-info .readme-content {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    color: var(--content-text-color);
+    font-size: 17px;
+    overflow-y: auto;
+}
+
+.region-readme-box .readme-info .readme-button {
+    /* background-color: green; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 .readme-button>button {
@@ -162,10 +262,14 @@
 }
 
 /* 动画 */
-.go ion-icon:hover {
+.go a ion-icon {
+    transition: all 0.5s linear;
+}
+
+.go a ion-icon:hover {
     background-color: rgb(254, 184, 7);
     border-radius: 35px;
-    color: gray;
+    color: rgb(54, 52, 51);
     box-shadow: 0px 0px 20px 10px rgba(254, 184, 7, 0.3);
 }
 
