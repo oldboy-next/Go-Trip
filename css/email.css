@@ -1,3 +1,16 @@
+/* 文本框默认样式 */
+input[type="date"] {
+    text-indent: 2px;
+}
+
+input[type="text"] {
+    text-indent: 10px;
+}
+
+select.input-item {
+    text-indent: 10px;
+}
+
 .email {
     --email-width: 1000px;
     --email-height: 430px;
@@ -42,6 +55,7 @@
     color: var(--title-text-color, #fff);
     font-size: var(--title-font-size, 15px);
     overflow: hidden;
+    padding: 0 20px;
 }
 
 .email-content {
@@ -56,6 +70,7 @@
     line-height: 25px;
     color: var(--content-text-color, rgb(124, 124, 124));
     font-size: var(--content-font-size);
+    padding: 0 20px;
 }
 
 /* 输入框 */
@@ -68,6 +83,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 /* 输入框上下盒子 */
@@ -113,28 +129,29 @@
     width: 300px;
     height: 45px;
     border-radius: 10px;
-    background-color: aliceblue;
-    font-size: 15px;
-    padding-left: 10px;
+    background-color: #fff;
+    font-size: 17px;
     margin-top: 12px;
     transition: all 0.3s;
+    outline: none;
 }
 
 .email-submit button {
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: 500;
+    background: rgb(92, 179, 204);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* 动画 */
-.email-submit>.input-item {
-    background: rgb(92, 179, 204);
-}
 
 .email-submit>.input-item:hover {
-    background: rgb(251, 218, 65)
+    background: rgb(251, 218, 65);
+    color: #000;
 }
 
 .input-item:hover {
-    transform: translate(2px, 10px) scale(1.1);
+    transform: scale(1.1);
+    border: 1px gainsboro solid;
 }

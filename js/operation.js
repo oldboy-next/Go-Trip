@@ -25,7 +25,7 @@ $(() =>
 // 设置按钮状态
 function setButton(disabled)
 {
-    let input = document.querySelector(".frame input");
+    var input = document.querySelector(".frame input");
     // var button = document.querySelector(".search-frame button");
     if (disabled)
     {
@@ -42,10 +42,10 @@ function setButton(disabled)
 // 搜索功能
 function onSearch()
 {
-    let input = document.querySelector(".frame input");
+    var input = document.querySelector(".frame input");
     // window.location.href = "https://www.writingo.net/document?source=new1";   
 
-    // let action = document.querySelector(".frame a");
+    // var action = document.querySelector(".frame a");
     if (!input.value)
     {
         // action.removeAttribute("target")
@@ -56,7 +56,7 @@ function onSearch()
     }
     else
     {
-        let url = `https://cn.bing.com/search?q=${input.value}`;
+        var url = `https://cn.bing.com/search?q=${input.value}`;
         // action.setAttribute("target", "_blank");
         // action.href = url;
         console.log(url);
@@ -66,10 +66,14 @@ function onSearch()
 
 }
 
+// 初始和
+var menu = null;
+
 // 初始化函数
 function Awake()
 {
     document.querySelector(".frame input").addEventListener("keyup", Enter);
+    menu = document.querySelector(".link-nav-list");
 }
 
 // 回车搜索
@@ -82,4 +86,30 @@ function Enter(event)
             onSearch();
         }
     }
+}
+
+// 显示菜单
+var isMenu = true;
+window.addEventListener("resize", function ()
+{
+    menu.style.transition = "0s";
+    if (this.window.screen.availWidth >= 1500)
+    {
+        menu.classList.remove("hop");
+        isMenu = true;
+    }
+})
+function ShowMenu()
+{
+    if (isMenu)
+    {
+        menu.style.transition = "opacity 0.4s linear ,height 0.3s linear";
+        menu.classList.add("hop");
+    }
+    else
+    {
+        menu.classList.remove("hop");
+    }
+
+    isMenu = !isMenu;
 }

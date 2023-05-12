@@ -1,126 +1,115 @@
-.scene {
-    color: whitesmoke;
+/* 响应布局*/
+@media (min-width:1500px) {
+    .scene {
+        /* border: red 1px solid; */
+        width: 100%;
+        height: 850px;
+        display: flex;
+        position: relative;
+    }
+}
+
+@media (max-width:1500px) {
+    .scene {
+        /* border: red 1px solid; */
+        width: 1000px;
+        height: 550px;
+        display: flex;
+        position: relative;
+        margin: 0 13px;
+    }
+}
+
+.scene img {
     width: 100%;
-    height: 860px;
-    background-color: black;
+    height: 100%;
+    opacity: 0.7;
 }
 
-.scene-master {
+.scene-right,
+.scene-left {
+    /* border: blue 1px solid; */
     width: 50%;
-    height: 860px;
-    float: left;
+    height: 100%;
+    position: relative;
 }
 
-/*  */
-.scene-master>p,
-.scene-master>img,
-.scene-master>span {
+.scene-left .scene-img {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 100%;
     position: absolute;
+    z-index: 1;
+    overflow: hidden;
 }
 
-.scene-item-up>p,
-.scene-item-up>img,
-.scene-item-up>span {
+.scene-left .scene-info {
+    /* background-color: green; */
     position: absolute;
+    z-index: 2;
+    width: 85%;
+    height: 50%;
+    bottom: 0;
 }
 
-.scene-item-down>p,
-.scene-item-down>img,
-.scene-item-down>span {
-    position: absolute;
-}
-
-.scene-content {
-    transition: all 1s;
-}
-
-/* 图片大小 */
-.scene-master>.scene-img {
-    width: 50%;
-    height: 860px;
-    opacity: 0.5;
-}
-
-.scene-item-up>.scene-img {
-    width: 50%;
-    height: 430px;
-    opacity: 0.5;
-}
-
-.scene-item-down>.scene-img {
-    width: 50%;
-    height: 430px;
-    opacity: 0.5;
-}
-
-/* 字体 */
-.scene-title {
+/* 统一样式 */
+.scene-left .scene-info .scene-title {
+    /* background-color: plum; */
+    width: 100%;
+    height: 20%;
     font-size: 30px;
     font-weight: bolder;
-    padding-left: 50px;
-    text-shadow: 5px 8px 5px rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    color: var(--title-text-color);
+    text-shadow: 8px 8px 2px rgba(0, 0, 0, 0.7);
+    padding: 0 22px;
+    box-sizing: border-box;
 }
 
-.scene-content {
-    line-height: 25px;
-    height: 100px;
-    width: 25%;
-    font-size: 15px;
-    font-weight: lighter;
-    padding-left: 50px;
-    text-shadow: 5px 8px 5px rgb(56, 56, 56);
-    width: 20vw;
-    height: 1vh;
+.scene-left .scene-info .scene-content {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: 60%;
+    color: #fff;
+    font-size: calc(1px + var(--content-font-size));
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    overflow-y: auto;
+    padding: 0 22px;
+    box-sizing: border-box;
 }
 
-/* master */
-.scene-master>p {
-    margin-top: 430px;
-    padding-left: 50px;
+/* 单独设置右边的布局 */
+.scene-right .scene-info .scene-title {
+    /* background-color: red; */
+    width: 100%;
+    height: 30%;
 }
 
-.scene-master>span {
-
-    margin-top: 500px;
-    padding-left: 50px;
+.scene-right .scene-info {
+    /* background-color: palevioletred; */
+    width: 100%;
+    height: 40%;
 }
 
-/* right */
-.scene-right {
-    width: 50%;
-    height: 860px;
-    position: absolute;
-    margin-left: 50%;
+.scene-right .scene-info .scene-content {
+    /* background-color: green; */
+    width: 100%;
+    height: 70%;
 }
 
-/* item up box*/
-.scene-item-up {
-    float: left;
-    height: 430px;
-    width: 50%;
-}
-
-.scene-item-up>span,
-.scene-item-down>span {
-    margin-top: 370px;
-}
-
-.scene-item-up>p,
-.scene-item-down>p {
-    margin-top: 320px;
-}
-
-/* item down box*/
-.scene-item-down {
-    float: left;
-    height: 430px;
-    width: 50%;
+/* 右边盒子 */
+.scene-right .scene-right-up,
+.scene-right .scene-right-down {
+    /* border: red solid 1px; */
+    width: 100%;
+    height: 50%;
+    display: flex;
 }
 
 /* 动画 */
-.scene-content:hover {
-    transform: scale(1.12) translate(5px, 5px);
-}
 
 .scene-title>a:hover {
     color: rgb(251, 218, 65);

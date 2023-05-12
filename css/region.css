@@ -1,7 +1,7 @@
 .goods {
     /* border: red solid 1px; */
-    width: 1100px;
-    height: 1200px;
+    width: 1000px;
+    height: 1000px;
     margin: 80px auto;
 }
 
@@ -10,6 +10,7 @@
     /* background-color: green; */
     width: 100%;
     height: 15%;
+    padding: 0 20px;
 }
 
 /* 标题盒子 */
@@ -37,6 +38,7 @@
     line-height: 25px;
     color: var(--content-text-color, rgb(124, 124, 124));
     font-size: var(--content-font-size);
+    text-indent: 2em;
 }
 
 /* 内容盒子 */
@@ -82,7 +84,7 @@
     /* border: blue 1px solid; */
     width: 93%;
     height: 45%;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     top: 10px;
 }
@@ -90,7 +92,7 @@
 /* 标题 */
 .region-info .info-title {
     /* background-color: skyblue; */
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bolder;
     width: 100%;
     height: 17%;
@@ -98,6 +100,7 @@
     justify-content: start;
     align-items: center;
     color: var(--title-text-color);
+    overflow: hidden;
 }
 
 /* 时间信息 */
@@ -115,10 +118,10 @@
     overflow: hidden;
     flex: 1;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     color: var(--content-text-color, #fff);
-    font-size: 14px;
+    font-size: calc(var(--content-font-size) - 2px);
 }
 
 /* 人数 */
@@ -127,10 +130,10 @@
     /* background-color: green; */
     flex: 1;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     color: var(--content-text-color, #fff);
-    font-size: 14px;
+    font-size: calc(var(--content-font-size) - 2px);
 }
 
 /* 描述 */
@@ -139,11 +142,11 @@
     height: 40%;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
     color: var(--content-text-color, #fff);
-    font-size: 16px;
+    font-size: calc(var(--content-font-size) - 1px);
 }
 
 /* 价格 */
@@ -158,9 +161,9 @@
     /* background-color: skyblue; */
     flex: 1;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 22px;
+    font-size: calc(var(--content-font-size) + 3px);
     font-weight: bolder;
     color: rgb(8, 161, 243);
 }
@@ -169,10 +172,9 @@
     /* background-color: green; */
     flex: 1;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-    line-height: 22px;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 /* 图片 */
@@ -218,12 +220,13 @@
     /* background-color: plum; */
     width: 100%;
     height: 15%;
-    font-size: 30px;
+    font-size: 25px;
     color: var(--title-text-color);
     font-weight: bolder;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
 }
 
 .region-readme-box .readme-info .readme-content {
@@ -237,6 +240,9 @@
     color: var(--content-text-color);
     font-size: 17px;
     overflow-y: auto;
+    padding: 0 10px;
+    text-align: left;
+    text-indent: 2em;
 }
 
 .region-readme-box .readme-info .readme-button {
@@ -244,7 +250,7 @@
     width: 100%;
     height: 40%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -262,11 +268,11 @@
 }
 
 /* 动画 */
-.go a ion-icon {
-    transition: all 0.5s linear;
+.region-account .go a ion-icon {
+    transition: all 0.3s linear;
 }
 
-.go a ion-icon:hover {
+.region-account .go a ion-icon:hover {
     background-color: rgb(254, 184, 7);
     border-radius: 35px;
     color: rgb(54, 52, 51);

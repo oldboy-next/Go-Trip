@@ -46,23 +46,33 @@
                 </div>
                 <!-- TODO:导航链接功能 -->
                 <div class="link-nav">
-                    <ul>
-                        <li>
-                            <a href="#top">主页</a>
-                        </li>
-                        <li>
-                            <a href="#email">订阅</a>
-                        </li>
-                        <li>
-                            <a href="#scene">景点</a>
-                        </li>
-                        <li>
-                            <a href="#region">地点</a>
-                        </li>
-                        <li>
-                            <a href="#ended">尾景</a>
-                        </li>
-                    </ul>
+                    <div class="link-nav-menu">
+                        <div class="link-nav-menu-btn">
+                            <a href="javascript:void(0)" onclick=" ShowMenu()">
+                                <ion-icon name="menu-outline"></ion-icon>
+                            </a>
+                        </div>
+                        <!-- 菜单 -->
+                        <div class="link-nav-list">
+                            <ul>
+                                <li>
+                                    <a href="#top">主页</a>
+                                </li>
+                                <li>
+                                    <a href="#email">订阅</a>
+                                </li>
+                                <li>
+                                    <a href="#scene">景点</a>
+                                </li>
+                                <li>
+                                    <a href="#region">地点</a>
+                                </li>
+                                <li>
+                                    <a href="#ended">尾景</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <!-- 搜索框 -->
                 <div class="search">
@@ -311,44 +321,77 @@
     </div>
     <!-- TODO:a 改图，链接 景点 -->
     <div class="scene">
-        <div class="scene-master">
-            <img class="scene-img" src="./img/guiling/scene1.jpg" alt="1">
-            <p class="scene-title">
-                <a href="">夜之景</a>
-            </p>
-            <span class="scene-content">
-                桂林山水秀美，素有“天下独奇”的美誉。它的山是险峻而多姿多彩的，有层峦叠嶂、云雾缭绕的世外桃源形象；它的水则沁人心脾，碧绿，清澈，婉约，有水墨画般的一片轻盈。
-            </span>
+        <div class="scene-left">
+            <div class="scene-img">
+                <img src="./img/guiling/scene1.jpg" alt="1">
+            </div>
+            <div class="scene-info">
+                <div class="scene-title">
+                    <a href="#">夜之景</a>
+                </div>
+                <div class="scene-content">
+                    桂林山水秀美，素有“天下独奇”的美誉。它的山是险峻而多姿多彩的，有层峦叠嶂、云雾缭绕的世外桃源形象；它的水则沁人心脾，碧绿，清澈，婉约，有水墨画般的一片轻盈。
+                </div>
+            </div>
         </div>
+        <!--  -->
         <div class="scene-right">
-            <div class="scene-item-up">
-                <img class="scene-img" src="./img/guiling/s2.jpg" alt="1">
-                <p class="scene-title">
-                    <a href="">奇峰峭</a>
-                </p>
-                <span class="scene-content">东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。</span>
+            <div class="scene-right-up">
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="./img/guiling/s2.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="">奇峰峭</a>
+                        </div>
+                        <div class="scene-content">
+                            东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。
+                        </div>
+                    </div>
+                </div>
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="./img/guiling/s3.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="">恍如境</a>
+                        </div>
+                        <div class="scene-content">
+                            人们尽情欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="scene-item-up">
-                <img class="scene-img" src="./img/guiling/s3.jpg" alt="1">
-                <p class="scene-title">
-                    <a href="">恍如境</a>
-                </p>
-                <span class="scene-content">人们尽情欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。</span>
-            </div>
-            <br>
-            <div class="scene-item-down">
-                <img class="scene-img" src="./img/guiling/s4.jpg" alt="1">
-                <p class="scene-title">
-                    <a href="">水如画</a>
-                </p>
-                <span class="scene-content">这是二千多年前的桂林，仙人在此游山玩水、吟诗作画，留下了无数动人心魄的故事和不朽佳话。</span>
-            </div>
-            <div class="scene-item-down">
-                <img class="scene-img" src="./img/guiling/s5.jpg" alt="1">
-                <p class="scene-title">
-                    <a href="">青山间</a>
-                </p>
-                <span class="scene-content">黄布倒影、牛角塘、龙潭等处，更是赏到了壮美、静美、动人和神秘的自然景观</span>
+            <!-- d -->
+            <div class="scene-right-down">
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="./img/guiling/s4.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="">水如画</a>
+                        </div>
+                        <div class="scene-content">
+                            这是二千多年前的桂林，仙人在此游山玩水、吟诗作画，留下了无数动人心魄的故事和不朽佳话。
+                        </div>
+                    </div>
+                </div>
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="./img/guiling/s5.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="">青山间</a>
+                        </div>
+                        <div class="scene-content">
+                            黄布倒影、牛角塘、龙潭等处，更是赏到了壮美、静美、动人和神秘的自然景观
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -492,23 +535,23 @@
     <!-- 尾页 -->
     <hr id="ended" class="point">
     <div class="ended">
-        <div class="ended-box">
-            <div class="ended-box-item">
-                <div class="box-item-title ended">
-                    我们与您在旅程的每个
-                    <br>
-                    阶段都与您同在
-                </div>
-                <div class="box-item-content ended">
-                    无论是寻找刺激、挑战自我，还是追求放松、享受生活，我们都能为您提供最好的旅游体验。快来加入我们的旅行队伍，让心灵穿越时空，在旅途中找到属于自己的那片天地。
-                </div>
-                <div class="subscribe ended">
-                    <button type="button">
-                        <a href="#">预订您的旅行</a>
-                    </button>
-                </div>
-            </div>
+        <div class="ended-img">
             <img src="./img/guiling/ended.jpg" alt="1">
+        </div>
+        <div class="ended-box">
+            <div class="ended-box-title">
+                我们与您在旅程的每个
+                <br>
+                阶段都与您同在
+            </div>
+            <div class="ended-box-content">
+                无论是寻找刺激、挑战自我，还是追求放松、享受生活，我们都能为您提供最好的旅游体验。快来加入我们的旅行队伍，让心灵穿越时空，在旅途中找到属于自己的那片天地。
+            </div>
+            <div class="ended-box-subscribe">
+                <button type="button">
+                    <a href="#">预订您的旅行</a>
+                </button>
+            </div>
         </div>
     </div>
     <footer>
@@ -626,7 +669,7 @@
         <div class="version">
             <hr>
             <br>
-            <span>&copy;` 2023 去旅行。v4.7.0</span>
+            <span>&copy;` 2023 去旅行。v4.8.0</span>
             <ion-icon name="leaf-outline"></ion-icon>
             <span>徐家国 | 网页</span>
         </div>

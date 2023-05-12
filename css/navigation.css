@@ -8,18 +8,14 @@
 }
 
 body {
-    background: rgb(19, 19, 19);
+    background: var(--background-color-dark);
     /* background: #fff; */
 }
 
 a {
-    color: #fff;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-}
-
-input[type="text"]::-webkit-input-placeholder {
-    padding-left: 10px;
+    color: var(--title-text-color, #fff);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -62,18 +58,19 @@ html {
 /* nav 导航栏 */
 .nav {
     /* border: red 1px solid; */
-    height: 100%;
-    width: 100%;
+    height: 85px;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
+    margin: 0 auto;
 }
 
 /* logo */
 .link-top {
-    /* background-color: red; */
+    background-color: red;
     height: 85px;
-    width: 260px;
+    width: 300px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -110,31 +107,106 @@ html {
 
 /*导航所有链接 */
 .link-nav {
-    /* background-color: skyblue; */
+    background-color: skyblue;
     width: 400px;
     height: 85px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.link-nav ul li {
-    /* border: red 1px solid; */
+.link-nav-menu {
+    border: blue 1px solid;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 响应布局 */
+@media (min-width:1500px) {
+    .link-nav-list {
+        background-color: purple;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .link-nav-list ul li {
+        display: inline-block;
+        margin: 0 10px;
+        margin-top: 20px;
+    }
+
+    .link-nav-menu-btn {
+        display: none;
+    }
+
+}
+
+@media (max-width:1500px) {
+    .link-nav-list {
+        background-color: rgb(19, 19, 19);
+        position: fixed;
+        top: 85px;
+        width: 150px;
+        height: 0px;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 7px;
+        overflow-y: hidden;
+    }
+
+    .link-nav-list ul li {
+        text-align: center;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .link-nav-menu-btn {
+        display: block;
+    }
+
+    /* 设置透明宽高 */
+    .hop {
+        opacity: 1;
+        height: 240px;
+    }
+
+    .link-top>div:last-child {
+        display: none !important;
+    }
+
+    .user .phone {
+        display: none !important;
+    }
+}
+
+/* 菜单按钮 */
+.link-nav-menu-btn {
+    border: red solid 1px;
+    height: 40px;
+    width: 40px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.link-nav-list ul li {
+    border: red 1px solid;
     list-style: none;
-    display: inline-block;
-    margin: 0 13px;
-    letter-spacing: 5px;
-    font-size: 18px;
-    font-weight: 500;
-    vertical-align: bottom;
-    margin-top: 20px;
+    font-size: 22px;
+    letter-spacing: 3px;
 }
 
 /* 搜索界面 */
 .search {
-    /* background-color: plum; */
-    width: 340px;
+    background-color: plum;
+    width: 300px;
     height: 85px;
     display: flex;
     position: relative;
@@ -168,7 +240,7 @@ html {
     width: 230px;
     height: 40px;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 7px;
     border: none;
     outline: none;
     font-size: 16px;
@@ -203,7 +275,7 @@ html {
 
 /* 用户界面 */
 .user {
-    /* background-color: palevioletred; */
+    background-color: palevioletred;
     width: 400px;
     height: 85px;
     display: flex;
@@ -288,7 +360,7 @@ html {
 
 /* 用户详细面板 */
 .infos {
-    width: 260px;
+    width: 250px;
     height: 0px;
     opacity: 0;
     background-image: linear-gradient(to top, #dfe9f3 10%, white 100%);
