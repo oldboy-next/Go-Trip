@@ -3,14 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./img/svg/icon_trip.svg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 外部图标库 -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- 本地脚本js -->
     <script src="./js/animation.js"></script>
     <script src="./js/operation.js"></script>
+    <!-- 本地样式 -->
     <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="stylesheet" href="./css/email.css">
     <link rel="stylesheet" href="./css/scene.css">
     <link rel="stylesheet" href="./css/region.css">
@@ -25,6 +30,10 @@
 
             --background-color-light: rgb(233, 233, 233);
             --background-color-dark: rgb(19, 19, 19);
+        }
+
+        .smooth {
+            scroll-behavior: smooth;
         }
     </style>
     <title>Go trip</title>
@@ -49,7 +58,9 @@
                     <div class="link-nav-menu">
                         <div class="link-nav-menu-btn">
                             <a href="javascript:void(0)" onclick=" ShowMenu()">
-                                <ion-icon name="menu-outline"></ion-icon>
+                                <ion-icon name="menu-outline">
+                                    <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
                             </a>
                         </div>
                         <!-- 菜单 -->
@@ -78,7 +89,9 @@
                 <div class="search">
                     <div class="search-btn">
                         <a href="javascript:void(0)" id="search">
-                            <ion-icon name="search-circle-outline"></ion-icon>
+                            <ion-icon name="search-circle-outline">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                     </div>
                     <div class="frame" id="frame">
@@ -148,7 +161,9 @@
                     </div>
                     <div class="display">
                         <a href="#">
-                            <ion-icon name="moon-outline"></ion-icon>
+                            <ion-icon name="moon-outline">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                             <ion-icon name="sunny-outline" style="display: none;"></ion-icon>
                         </a>
                     </div>
@@ -156,102 +171,144 @@
             </div>
         </nav>
         <!-- 主页图片 -->
-        <div class="view">
-            <div class="box">
-                <div class="a">
-                    <div class="box-item">
-                        <div class="box-item-title">
-                            欢迎来到
-                            <br>
-                            旅行吧
-                        </div>
-                        <div class="box-item-content">
-                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
-                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
-                        </div>
-                        <div class="subscribe">
-                            <button type="button">
-                                <a href="#email">预订您的旅行</a>
-                            </button>
-                        </div>
+        <div class="view" title="左右滑动切换图片">
+            <div class="scroll view-item a">
+                <img draggable="false" src="./img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
                     </div>
-                    <img draggable="false" src="./img/bg/bg1.jpg" alt="">
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
                 </div>
-                <div class="b">
-                    <div class="box-item">
-                        <div class="box-item-title">
-                            欢迎来到
-                            <br>
-                            旅行吧
-                        </div>
-                        <div class="box-item-content">
-                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
-                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
-                        </div>
-                        <div class="subscribe">
-                            <button type="button">
-                                <a href="#email">预订您的旅行</a>
-                            </button>
-                        </div>
+            </div>
+
+            <div class="scroll view-item c">
+                <img draggable="false" src="./img/bg/bg3.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
                     </div>
-                    <img draggable="false" src="./img/bg/bg2.jpg" alt="">
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
                 </div>
-                <div class="c">
-                    <div class="box-item">
-                        <div class="box-item-title">
-                            欢迎来到
-                            <br>
-                            旅行吧
-                        </div>
-                        <div class="box-item-content">
-                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
-                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
-                        </div>
-                        <div class="subscribe">
-                            <button type="button">
-                                <a href="#email">预订您的旅行</a>
-                            </button>
-                        </div>
+            </div>
+
+            <div class="scroll view-item b">
+                <img draggable="false" src="./img/bg/bg2.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
                     </div>
-                    <img draggable="false" src="./img/bg/bg3.jpg" alt="">
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
                 </div>
-                <div class="d">
-                    <div class="box-item">
-                        <div class="box-item-title">
-                            欢迎来到
-                            <br>
-                            旅行吧
-                        </div>
-                        <div class="box-item-content">
-                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
-                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
-                        </div>
-                        <div class="subscribe">
-                            <button type="button">
-                                <a href="#email">预订您的旅行</a>
-                            </button>
-                        </div>
+            </div>
+
+            <div class="scroll view-item a">
+                <img draggable="false" src="./img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
                     </div>
-                    <img draggable="false" src="./img/bg/bg4.jpg" alt="">
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
                 </div>
-                <div class="a">
-                    <div class="box-item">
-                        <div class="box-item-title">
-                            欢迎来到
-                            <br>
-                            旅行吧
-                        </div>
-                        <div class="box-item-content">
-                            旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
-                            如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
-                        </div>
-                        <div class="subscribe">
-                            <button type="button">
-                                <a href="#email">预订您的旅行</a>
-                            </button>
-                        </div>
+            </div>
+
+            <div class="scroll view-item b">
+                <img draggable="false" src="./img/bg/bg2.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
                     </div>
-                    <img draggable="false" src="./img/bg/bg1.jpg" alt="">
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item c">
+                <img draggable="false" src="./img/bg/bg3.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item a">
+                <img draggable="false" src="./img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -343,7 +400,7 @@
                     </div>
                     <div class="scene-info">
                         <div class="scene-title">
-                            <a href="">奇峰峭</a>
+                            <a href="#">奇峰峭</a>
                         </div>
                         <div class="scene-content">
                             东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。
@@ -356,7 +413,7 @@
                     </div>
                     <div class="scene-info">
                         <div class="scene-title">
-                            <a href="">恍如境</a>
+                            <a href="#">恍如境</a>
                         </div>
                         <div class="scene-content">
                             人们尽情欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。
@@ -372,7 +429,7 @@
                     </div>
                     <div class="scene-info">
                         <div class="scene-title">
-                            <a href="">水如画</a>
+                            <a href="#">水如画</a>
                         </div>
                         <div class="scene-content">
                             这是二千多年前的桂林，仙人在此游山玩水、吟诗作画，留下了无数动人心魄的故事和不朽佳话。
@@ -385,7 +442,7 @@
                     </div>
                     <div class="scene-info">
                         <div class="scene-title">
-                            <a href="">青山间</a>
+                            <a href="#">青山间</a>
                         </div>
                         <div class="scene-content">
                             黄布倒影、牛角塘、龙潭等处，更是赏到了壮美、静美、动人和神秘的自然景观
@@ -436,7 +493,9 @@
                         </div>
                         <div class="go">
                             <a href="#">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
                             </a>
                         </div>
                     </div>
@@ -469,7 +528,9 @@
                         </div>
                         <div class="go">
                             <a href="#">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
                             </a>
                         </div>
                     </div>
@@ -502,7 +563,9 @@
                         </div>
                         <div class="go">
                             <a href="#">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
                             </a>
                         </div>
                     </div>
@@ -573,19 +636,39 @@
                     </div>
                     <div class="icons">
                         <a title="GitHup" href="https://github.com/oldboy-next/Go-Trip/tree/dev" target="_blank">
-                            <ion-icon name="logo-github"></ion-icon>
+                            <ion-icon name="logo-github">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                         <a href="#" title="热门拍照">
-                            <ion-icon name="camera-outline"></ion-icon>
+                            <ion-icon name="camera-outline">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                         <a href="#" title="微信">
-                            <ion-icon name="logo-wechat"></ion-icon>
+                            <ion-icon name="logo-wechat">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                         <a href="#" title="支付宝">
-                            <ion-icon name="logo-alipay"></ion-icon>
+                            <ion-icon name="logo-alipay">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                         <a href="#" title="暂时仅支持PC端">
-                            <ion-icon name="logo-windows"></ion-icon>
+                            <ion-icon name="logo-windows">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="移动端测试">
+                            <ion-icon name="phone-portrait-outline">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="https://ionic.io/ionicons" target="_blank" title="图标赞助网站">
+                            <ion-icon name="extension-puzzle-outline">
+                                <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
                         </a>
                     </div>
                 </div>
@@ -666,13 +749,130 @@
             <div class="version-info">
                 <span>&copy;` 2023 去旅行。
                     <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
-                        title="前往仓库查看版本">v-4.9.0</a>
+                        title="前往仓库查看版本">v-5.0.0</a>
                 </span>
                 <ion-icon name="leaf-outline"></ion-icon>
                 <span>徐家国 | 网页</span>
             </div>
         </div>
     </footer>
+    <!-- scripts -->
+    <script>
+        // 获取元素
+        const box = document.querySelector(".view");
+        const item = document.querySelector(".view-item");
+
+        let itemWidth = item.clientWidth;
+        // 原点坐标
+        box.scrollLeft = itemWidth * 3;
+
+        // 监听盒子滚动
+        let boxScroll = function (event)
+        {
+            if (!event instanceof Event) return;
+            let pos = box.scrollLeft - itemWidth * 3;
+            if (Math.abs(pos) === itemWidth * 3)
+            {
+                // 回到原点
+                box.classList.remove("smooth");
+                box.scrollTo(itemWidth * 3, 0);
+            }
+        }
+
+        // 事件注册盒子滚动
+        box.addEventListener("scroll", boxScroll);
+
+        // 鼠标按下
+        let mouseDown = function (event)
+        {
+            // 移除过渡
+            box.classList.remove("smooth");
+            if (!event instanceof MouseEvent) return;
+            // console.log("down");
+            // 是否是在滑动的元素上 移除监听
+            if (event.target.classList.item(0) === "scroll")
+            {
+                // console.log(event.target.classList.item(0));
+                window.addEventListener("mousemove", mouseMove);
+            }
+            else
+            {
+                // console.log("class is null");
+                window.removeEventListener("mousemove", mouseMove);
+            }
+        }
+        // 鼠标抬起
+        let mouseUp = function (event)
+        {
+            // 添加过渡
+            box.classList.add("smooth");
+            if (!event instanceof MouseEvent) return;
+            // console.log("up");
+            window.removeEventListener("mousemove", mouseMove);
+
+            // 判断返回的方向
+            box.scrollLeft = next();
+        }
+        // 鼠标移动
+        let mouseMove = function (event)
+        {
+            if (event instanceof MouseEvent)
+            {
+                // 限制最大滑动
+                let moveX = Math.min(Math.abs(event.movementX), 80);
+                direction = event.movementX > 0 ? -moveX : moveX;
+                // 移动
+                box.scrollBy(direction, 0);
+            }
+        }
+
+        // 事件注册
+        window.addEventListener("mousedown", mouseDown);
+        window.addEventListener("mouseup", mouseUp);
+        window.addEventListener("blur", e => window.removeEventListener("mousemove", mouseMove));
+
+        // 自动回滚方法
+        function next()
+        {
+            let current = box.scrollLeft % itemWidth;
+
+            let target = 0;
+            // 求余，得到哪边的距离较近
+            if (current <= itemWidth / 2)
+            {
+                target = box.scrollLeft - current;
+            }
+            else
+            {
+                target = itemWidth - current + box.scrollLeft;
+            }
+            // 返回
+            return target;
+        }
+
+        // 窗口改变监听
+        window.addEventListener("resize", function (e)
+        {
+            // 重新计算盒子宽度
+            itemWidth = item.clientWidth;
+            // 回到原点
+            box.scrollLeft = itemWidth * 3;
+        })
+
+        // 移动端开始-拖-结束 测试
+        window.addEventListener("touchmove", e => box.classList.remove("smooth"));
+        // window.addEventListener("touchstart", function (event)
+        // {
+        //     console.log("touchstart");
+        // })
+        window.addEventListener("touchend", function ()
+        {
+            box.classList.add("smooth");
+            box.scrollLeft = next()
+        })
+
+
+    </script>
 </body>
 
 </html>

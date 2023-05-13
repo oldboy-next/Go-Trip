@@ -211,9 +211,9 @@
     height: 20%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px 20px;
+    justify-content: space-around;
     box-sizing: border-box;
+    padding: 0px 5px 0px 13px;
 }
 
 .footer .container-left .menu .icons a {
@@ -286,7 +286,7 @@
     height: 85%;
     box-sizing: border-box;
     overflow-y: auto;
-    padding: 0 7px;
+    padding: 0 8px;
 }
 
 .footer .container-right .new-img .free-img .free-img-item {
@@ -330,8 +330,19 @@
     background: rgb(17, 115, 196);
 }
 
+.menu>div:last-child>a:nth-child(5) ion-icon:hover {
+    background: rgb(122, 174, 214);
+    color: rgb(0, 89, 255);
+}
+
+.menu>div:last-child>a:nth-child(6) ion-icon:hover {
+    background: rgb(228, 89, 96);
+    color: #000;
+}
+
 .menu>div:last-child>a:last-child ion-icon:hover {
-    background: rgb(73, 131, 179);
+    background: rgb(94, 77, 185);
+    color: #000;
 }
 
 

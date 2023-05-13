@@ -1,6 +1,6 @@
 /* 文本框默认样式 */
 input[type="date"] {
-    text-indent: 2px;
+    text-indent: 5px;
 }
 
 input[type="text"] {
