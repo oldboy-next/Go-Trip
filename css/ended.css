@@ -100,32 +100,216 @@
     background: rgb(196, 164, 24);
 }
 
-/* 结尾 */
-
-/* --联系菜单-- */
-footer .menu {
-    /* background-color: plum; */
-    text-align: left;
-    width: 400px;
+/* ---结尾--- */
+.footer {
+    /* border: red 1px solid; */
+    width: 1000px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu ion-icon,
-.menu span {
+/* 响应布局 */
+@media (max-width:1500px) {
+    .footer {
+        border: red 1px solid;
+        width: 1000px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        margin: 80px 5px 0px 5px;
+    }
+}
+
+@media (min-width:1500px) {
+    .footer {
+        border: red 1px solid;
+        width: 1000px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        margin: 80px auto 0px auto;
+    }
+}
+
+/* 更多链接盒子 */
+.footer .container {
+    background-color: coral;
+    width: 100%;
+    height: 75%;
+    position: relative;
+    display: flex;
+}
+
+.footer .container-left,
+.footer .container-right {
+    border: blue 1px solid;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 联系菜单 */
+.footer .container-left .menu {
+    background-color: skyblue;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 标题盒子 */
+.container .title {
+    background-color: gray;
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    height: 15%;
+    color: var(--title-text-color, #fff);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* 地区的盒子 */
+.footer .container-left .menu .positions {
+    background-color: plum;
+    width: 100%;
+    height: 45%;
+    color: rgb(211, 211, 211);
+    font-size: calc(2px + var(--content-font-size, 15px));
+    line-height: 25px;
+    overflow-y: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+/* 联系电话 邮箱 */
+.footer .container-left .menu .phones,
+.footer .container-left .menu .emails {
+    background-color: cadetblue;
+    width: 100%;
+    height: 10%;
+    font-size: calc(2px + var(--content-font-size, 15px));
+    letter-spacing: 1px;
+    color: rgb(211, 211, 211);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* 外接链接盒子 */
+.footer .container-left .menu .icons {
+    background-color: salmon;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.footer .container-left .menu .icons a {
+    border: red 1px solid;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+/* 图标文字对齐 */
+.footer .container-left div ion-icon,
+.footer .container-left div span {
     vertical-align: middle;
-    font-size: 16px;
-    color: rgba(214, 214, 214, 0.7);
+    border-radius: 3px;
+    transition: all 0.4s linear;
 }
 
-.menu>div:last-child ion-icon {
-    font-size: 30px;
-    background-color: rgba(32, 32, 32, 0.7);
-    border-radius: 5px;
-    color: whitesmoke;
-    transition: all 0.3s;
+/* 类型列表 */
+.footer .container .type {
+    background-color: brown;
+    width: 20%;
+    height: 100%;
 }
 
-.menu div {
-    margin-bottom: 19px;
+.footer .container .type .list {
+    background-color: skyblue;
+    width: 100%;
+    height: 85%;
+}
+
+.footer .container .type ul {
+    border: red 1px solid;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .container .type .title {
+    justify-content: center;
+    background-color: red;
+}
+
+.footer .container .type ul li {
+    width: 100%;
+    height: calc(100% / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(2px + var(--content-font-size, 15px));
+}
+
+.footer .container .type ul li a {
+    color: rgb(211, 211, 211);
+}
+
+/* 右边图片盒子 */
+.footer .container-right .new-img {
+    background-color: chocolate;
+    width: 80%;
+    height: 100%;
+}
+
+.footer .container-right .new-img .free-img {
+    background-color: green;
+    width: 100%;
+    height: 85%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 0 7px;
+}
+
+.footer .container-right .new-img .free-img .free-img-item {
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer .free-img-item img {
+    background-color: saddlebrown;
+    display: block;
+    width: 30%;
+    height: 85%;
+    border-radius: 8px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.footer .free-img-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* 联系菜单动画*/
@@ -150,108 +334,54 @@ footer .menu {
     background: rgb(73, 131, 179);
 }
 
-/* 类型面板 */
-.type {
-    /* background-color: skyblue; */
-    width: 100px;
-    text-align: center;
-}
-
-/* .type>div:last-child {
-    background-color: green;
-} */
-
-.type li {
-    margin-top: 19px;
-    list-style: none;
-}
-
-.type a {
-    color: rgba(214, 214, 214, 0.7);
-}
-
-/* 图片面板 */
-.new-img {
-    /* background-color: plum; */
-    width: 400px;
-}
-
-.new-img img {
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s;
-    border-radius: 10px;
-}
-
-.new-img>.title {
-    padding-left: 10px;
-}
-
-table tr td {
-    width: 200px;
-    height: 90px;
-}
-
-tr td {
-    padding: 5px;
-}
-
-.new-img img:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-/* 所有的标题 */
-.title {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-}
-
-.container>div {
-    height: 240px;
-}
-
-.container {
-    /* background-color: yellow; */
-    height: 280px;
-    padding-top: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu,
-.type,
-.new-img {
-    float: left;
-}
 
 /* 末尾-> 版本信息 */
-.version {
-    /* background-color: coral; */
-    text-align: center;
-    padding-bottom: 70px;
+/* 版权盒子 */
+.footer .version {
+    background-color: purple;
+    width: 100%;
+    height: 25%;
 }
 
-.version ion-icon {
-    color: rgb(185, 185, 185);
+.footer .version ion-icon,
+.footer .version span,
+.footer .version span a {
+    vertical-align: middle;
 }
 
-.version>span:nth-child(3) {
-    font-size: 15px;
-    color: gray;
+.footer .version .version-info {
+    background-color: green;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
 }
 
-.version>span:nth-child(5) {
-    font-size: 16px;
-    color: rgb(185, 185, 185);
+.footer .version .version-info span:first-child,
+.footer .version .version-info span:first-child a {
+    font-size: var(--content-font-size);
+    color: var(--content-text-color, rgb(107, 107, 107));
+    padding: 0 10px;
 }
 
-.version hr {
-    margin: 0 auto;
-    height: 2px;
-    width: 1010px;
-    border: none;
+.footer .version .version-info span:first-child a:hover {
+    color: #fff;
+}
+
+.footer .version .version-info ion-icon {
+    color: var(--content-text-color, rgb(107, 107, 107));
+}
+
+.footer .version .version-info span:last-child {
+    color: rgb(199, 199, 199);
+}
+
+.footer .version hr {
     background-color: rgba(88, 88, 88, 0.8);
+    border: none;
+    width: 95%;
+    height: 2px;
+    margin: 5px auto;
 }
