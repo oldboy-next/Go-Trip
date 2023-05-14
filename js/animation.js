@@ -26,7 +26,6 @@ function* gen()
     yield $(".link-nav").hide().slideDown(600);
     yield $(".search").hide().slideDown(700);
     yield $(".phone").hide().slideDown(800);
-
     return "END ANIM";
 }
 
@@ -36,18 +35,18 @@ function down()
 {
     if (window.scrollY === 0 && isScroll === true)
     {
-        let top = $(".header-nav");
-        console.log("up");
-        top.css("background", "rgba(255, 255, 255, 0.2)");
-        top.css("height", "85px")
+        $(".header-nav").css("height", "85px");
+        let color = $("html").hasClass("dark") ? "rgba(19,19,19,0.2)" : "rgba(255,255,255,0.2)";
+        $(".header-nav").css("background", color);
+
         isScroll = false;
     }
     if (window.scrollY > 0 && isScroll === false)
     {
-        let top = $(".header-nav");
-        console.log("down");
-        top.css("background", "rgb(19, 19, 19)")
-        top.css("height", "110px")
+        $(".header-nav").css("height", "110px");
+
+        let color = $("html").hasClass("dark") ? "rgba(19,19,19,1)" : "rgba(255,255,255,1)";
+        $(".header-nav").css("background", color);
         isScroll = true;
     }
 }

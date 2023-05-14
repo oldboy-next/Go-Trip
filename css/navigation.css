@@ -7,11 +7,6 @@
     /* border: red solid 1px; */
 }
 
-body {
-    background: var(--background-color-dark);
-    /* background: #fff; */
-}
-
 a {
     color: var(--title-text-color, #fff);
     transition: all 0.3s linear;
@@ -44,7 +39,7 @@ html {
 
 .link-nav a:hover {
     transform: scale(1.2);
-    color: rgb(251, 218, 65);
+    color: rgb(240, 213, 95);
 }
 
 /* 导航栏页面 */
@@ -73,7 +68,7 @@ html {
 
 /* logo */
 .link-top {
-    background-color: red;
+    /* background-color: red; */
     height: 85px;
     width: 300px;
     display: flex;
@@ -100,19 +95,29 @@ html {
     justify-content: space-around;
 }
 
-.link-top>div:first-child img {
+.link-top .logo-img {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    /* border: red 1px solid; */
+}
+
+.link-top .logo-img svg {
+    fill: var(--logo-color);
+    width: 90%;
+    height: 90%;
 }
 
 .link-top>div:last-child h1 {
     font-size: 43px;
-    color: #fff;
+    color: var(--logo-color);
 }
 
 /*导航所有链接 */
 .link-nav {
-    background-color: skyblue;
+    /* background-color: skyblue; */
     width: 400px;
     height: 85px;
     display: flex;
@@ -121,7 +126,7 @@ html {
 }
 
 .link-nav-menu {
-    border: blue 1px solid;
+    /* border: blue 1px solid; */
     width: 100%;
     height: 100%;
     display: flex;
@@ -132,7 +137,7 @@ html {
 /* 响应布局 */
 @media (min-width:1500px) {
     .link-nav-list {
-        background-color: purple;
+        /* background-color: purple; */
         width: 100%;
         height: 100%;
         display: flex;
@@ -154,7 +159,7 @@ html {
 
 @media (max-width:1500px) {
     .link-nav-list {
-        background-color: rgb(19, 19, 19);
+        background-color: var(--background-color);
         position: fixed;
         top: 85px;
         width: 150px;
@@ -190,19 +195,34 @@ html {
     .user .phone {
         display: none !important;
     }
+
+    .search {
+        /* background-color: plum; */
+        width: 300px;
+        height: 85px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        right: 20px;
+    }
 }
 
 /* 菜单按钮 */
 .link-nav-menu-btn {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     height: 40px;
     width: 40px;
     font-size: 35px;
     text-align: center;
 }
 
+.link-nav-menu-btn a {
+    color: var(--title-color);
+}
+
 .link-nav-list ul li {
-    border: red 1px solid;
+    /* border: red 1px solid; */
     list-style: none;
     font-size: 22px;
     letter-spacing: 3px;
@@ -210,13 +230,17 @@ html {
 
 /* 搜索界面 */
 .search {
-    background-color: plum;
+    /* background-color: plum; */
     width: 300px;
     height: 85px;
     display: flex;
     position: relative;
     justify-content: space-around;
     align-items: center;
+}
+
+.link-nav-list a {
+    color: var(--title-color);
 }
 
 .search .search-btn {
@@ -249,11 +273,11 @@ html {
     border: none;
     outline: none;
     font-size: 16px;
+    border: 1px rgb(122, 122, 122) solid;
 }
 
-.search .frame a {
+.search .frame .search-btn {
     /* border: red 1px solid; */
-    font-size: 30px;
     position: absolute;
     right: 0;
     color: rgb(107, 107, 107);
@@ -262,6 +286,13 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
+    transition: transform 0.3s linear;
+    cursor: pointer;
+}
+
+.search .frame .search-btn:hover {
+    transform: scale(1.2);
 }
 
 .search .frame a:hover {
@@ -276,16 +307,24 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--title-color);
 }
 
 /* 用户界面 */
+
+.display a {
+    color: var(--title-color);
+}
+
 .user {
-    background-color: palevioletred;
+    background-color: var(--user-infos-color);
     width: 400px;
     height: 85px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
 }
 
 .user .phone {
@@ -296,7 +335,16 @@ html {
     justify-content: center;
     align-items: center;
     font-size: 22px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+
+.user .phone a {
+    color: var(--title-color);
+}
+
+.user .phone a:hover {
+    color: #08acf3;
 }
 
 .user .display a {
@@ -326,6 +374,11 @@ html {
     height: 65px;
     position: absolute;
     z-index: 2;
+}
+
+/* 过渡动画 */
+.user .user-icon .user-frame,
+.user .user-icon .user-image {
     -webkit-transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -337,8 +390,6 @@ html {
     position: absolute;
     overflow: hidden;
     z-index: 1;
-    -webkit-transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: 0.3s 0.3s transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .user .user-icon .user-image img {
@@ -368,7 +419,7 @@ html {
     width: 250px;
     height: 0px;
     opacity: 0;
-    background-image: linear-gradient(to top, #dfe9f3 10%, white 100%);
+    background-image: linear-gradient(to top, #e1eefc 30%, rgb(226, 226, 226) 100%);
     overflow: hidden;
     position: fixed;
     border-radius: 12px;
@@ -440,7 +491,7 @@ html {
 }
 
 #search:hover {
-    color: rgb(18, 196, 209);
+    color: #08acf3;
 }
 
 /* 主页面文字 */
@@ -477,9 +528,10 @@ html {
 .view .view-item img {
     display: block;
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
     height: 100%;
+    /* opacity: 0.75; */
 }
 
 /* 测试 */
@@ -497,7 +549,7 @@ html {
 
 
 .box-item {
-    border: red 1px solid;
+    /* border: red 1px solid; */
     width: 40%;
     height: 50%;
     display: flex;
@@ -506,7 +558,7 @@ html {
 }
 
 .box-item-title {
-    background-color: chocolate;
+    /* background-color: chocolate; */
     width: 100%;
     height: 40%;
     font-size: 62px;
@@ -519,23 +571,23 @@ html {
 }
 
 .box-item-content {
-    background-color: gray;
+    /* background-color: gray; */
     width: 100%;
     height: 20%;
     font-size: calc(2px + var(--content-font-size, 20px));
     font-weight: lighter;
-    color: #dfe9f3;
+    color: #e4f2ff;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    letter-spacing: 8px;
+    letter-spacing: 3px;
     overflow-y: auto;
     line-height: 30px;
 }
 
 .box-subscribe {
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     height: 20%;
     display: flex;
@@ -560,6 +612,7 @@ html {
 
 @media (max-width:1500px) {
     .view {
+        /* border: red 1px solid; */
         width: 1000px;
         height: 550px;
         position: relative;
@@ -569,7 +622,7 @@ html {
         -ms-user-select: none;
         user-select: none;
         overflow-x: scroll;
-        margin: 0 20px;
+        margin: 0 auto;
     }
 
     .box-item-title {
@@ -591,62 +644,33 @@ html {
     }
 }
 
-/* 动画 */
-@keyframes run {
-    0% {
-        left: 0%;
-    }
+/* 遮罩 */
+.view .view-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    opacity: var(--mask-opacity);
+    z-index: -1;
+}
 
-    15% {
-        left: 0%;
-    }
+.scene::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    opacity: var(--mask-opacity);
+    z-index: 2;
+}
 
-    20% {
-        left: 0%;
-    }
-
-    /*  */
-
-    25% {
-        left: -100%;
-    }
-
-    40% {
-        left: -100%;
-    }
-
-    45% {
-        left: -100%;
-    }
-
-    /*  */
-
-    50% {
-        left: -200%;
-    }
-
-    65% {
-        left: -200%;
-    }
-
-    /*  */
-    70% {
-        left: -200%;
-    }
-
-    75% {
-        left: -300%;
-    }
-
-    90% {
-        left: -300%;
-    }
-
-    95% {
-        left: -300%;
-    }
-
-    100% {
-        left: -400%;
-    }
+.ended .ended-img::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    opacity: var(--mask-opacity);
+    z-index: 2;
 }

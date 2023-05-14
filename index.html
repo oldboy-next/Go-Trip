@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -21,19 +21,37 @@
     <link rel="stylesheet" href="./css/region.css">
     <link rel="stylesheet" href="./css/ended.css">
     <style>
-        body {
-            --title-text-color: #fff;
+        :root {
             --title-font-size: 40px;
-
-            --content-text-color: rgb(163, 163, 163);
             --content-font-size: 15px;
+            --mask-opacity: 0.3;
+        }
 
-            --background-color-light: rgb(233, 233, 233);
-            --background-color-dark: rgb(19, 19, 19);
+        :root.dark {
+            /* 深色模式 */
+            --background-color: rgb(19, 19, 19);
+            --logo-color: #eff2f5;
+            --title-color: #fff;
+            --content-color: rgb(168, 167, 167);
+            --user-infos-color: rgba(116, 116, 116, 0.2);
+        }
+
+        :root.light {
+            /* 浅色模式 */
+            --background-color: #eff2f5;
+            --logo-color: #08acf3;
+            --title-color: rgb(0, 0, 0);
+            --content-color: rgb(27, 27, 27);
+            --user-infos-color: rgba(121, 121, 121, 0.2);
         }
 
         .smooth {
             scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--background-color);
+            transition: background-color 0.3s linear;
         }
     </style>
     <title>Go trip</title>
@@ -46,8 +64,17 @@
             <div class="nav">
                 <!-- TODO:导航logo -->
                 <div class="link-top">
-                    <div>
-                        <img src="./img/icon/logo.png" alt="logo">
+                    <div class="logo-img">
+                        <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="200" height="200">
+                            <path d="M66.782609 267.130435 66.782609 1024 333.913043 801.391304 333.913043 44.521739Z"
+                                p-id="2469"></path>
+                            <path d="M690.086957 222.608696 690.086957 979.478261 957.217391 756.869565 957.217391 0Z"
+                                p-id="2470"></path>
+                            <path d="M378.434783 44.521739 378.434783 801.391304 645.565217 1024 645.565217 267.130435Z"
+                                p-id="2471"></path>
+                        </svg>
                     </div>
                     <div>
                         <h1>Go Trip</h1>
@@ -96,9 +123,9 @@
                     </div>
                     <div class="frame" id="frame">
                         <input type="text" disabled placeholder="请输入内容">
-                        <a href="javascript:void(0)" onclick="onSearch()">
+                        <div class="search-btn" onclick="onSearch()">
                             <ion-icon name="search-outline"></ion-icon>
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <!-- 用户界面 -->
@@ -160,7 +187,7 @@
                         </div>
                     </div>
                     <div class="display">
-                        <a href="#">
+                        <a href="javascript:void(0);" onclick="DisplayColor()">
                             <ion-icon name="moon-outline">
                                 <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
                             </ion-icon>
@@ -322,13 +349,14 @@
                 <span>获得专家计划的最佳假期！</span>
             </div>
             <div class="email-content">
-                <span>如果你想了解一个国家或城市，请不要去查资料,请不要去查资料，而应该用自己的脚步、眼睛和心灵去看。
+                <span>
+                    我们的旅游计划旨在为您提供一个难忘的旅行体验。在这个旅游计划中，您将会有机会探索世界各地的美景、文化和风景。
                 </span>
             </div>
         </div>
         <div class="email-data">
             <!-- TODO:提交 -->
-            <form action="/" method="post">
+            <form action="http://127.0.0.1/action/" method="post">
                 <div class="email-data-up">
                     <div class="name">
                         <label for="username">名称</label>
@@ -403,7 +431,7 @@
                             <a href="#">奇峰峭</a>
                         </div>
                         <div class="scene-content">
-                            东莞鼎湖山摩崖石刻中的“山水甲天下”八个大字，无疑道出了桂林山水的卓越之处。
+                            青山绿水形成无数景色。山石嶙峋、溪水淙淙、翠竹葱茏，仿佛置身于一个天然的绿色乐园。
                         </div>
                     </div>
                 </div>
@@ -416,7 +444,7 @@
                             <a href="#">恍如境</a>
                         </div>
                         <div class="scene-content">
-                            人们尽情欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。
+                            欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。绝对是一个值得一生中一游的绝美胜地
                         </div>
                     </div>
                 </div>
@@ -432,7 +460,7 @@
                             <a href="#">水如画</a>
                         </div>
                         <div class="scene-content">
-                            这是二千多年前的桂林，仙人在此游山玩水、吟诗作画，留下了无数动人心魄的故事和不朽佳话。
+                            清澈蜿蜒的河流。漓江被誉为是中国最美丽的一条江，您可以乘船漫游，欣赏到壮美的山水风光。
                         </div>
                     </div>
                 </div>
@@ -445,7 +473,7 @@
                             <a href="#">青山间</a>
                         </div>
                         <div class="scene-content">
-                            黄布倒影、牛角塘、龙潭等处，更是赏到了壮美、静美、动人和神秘的自然景观
+                            在这里您可以感受到大自然的魅力，漫步在山间，呼吸着清新的空气，欣赏着山间秀美的景象。
                         </div>
                     </div>
                 </div>
@@ -460,8 +488,9 @@
                 <span>热门旅游目的地</span>
             </div>
             <div class="region-content">
-                <span>旅游经历中最重要的事情不是拍照，而是体验感受和收集回忆。
-                    到了一个陌生的城市，首先要做的不是找交通，而是找美食。
+                <span>
+                    自然探险和文化体验等。您可以在不同的地方发现不同的奇妙之处，感受到大自然的神奇与美好。
+                    我们的旅游计划期待与您相遇。
                 </span>
             </div>
         </div>
@@ -484,7 +513,8 @@
                         </div>
                     </div>
                     <div class="info-content">
-                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
+                        <span>
+                            位于桂林市漓江，以其独特的山形和悠久的历史成为桂林城徽标志。
                         </span>
                     </div>
                     <div class="region-account">
@@ -504,10 +534,10 @@
             <!-- 盒子内容2 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/t1/t1.jpg" alt="1">
+                    <img src="./img/t1/t2.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">象鼻山</p>
+                    <p class="info-title">四湖环城</p>
                     <div class="info-time">
                         <div class="info-day">
                             <ion-icon name="time-outline"></ion-icon>
@@ -519,7 +549,8 @@
                         </div>
                     </div>
                     <div class="info-content">
-                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
+                        <span>
+                            榕湖、杉湖、桂湖和木龙湖、漓江、桃花江所构成的桂林环城水系
                         </span>
                     </div>
                     <div class="region-account">
@@ -539,10 +570,10 @@
             <!-- 盒子内容3 -->
             <div class="region-box">
                 <div class="region-img">
-                    <img src="./img/t1/t1.jpg" alt="1">
+                    <img src="./img/t1/t3.jpg" alt="1">
                 </div>
                 <div class="region-info">
-                    <p class="info-title">象鼻山</p>
+                    <p class="info-title">漓江</p>
                     <div class="info-time">
                         <div class="info-day">
                             <ion-icon name="time-outline"></ion-icon>
@@ -554,7 +585,8 @@
                         </div>
                     </div>
                     <div class="info-content">
-                        <span>桂林山水甲天下，胜景闻名在海内。桂林山水迷人眼，秀色东南无二乡。
+                        <span>
+                            漓江风光和溶洞为代表的山水景观有山青、水秀、洞奇、石美“四绝”之誉。
                         </span>
                     </div>
                     <div class="region-account">
@@ -582,8 +614,8 @@
                     <span>为您提供独家度假套餐和旅行服务。</span>
                 </div>
                 <div class="readme-content">
-                    <span>在旅途中，如果你错过了一个城市，也许你只是错过了一个地方。
-                        古往今来，三百六十行，走得最多的一种就是旅游。
+                    在旅途中，如果你错过了一个城市，也许你只是错过了一个地方。
+                    古往今来，三百六十行，走得最多的一种就是旅游。让我们一起探索世界的精彩！
                 </div>
                 <div class="readme-button">
                     <button type="button">
@@ -624,7 +656,7 @@
                     <div class="title">联系我们</div>
                     <div class="positions">
                         <ion-icon name="compass-outline"></ion-icon>
-                        <span>中国广西桂林市，象山区， #54**00 桂林桂林 桂林漓江景区。</span>
+                        <span>中国广西桂林市，#54**00 桂林桂林 桂林漓江景区。</span>
                     </div>
                     <div class="phones">
                         <ion-icon name="call-outline"></ion-icon>
@@ -665,7 +697,7 @@
                                 <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
                             </ion-icon>
                         </a>
-                        <a href="https://ionic.io/ionicons" target="_blank" title="图标赞助网站">
+                        <a href="https://ionic.io/ionicons" target="_blank" title="图标网站ion">
                             <ion-icon name="extension-puzzle-outline">
                                 <img class="loading" src="./img/svg/icon_loading.svg" alt="loading..">
                             </ion-icon>
@@ -712,9 +744,9 @@
                             <img src="./img/other/l6.jpg" alt="6">
                         </div>
                         <div class="free-img-item">
-                            <img src="./img/other/l1.jpg" alt="4">
-                            <img src="./img/other/l2.jpg" alt="5">
-                            <img src="./img/other/l3.jpg" alt="6">
+                            <img src="./img/other/l7.jpg" alt="4">
+                            <img src="./img/other/l8.jpg" alt="5">
+                            <img src="./img/other/l9.jpg" alt="6">
                         </div>
                     </div>
                 </div>
@@ -724,19 +756,24 @@
                     <div class="list">
                         <ul>
                             <li>
-                                <a href="#">漓江游玩</a>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/c0b3e711-9692-4a1d-b396-46fae65a7cd6?q=%E6%BC%93%E6%B1%9F">漓江游玩</a>
                             </li>
                             <li>
-                                <a href="#">四湖环城</a>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/aa61ece9-843e-4a70-8eb2-a7080a84fe67?q=%E5%9B%9B%E6%B9%96%E7%8E%AF%E5%9F%8E">四湖环城</a>
                             </li>
                             <li>
-                                <a href="#">世外桃源</a>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/a8389912-6529-43e7-ae81-867fbc556722?q=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>
                             </li>
                             <li>
-                                <a href="#">银子岩</a>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/f980afbe-172f-4d18-8da7-5bc6146f9dd3?q=%E6%A1%82%E6%9E%97%E9%BE%99%E8%83%9C%E6%A2%AF%E7%94%B0">龙胜梯田</a>
                             </li>
                             <li>
-                                <a href="#">遇龙河</a>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/8a411c64-cb01-4553-8b98-4ea814ead479?q=%E9%81%87%E9%BE%99%E6%B2%B3">遇龙河</a>
                             </li>
                         </ul>
                     </div>
@@ -749,7 +786,7 @@
             <div class="version-info">
                 <span>&copy;` 2023 去旅行。
                     <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
-                        title="前往仓库查看版本">v-5.0.0</a>
+                        title="前往仓库查看版本">v-5.1.0</a>
                 </span>
                 <ion-icon name="leaf-outline"></ion-icon>
                 <span>徐家国 | 网页</span>
@@ -761,6 +798,9 @@
         // 获取元素
         const box = document.querySelector(".view");
         const item = document.querySelector(".view-item");
+        // 禁止图片拖拽
+        const scrollItems = document.querySelectorAll(".scroll img");
+        scrollItems.forEach(item => item.setAttribute("draggable", "false"));
 
         let itemWidth = item.clientWidth;
         // 原点坐标
@@ -786,12 +826,12 @@
         let mouseDown = function (event)
         {
             // 移除过渡
-            box.classList.remove("smooth");
             if (!event instanceof MouseEvent) return;
             // console.log("down");
             // 是否是在滑动的元素上 移除监听
             if (event.target.classList.item(0) === "scroll")
             {
+                box.classList.remove("smooth");
                 // console.log(event.target.classList.item(0));
                 window.addEventListener("mousemove", mouseMove);
             }
@@ -805,13 +845,13 @@
         let mouseUp = function (event)
         {
             // 添加过渡
-            box.classList.add("smooth");
             if (!event instanceof MouseEvent) return;
             // console.log("up");
+            box.classList.add("smooth");
+            // 返回方向
             window.removeEventListener("mousemove", mouseMove);
-
-            // 判断返回的方向
             box.scrollLeft = next();
+
         }
         // 鼠标移动
         let mouseMove = function (event)
@@ -819,7 +859,7 @@
             if (event instanceof MouseEvent)
             {
                 // 限制最大滑动
-                let moveX = Math.min(Math.abs(event.movementX), 80);
+                let moveX = Math.min(Math.abs(event.movementX), 100);
                 direction = event.movementX > 0 ? -moveX : moveX;
                 // 移动
                 box.scrollBy(direction, 0);
@@ -868,9 +908,8 @@
         window.addEventListener("touchend", function ()
         {
             box.classList.add("smooth");
-            box.scrollLeft = next()
+            box.scrollLeft = next();
         })
-
 
     </script>
 </body>

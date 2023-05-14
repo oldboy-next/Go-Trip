@@ -25,40 +25,32 @@ $(() =>
 // 设置按钮状态
 function setButton(disabled)
 {
-    var input = document.querySelector(".frame input");
-    // var button = document.querySelector(".search-frame button");
+    let goBtn = document.querySelector(".search .frame .search-btn");
+    let input = document.querySelector(".frame input");
     if (disabled)
     {
         input.removeAttribute("disabled");
-        // button.removeAttribute("disabled");
+        goBtn.setAttribute("style", "display:flex;");
     }
     else
     {
         input.setAttribute("disabled", "");
-        // button.setAttribute("disabled", "");
+        goBtn.setAttribute("style", "display:none;");
     }
 }
 
 // 搜索功能
 function onSearch()
 {
-    var input = document.querySelector(".frame input");
-    // window.location.href = "https://www.writingo.net/document?source=new1";   
-
-    // var action = document.querySelector(".frame a");
+    let input = document.querySelector(".frame input");
     if (!input.value)
     {
-        // action.removeAttribute("target")
-        console.log("null");
-        // action.href = "javascript:void(0)";
+        // console.log("null");
         return false;
-
     }
     else
     {
         var url = `https://cn.bing.com/search?q=${input.value}`;
-        // action.setAttribute("target", "_blank");
-        // action.href = url;
         console.log(url);
         window.open(url);
         return true;
@@ -68,7 +60,6 @@ function onSearch()
 
 // 初始和
 var menu = null;
-
 // 初始化函数
 function Awake()
 {
@@ -112,4 +103,31 @@ function ShowMenu()
     }
 
     isMenu = !isMenu;
+}
+
+// 主题切换
+let dark = true;
+function DisplayColor()
+{
+    let ions = document.querySelectorAll(".display a ion-icon");
+    let html = document.querySelector("html");
+    let color = "#123fff";
+    if (ions[0])
+    {
+        html.classList.item(0) === "dark" ? html.setAttribute("class", "light") : html.setAttribute("class", "dark");
+        if (dark)
+        {
+            ions[0].setAttribute("style", "display:none;");
+            ions[1].setAttribute("style", "display:block;");
+            color = window.scrollY === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,1)";
+        }
+        else
+        {
+            ions[0].setAttribute("style", "display:block;");
+            ions[1].setAttribute("style", "display:none;");
+            color = window.scrollY === 0 ? "rgba(19,19,19,0.2)" : "rgba(19,19,19,1)";
+        }
+        dark = !dark;
+        $(".header-nav").css("background", color);
+    }
 }
