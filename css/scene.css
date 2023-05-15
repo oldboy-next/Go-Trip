@@ -111,6 +111,7 @@
         height: 450px;
         display: flex;
         position: relative;
+        margin: 0 auto;
     }
 
     .scene-left .scene-info .scene-title {

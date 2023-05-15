@@ -73,13 +73,14 @@ html {
     width: 300px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-direction: row;
     cursor: pointer;
 }
 
 .link-top>div:first-child {
     /* background-color: skyblue; */
-    width: 75px;
+    width: 25%;
     height: 75px;
     display: flex;
     align-items: center;
@@ -87,7 +88,7 @@ html {
 }
 
 .link-top>div:last-child {
-    width: 160px;
+    width: 75%;
     height: 75px;
     /* background-color: green; */
     display: flex;
@@ -111,7 +112,7 @@ html {
 }
 
 .link-top>div:last-child h1 {
-    font-size: 43px;
+    font-size: 40px;
     color: var(--logo-color);
 }
 
@@ -188,8 +189,12 @@ html {
         height: 240px;
     }
 
-    .link-top>div:last-child {
+    /* .link-top>div:last-child {
         display: none !important;
+    } */
+
+    .link-top>div:last-child h1 {
+        font-size: 30px;
     }
 
     .user .phone {
@@ -205,6 +210,12 @@ html {
         justify-content: space-between;
         align-items: center;
         right: 20px;
+    }
+}
+
+@media (max-width:300px) {
+    .link-top>div:last-child {
+        display: none !important;
     }
 }
 
@@ -337,6 +348,9 @@ html {
     font-size: 22px;
     letter-spacing: 1px;
     line-height: 22px;
+    padding: 9px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .user .phone a {
@@ -451,6 +465,7 @@ html {
     align-items: center;
     margin: 0px auto;
     position: relative;
+    overflow-x: auto;
 }
 
 .infos .username {
