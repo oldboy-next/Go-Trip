@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+<!-- html -->
 
 <head>
     <meta charset="UTF-8">
@@ -64,7 +65,7 @@
             <div class="nav">
                 <!-- TODO:导航logo -->
                 <div class="link-top">
-                    <div class="logo-img">
+                    <div class="logo-img" onclick="window.history.go(0)">
                         <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="200" height="200">
@@ -76,7 +77,7 @@
                                 p-id="2471"></path>
                         </svg>
                     </div>
-                    <div>
+                    <div onclick="window.history.go(0)">
                         <h1>Go Trip</h1>
                     </div>
                 </div>
@@ -356,19 +357,19 @@
         </div>
         <div class="email-data">
             <!-- TODO:提交 -->
-            <form action="http://127.0.0.1/action/" method="post">
+            <form action="/users" method="get">
                 <div class="email-data-up">
                     <div class="name">
-                        <label for="username">名称</label>
-                        <input class="input-item" type="text" name="username" placeholder="名称">
+                        <label for="title">名称</label>
+                        <input class="input-item" type="text" name="title" placeholder="名称">
                     </div>
                     <div class="region">
                         <label for="region">目的地</label>
                         <input class="input-item" type="text" name="region" placeholder="目的地">
                     </div>
                     <div class="activity">
-                        <label for="region">活动</label>
-                        <select class="input-item" name="region" id="">
+                        <label for="activity">活动</label>
+                        <select class="input-item" name="activity">
                             <option value="0">任何</option>
                             <option value="1">城市观光</option>
                             <option value="2">文化与主题旅游</option>
@@ -383,7 +384,7 @@
                 <div class="email-data-down">
                     <div class="day">
                         <label for="day">期间</label>
-                        <select class="input-item" name="day" id="">
+                        <select class="input-item" name="day">
                             <option value="0">任何</option>
                             <option value="1">1日游</option>
                             <option value="2">2~4日游</option>
@@ -393,12 +394,12 @@
                     </div>
                     <div class="time">
                         <label for="time" id="scene">时间</label>
-                        <input class="input-item" type="date" name="time" placeholder="年/月/日">
+                        <input class="input-item" type="date" name="date" placeholder="年/月/日">
                     </div>
                     <div class="email-submit">
                         <!-- TODO:表单提交功能 -->
                         <label for="submit">提交</label>
-                        <button title="服务尚未开发" class="input-item" type="submit">提交</button>
+                        <button title="打开服务端" disabled class="input-item" type="submit">提交</button>
                     </div>
                 </div>
             </form>
@@ -786,7 +787,7 @@
             <div class="version-info">
                 <span>&copy;` 2023 去旅行。
                     <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
-                        title="前往仓库查看版本">v-5.2.0</a>
+                        title="前往仓库查看版本">v-5.4.0</a>
                 </span>
                 <ion-icon name="leaf-outline"></ion-icon>
                 <span>徐家国 | 网页</span>

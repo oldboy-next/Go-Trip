@@ -10,7 +10,7 @@
 a {
     color: var(--title-text-color, #fff);
     transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
+    -webkit-transition: all 0.4s linear;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -75,7 +75,6 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    cursor: pointer;
 }
 
 .link-top>div:first-child {
@@ -103,6 +102,7 @@ html {
     align-items: center;
     justify-items: center;
     /* border: red 1px solid; */
+    cursor: pointer;
 }
 
 .link-top .logo-img svg {
@@ -114,6 +114,7 @@ html {
 .link-top>div:last-child h1 {
     font-size: 40px;
     color: var(--logo-color);
+    cursor: pointer;
 }
 
 /*导航所有链接 */
@@ -213,7 +214,7 @@ html {
     }
 }
 
-@media (max-width:300px) {
+@media (max-width:1000px) {
     .link-top>div:last-child {
         display: none !important;
     }
@@ -325,6 +326,10 @@ html {
 
 .display a {
     color: var(--title-color);
+}
+
+.display a:active {
+    transform: scale(1.5);
 }
 
 .user {
