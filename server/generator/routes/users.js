@@ -1,56 +1,103 @@
-const { query } = require('express');
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
-router.post('/users', function (req, res, next)
-{
-  try
-  {
-    let { title, region, activity, day, date, userdata } = req.body;
-    // console.log(title, region, activity, day, date, userphone);
-    let [year, month, sunday] = date.split("-");
-    let userData = userdata.split("&");
+// 用户数据模板
+const { Subscribe, UserData } = require("../model/UserDataModel");
+// 数据库
+const { db, key, uid } = require("../model/LinkData");
 
-    res.render("users", {
-      title: title,
-      region: region,
-      activity: activity,
-      day: day,
-      userphone: userData[0],
-      username: userData[1],
-      year: year,
-      month: month,
-      sunday: sunday
-    });
-  } catch (error)
-  {
-    console.log(error);
-    req.render("error");
-  }
-});
-
-router.get('/users', function (req, res, next)
+// 用户界面GET
+router.get('/users', function (request, response, next)
 {
-  console.log(req.query);
-  if (req.query.name === "" || !req.query.name)
+  response.clearCookie("def");
+  let data = db.get(key).find({ userphone: request.cookies.userphone }).value();
+
+  if (!data)
   {
-    res.render("login");
+    response.redirect("/login");
   }
   else
   {
-    res.render("users", {
-      title: "数据库未开发",
-      region: "暂无",
-      activity: "暂无",
-      day: "暂无",
-      userphone: req.query.phone,
-      username: req.query.name,
-      year: "2023",
-      month: "5",
-      sunday: "5"
+    //渲染
+    response.render("users", {
+      subscribers: data.subscribers,
+      userphone: data.userphone,
+      username: data.username,
+      uid: data.uid
     });
   }
+});
+
+// 获取数据
+router.post('/users', function (request, response, next)
+{
+  response.cookie("isSubmit", true);
+  response.clearCookie("def");
+
+  // 获取用户
+  let user = db.get(key).find({ userphone: request.cookies.userphone }).value();
+
+  if (request.cookies.isSubmit)
+  {
+    //渲染
+    response.render("users", {
+      subscribers: user.subscribers,
+      userphone: user.userphone,
+      username: user.username,
+      uid: user.uid
+    });
+  }
+  else
+  {
+    user.subscribers.push({ ...request.body });
+    // 更新数据
+    db.get(key).find({ userphone: request.cookies.userphone }).assign({
+      subscribers: user.subscribers
+    }).write();
+
+    // console.log("user", user);
+    //渲染
+    response.render("users", {
+      subscribers: user.subscribers,
+      userphone: user.userphone,
+      username: user.username,
+      uid: user.uid
+    });
+  }
+});
+
+// 删除数据
+router.get('/users/del', function (request, response, next)
+{
+  response.cookie("def", true);
+
+  let data = db.get(key).find({ userphone: request.cookies.userphone }).value();
+  if (!data)
+  {
+    response.redirect("/login");
+  }
+
+  if (!request.cookies.def)
+  {
+    let temp = data.subscribers.splice(parseInt(request.query.i), 1);
+
+    if (temp.length === 0)
+    {
+      response.render("success", { code: 300, message: "数据已经被删除" });
+    }
+
+    // 更新数据
+    db.get(key).find({ userphone: request.cookies.userphone }).assign({
+      subscribers: data.subscribers
+    }).write();
+  }
+
+  response.render("success", {
+    code: 200,
+    message: `< 删除第 ${Number(request.query.i) + 1} 个>`
+  });
+
+
 });
 
 module.exports = router;

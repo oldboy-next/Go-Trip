@@ -157,34 +157,36 @@
                             <div class="user-phone">
                                 <a href="/login">
                                     <ion-icon name="phone-portrait-outline"></ion-icon>
-                                    <span>+86 <%= userphone %></span>
+                                    <span>+86 <%= userphone %> </span>
                                 </a>
                             </div>
                             <!-- 数据 -->
                             <div class="option">
                                 <ul>
                                     <li>
-                                        <a href="/users?name=<%= username %>&phone=<%= userphone %>">
+                                        <a href="/users">
                                             <ion-icon name="person-outline"></ion-icon>
-                                            <span>个人/中心</span>
+                                            <span style="letter-spacing: 0px;">
+                                                UID:<%= uid %>
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/users?name=<%= username %>&phone=<%= userphone %>">
+                                        <a href="/users">
                                             <ion-icon name="book-outline"></ion-icon>
-                                            <span>我的/订阅</span>
+                                            <span>我的订阅</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#region">
                                             <ion-icon name="bulb-outline"></ion-icon>
-                                            <span>推介/服务</span>
+                                            <span>推介服务</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/login">
                                             <ion-icon name="exit-outline"></ion-icon>
-                                            <span>退出/登录</span>
+                                            <span>退出登录</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -403,8 +405,7 @@
                     <div class="email-submit">
                         <!-- TODO:表单提交功能 -->
                         <label for="submit">提交</label>
-                        <button name="userdata" value="<%= userphone %>&<%= username %>" class="input-item"
-                            type="submit">提交</button>
+                        <button class="input-item" type="submit">提交</button>
                     </div>
                 </div>
             </form>
@@ -792,7 +793,7 @@
             <div class="version-info">
                 <span>&copy;` 2023 去旅行。
                     <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
-                        title="前往仓库查看版本">v-5.4.0</a>
+                        title="前往仓库查看版本">v-5.5.0</a>
                 </span>
                 <ion-icon name="leaf-outline"></ion-icon>
                 <span>徐家国 | 网页</span>

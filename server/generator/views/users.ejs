@@ -289,6 +289,22 @@
             transform: scale(1.1);
         }
 
+        .uid {
+            width: 200px;
+            height: 30px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgb(218, 218, 218);
+            font-size: 17px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 1px;
+            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+        }
+
         @media (max-width:1400px) {
             .container {
                 width: 98%;
@@ -385,6 +401,14 @@
             .item .clear a:active {
                 transform: scale(1.1);
             }
+
+            .uid {
+                width: 140px;
+                height: 30px;
+                font-size: 12px;
+                bottom: 10px;
+                right: 5px;
+            }
         }
     </style>
     <title>users</title>
@@ -393,7 +417,7 @@
 <body>
     <div class="top">
         <div class="logo">
-            <a href="/index?name=<%= username %>&phone=<%= userphone %>">
+            <a href="/index">
                 <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
                     width="200" height="200">
@@ -411,7 +435,7 @@
         </div>
         <div class="phone">
             <ion-icon name="call-outline"></ion-icon>
-            <span>+86 <%= userphone %></span>
+            <span>+86 <%= userphone %> </span>
             <ion-icon name="person-outline"></ion-icon>
             <span>
                 <%= username %>
@@ -432,53 +456,60 @@
         <div class="content-box">
             <!-- 模板 -->
             <ul>
-                <li>
-                    <div class="item">
-                        <div class="clear">
-                            <a href="#">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </a>
-                        </div>
-                        <div class="data-title">
-                            <span>
-                                <%= title %>
-                            </span>
-                        </div>
-                        <div class="data-content">
-                            <div class="data-region">
+                <% subscribers.forEach((element,index)=> { %>
+                    <li>
+                        <div class="item">
+                            <div class="clear">
+                                <a href="/users/del?i=<%= index %>">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="data-title">
                                 <span>
-                                    <%= region %>
+                                    <%= element.title %>
                                 </span>
                             </div>
-                            <div class="data-activity">
-                                <span>
-                                    <%= activity %>
-                                </span>
+                            <div class="data-content">
+                                <div class="data-region">
+                                    <span>
+                                        <%= element.region %>
+                                    </span>
+                                </div>
+                                <div class="data-activity">
+                                    <span>
+                                        <%= element.activity %>
+                                    </span>
+                                </div>
+                                <div class="data-day">
+                                    <span>
+                                        <%= element.day %>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="data-day">
+                            <div class="data-date">
                                 <span>
-                                    <%= day %>
+                                    <%= element.date.split("-")[0] %>
                                 </span>
+                                年
+                                <span>
+                                    <%= element.date.split("-")[1] %>
+                                </span>
+                                月
+                                <span>
+                                    <%= element.date.split("-")[2]%>
+                                </span>
+                                日
                             </div>
                         </div>
-                        <div class="data-date">
-                            <span>
-                                <%= year %>
-                            </span>
-                            年
-                            <span>
-                                <%= month %>
-                            </span>
-                            月
-                            <span>
-                                <%= sunday %>
-                            </span>
-                            日
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                    <% }) %>
             </ul>
         </div>
+    </div>
+    <div class="uid">
+        <span>
+            UID: <%= uid %>
+        </span>
     </div>
 </body>
 

@@ -1,39 +1,72 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
-router.get('/index', (req, res) =>
-{
-  try
-  {
-    if (req.query.name === "" || !req.query.name)
-    {
-      res.render('index', { userphone: "Login", username: "" });
-    }
-    else
-    {
-      res.render('index', { userphone: req.query.phone, username: req.query.name });
-    }
-  } catch (error)
-  {
-    console.log(error);
-    res.render("error");
-  }
-});
+// 用户cookie
+const userCookied = "userphone";
 
-router.post('/index', (req, res) =>
+// 用户数据模板
+const { Subscribe, UserData } = require("../model/UserDataModel");
+// 数据库
+const { db, key, uid } = require("../model/LinkData");
+
+// 主页 post
+router.post('/index', (request, response) =>
 {
-  try
+  response.clearCookie("isSubmit");
+  response.clearCookie("def");
+
+  let { userphone, password, username } = request.body;
+  response.cookie(userCookied, userphone);
+
+  let data = db.get(key).find({ userphone: userphone }).value();
+
+  if (!data)
   {
-    // 获取用户名手机号
-    let name = req.body.username.trim();
-    let phone = req.body.userphone;
-    res.render('index', { userphone: phone, username: name });
-  } catch (error)
-  {
-    console.log(error);
-    res.render("error");
+    db.get(key).push(new UserData(uid, username, userphone, password, [])).write();
   }
-});
+  else
+  {
+    console.log(`欢迎用户${username}`);
+
+    // 渲染
+    response.render("index",
+      {
+        userphone: data.userphone,
+        username: data.username,
+        uid: data.uid
+      });
+  }
+
+})
+
+// 主页GET
+router.get('/index', (request, response) =>
+{
+  response.clearCookie("isSubmit");
+  response.clearCookie("def");
+
+  let data = db.get(key).find({ userphone: request.cookies.userphone }).value();
+  if (!data)
+  {
+    // 渲染
+    response.render("index",
+      {
+        userphone: "Login",
+        username: "",
+        uid: 0
+      });
+  }
+  else
+  {
+    // 渲染
+    response.render("index",
+      {
+        userphone: data.userphone,
+        username: data.username,
+        uid: data.uid
+      });
+  }
+
+})
 
 module.exports = router;
