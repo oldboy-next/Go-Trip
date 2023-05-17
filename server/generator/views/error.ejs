@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/svg/navigate-circle-outline.svg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 外部图标库 -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/css/ended.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <title>404</title>
+    <style>
+        .box {
+            /* border: blue 1px solid; */
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        :root {
+            /* 深色模式 */
+            --background-color: rgb(19, 19, 19);
+            --logo-color: #eff2f5;
+            --title-color: #fff;
+            --content-color: rgb(168, 167, 167);
+            --user-infos-color: rgba(116, 116, 116, 0.2);
+        }
+
+        body {
+            background-color: var(--background-color);
+        }
+
+        .box .box-logo a {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            z-index: 20;
+            top: 30px;
+            left: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            fill: #fff;
+        }
+
+        .box img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .box .error-title,
+        .box .error-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .box .error-title {
+            /* background-color: skyblue; */
+            color: #fff;
+            font-size: 20px;
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-shadow: 10px 10px 7px rgba(0, 0, 0, 0.8);
+        }
+
+        .box .error-link {
+            /* background-color: plum; */
+            width: 25%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .box .error-link a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: color 0.3s linear;
+            text-shadow: 10px 10px 7px rgba(0, 0, 0, 0.8);
+        }
+
+        .box .error-link a:first-child:hover {
+            color: rgb(255, 195, 44);
+            text-shadow: 0px 0px 10px rgb(255, 166, 0);
+        }
+
+        .box .error-link a:last-child:hover {
+            color: rgb(0, 204, 255);
+            text-shadow: 0px 0px 10px rgb(47, 179, 255);
+        }
+
+        .footer-box {
+            width: 100%;
+            height: 40vh;
+        }
+
+        .node-type {
+            display: none;
+        }
+
+        @media (max-width:1000px) {
+            .box {
+                height: 35vh;
+                margin: 100px auto;
+            }
+
+            .box .error-link {
+                width: 70%;
+                height: 25%;
+            }
+
+            .box .error-title {
+                font-size: 15px;
+            }
+
+            .box .box-logo a {
+                width: 50px;
+                height: 50px;
+                top: 20px;
+                left: 20px;
+            }
+
+            .footer {
+                display: none !important;
+            }
+
+            .node-type {
+                display: flex;
+            }
+        }
+
+        .node-type,
+        .node-type ul li {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .node-type ul li {
+            /* background-color: red; */
+            list-style: none;
+            font-size: 20px;
+            letter-spacing: 3px;
+            display: flex;
+
+            padding: 15px;
+        }
+
+        .node-type {
+            width: 100%;
+            height: 40vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-logo">
+            <a href="/index">
+                <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="200" height="200">
+                    <path d="M66.782609 267.130435 66.782609 1024 333.913043 801.391304 333.913043 44.521739Z"
+                        p-id="2469">
+                    </path>
+                    <path d="M690.086957 222.608696 690.086957 979.478261 957.217391 756.869565 957.217391 0Z"
+                        p-id="2470">
+                    </path>
+                    <path d="M378.434783 44.521739 378.434783 801.391304 645.565217 1024 645.565217 267.130435Z"
+                        p-id="2471"></path>
+                </svg>
+            </a>
+        </div>
+        <img src="/img/bg/bg3.jpg" alt="b3">
+        <div class="error-title">
+            <h1>~ NOT FOUND PAGE ~</h1>
+            <h3>404</h3>
+        </div>
+        <div class="error-link">
+            <a href="/index" target="_self">返回首页</a>
+            <a href="/login" target="_self">登录页面</a>
+        </div>
+    </div>
+    <div class="node-type">
+        <div class="list">
+            <ul>
+                <li>
+                    <a target="_blank"
+                        href="https://www.skypixel.com/photo360s/c0b3e711-9692-4a1d-b396-46fae65a7cd6?q=%E6%BC%93%E6%B1%9F">漓江游玩</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://www.skypixel.com/photo360s/aa61ece9-843e-4a70-8eb2-a7080a84fe67?q=%E5%9B%9B%E6%B9%96%E7%8E%AF%E5%9F%8E">四湖环城</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://www.skypixel.com/photo360s/a8389912-6529-43e7-ae81-867fbc556722?q=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://www.skypixel.com/photo360s/f980afbe-172f-4d18-8da7-5bc6146f9dd3?q=%E6%A1%82%E6%9E%97%E9%BE%99%E8%83%9C%E6%A2%AF%E7%94%B0">龙胜梯田</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://www.skypixel.com/photo360s/8a411c64-cb01-4553-8b98-4ea814ead479?q=%E9%81%87%E9%BE%99%E6%B2%B3">遇龙河</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="container-left">
+                <div class="menu">
+                    <div class="title">联系我们</div>
+                    <div class="positions">
+                        <ion-icon name="compass-outline"></ion-icon>
+                        <span>中国广西桂林市，#54**00 桂林桂林 桂林漓江景区。</span>
+                    </div>
+                    <div class="phones">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <span>+86 188******25</span>
+                    </div>
+                    <div class="emails">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <span>EmailG animator70@outlook.com</span>
+                    </div>
+                    <div class="icons">
+                        <a title="GitHup" href="https://github.com/oldboy-next/Go-Trip/tree/dev" target="_blank">
+                            <ion-icon name="logo-github">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="热门拍照">
+                            <ion-icon name="camera-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="微信">
+                            <ion-icon name="logo-wechat">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="支付宝">
+                            <ion-icon name="logo-alipay">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="暂时仅支持PC端">
+                            <ion-icon name="logo-windows">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="移动端测试">
+                            <ion-icon name="phone-portrait-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="https://ionic.io/ionicons" target="_blank" title="图标网站ion">
+                            <ion-icon name="extension-puzzle-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="type">
+                    <div class="title">类别</div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#">活动旅行</a>
+                            </li>
+                            <li>
+                                <a href="#">假日旅行</a>
+                            </li>
+                            <li>
+                                <a href="#">度假套餐</a>
+                            </li>
+                            <li>
+                                <a href="#">团体旅游</a>
+                            </li>
+                            <li>
+                                <a href="#">间隔年</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 右边 -->
+            <div class="container-right">
+                <div class="new-img">
+                    <div class="title">热门景点</div>
+                    <div class="free-img">
+                        <div class="free-img-item">
+                            <img src="../img/other/l1.jpg" alt="1">
+                            <img src="../img/other/l2.jpg" alt="2">
+                            <img src="../img/other/l3.jpg" alt="3">
+                        </div>
+                        <div class="free-img-item">
+                            <img src="../img/other/l4.jpg" alt="4">
+                            <img src="../img/other/l5.jpg" alt="5">
+                            <img src="../img/other/l6.jpg" alt="6">
+                        </div>
+                        <div class="free-img-item">
+                            <img src="../img/other/l7.jpg" alt="4">
+                            <img src="../img/other/l8.jpg" alt="5">
+                            <img src="../img/other/l9.jpg" alt="6">
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="type">
+                    <div class="title">旅游</div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/c0b3e711-9692-4a1d-b396-46fae65a7cd6?q=%E6%BC%93%E6%B1%9F">漓江游玩</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/aa61ece9-843e-4a70-8eb2-a7080a84fe67?q=%E5%9B%9B%E6%B9%96%E7%8E%AF%E5%9F%8E">四湖环城</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/a8389912-6529-43e7-ae81-867fbc556722?q=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/f980afbe-172f-4d18-8da7-5bc6146f9dd3?q=%E6%A1%82%E6%9E%97%E9%BE%99%E8%83%9C%E6%A2%AF%E7%94%B0">龙胜梯田</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/8a411c64-cb01-4553-8b98-4ea814ead479?q=%E9%81%87%E9%BE%99%E6%B2%B3">遇龙河</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 版本信息 -->
+        <div class="version">
+            <hr>
+            <div class="version-info">
+                <span>&copy;` 2023 去旅行。
+                    <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
+                        title="前往仓库查看版本">v-5.4.0</a>
+                </span>
+                <ion-icon name="leaf-outline"></ion-icon>
+                <span>徐家国 | 网页</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

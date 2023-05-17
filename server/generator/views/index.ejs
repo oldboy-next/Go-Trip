@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<!-- ejs -->
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/svg/navigate-circle-outline.svg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 外部图标库 -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- 本地脚本js -->
+    <script src="/js/animation.js"></script>
+    <script src="/js/operation.js"></script>
+    <!-- 本地样式 -->
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/email.css">
+    <link rel="stylesheet" href="/css/scene.css">
+    <link rel="stylesheet" href="/css/region.css">
+    <link rel="stylesheet" href="/css/ended.css">
+    <style>
+        :root {
+            --title-font-size: 40px;
+            --content-font-size: 15px;
+            --mask-opacity: 0.3;
+        }
+
+        :root.dark {
+            /* 深色模式 */
+            --background-color: rgb(19, 19, 19);
+            --logo-color: #eff2f5;
+            --title-color: #fff;
+            --content-color: rgb(168, 167, 167);
+            --user-infos-color: rgba(116, 116, 116, 0.2);
+        }
+
+        :root.light {
+            /* 浅色模式 */
+            --background-color: #eff2f5;
+            --logo-color: #08acf3;
+            --title-color: rgb(0, 0, 0);
+            --content-color: rgb(27, 27, 27);
+            --user-infos-color: rgba(121, 121, 121, 0.2);
+        }
+
+        .smooth {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--background-color);
+            transition: background-color 0.3s linear;
+        }
+    </style>
+    <title>Go trip</title>
+</head>
+
+<body>
+    <!-- 头导航 -->
+    <header id="top">
+        <nav class="header-nav">
+            <div class="nav">
+                <!-- TODO:导航logo -->
+                <div class="link-top">
+                    <div class="logo-img" onclick="window.history.go(0)">
+                        <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="200" height="200">
+                            <path d="M66.782609 267.130435 66.782609 1024 333.913043 801.391304 333.913043 44.521739Z"
+                                p-id="2469"></path>
+                            <path d="M690.086957 222.608696 690.086957 979.478261 957.217391 756.869565 957.217391 0Z"
+                                p-id="2470"></path>
+                            <path d="M378.434783 44.521739 378.434783 801.391304 645.565217 1024 645.565217 267.130435Z"
+                                p-id="2471"></path>
+                        </svg>
+                    </div>
+                    <div onclick="window.history.go(0)">
+                        <h1>Go Trip</h1>
+                    </div>
+                </div>
+                <!-- TODO:导航链接功能 -->
+                <div class="link-nav">
+                    <div class="link-nav-menu">
+                        <div class="link-nav-menu-btn">
+                            <a href="javascript:void(0)" onclick=" ShowMenu()">
+                                <ion-icon name="menu-outline">
+                                    <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
+                            </a>
+                        </div>
+                        <!-- 菜单 -->
+                        <div class="link-nav-list">
+                            <ul>
+                                <li>
+                                    <a href="#top">主页</a>
+                                </li>
+                                <li>
+                                    <a href="#email">订阅</a>
+                                </li>
+                                <li>
+                                    <a href="#scene">景点</a>
+                                </li>
+                                <li>
+                                    <a href="#region">地点</a>
+                                </li>
+                                <li>
+                                    <a href="#ended">尾景</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 搜索框 -->
+                <div class="search">
+                    <div class="search-btn">
+                        <a href="javascript:void(0)" id="search">
+                            <ion-icon name="search-circle-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                    </div>
+                    <div class="frame" id="frame">
+                        <input type="text" disabled placeholder="请输入内容">
+                        <div class="search-btn" onclick="onSearch()">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <!-- 用户界面 -->
+                <div class="user">
+                    <div class="phone">
+                        <a href="/login" id="phone" title="前往登录界面">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <span>
+                                <%= userphone %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="user-icon">
+                        <div class="user-frame">
+                            <img src="/img/user/if.png" alt="if">
+                        </div>
+                        <div class="user-image">
+                            <img src="/img/user/icon.jpg" alt="icon">
+                        </div>
+                        <div class="infos">
+                            <!-- 用户名 -->
+                            <div class="username">
+                                <span>
+                                    <%= username %>
+                                </span>
+                            </div>
+                            <!-- 手机号 -->
+                            <div class="user-phone">
+                                <a href="/login">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                    <span>+86 <%= userphone %></span>
+                                </a>
+                            </div>
+                            <!-- 数据 -->
+                            <div class="option">
+                                <ul>
+                                    <li>
+                                        <a href="/users?name=<%= username %>&phone=<%= userphone %>">
+                                            <ion-icon name="person-outline"></ion-icon>
+                                            <span>个人/中心</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/users?name=<%= username %>&phone=<%= userphone %>">
+                                            <ion-icon name="book-outline"></ion-icon>
+                                            <span>我的/订阅</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#region">
+                                            <ion-icon name="bulb-outline"></ion-icon>
+                                            <span>推介/服务</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/login">
+                                            <ion-icon name="exit-outline"></ion-icon>
+                                            <span>退出/登录</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display">
+                        <a href="javascript:void(0);" onclick="DisplayColor()">
+                            <ion-icon name="moon-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                            <ion-icon name="sunny-outline" style="display: none;"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- 主页图片 -->
+        <div class="view" title="左右滑动切换图片">
+            <div class="scroll view-item a">
+                <img draggable="false" src="/img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item c">
+                <img draggable="false" src="/img/bg/bg3.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item b">
+                <img draggable="false" src="/img/bg/bg2.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item a">
+                <img draggable="false" src="/img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item b">
+                <img draggable="false" src="/img/bg/bg2.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item c">
+                <img draggable="false" src="/img/bg/bg3.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll view-item a">
+                <img draggable="false" src="/img/bg/bg1.jpg" alt="1">
+                <div class="scroll box-item">
+                    <div class="scroll box-item-title">
+                        欢迎来到
+                        <br>
+                        旅行吧
+                    </div>
+                    <div class="scroll box-item-content">
+                        旅游不仅仅是看风景，更是感受异域文化的一种方式，让我们拥有更开阔的视野和世界观。
+                        如果你的旅行计划是去追寻快乐，那么最好先打听一下快乐藏在哪里再出发。
+                    </div>
+                    <div class="scroll box-subscribe">
+                        <button type="button">
+                            <a href="#email">预订您的旅行</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 消息 -->
+    <hr id="email" class="point">
+    <div class="email">
+        <div class="email-top">
+            <div class="email-title">
+                <span>获得专家计划的最佳假期！</span>
+            </div>
+            <div class="email-content">
+                <span>
+                    我们的旅游计划旨在为您提供一个难忘的旅行体验。在这个旅游计划中，您将会有机会探索世界各地的美景、文化和风景。
+                </span>
+            </div>
+        </div>
+        <div class="email-data">
+            <!-- TODO:提交 -->
+            <form action="/users" method="post" onsubmit="return Action()">
+                <div class="email-data-up">
+                    <div class="name">
+                        <label for="title">名称</label>
+                        <input class="input-item" type="text" name="title" placeholder="名称">
+                    </div>
+                    <div class="region">
+                        <label for="region">目的地</label>
+                        <input class="input-item" type="text" name="region" placeholder="目的地">
+                    </div>
+                    <div class="activity">
+                        <label for="activity">活动</label>
+                        <select class="input-item" name="activity">
+                            <option value="任何">任何</option>
+                            <option value="城市观光">城市观光</option>
+                            <option value="文化与主题旅游">文化与主题旅游</option>
+                            <option value="家庭友好之旅">家庭友好之旅</option>
+                            <option value="假日和季节性旅游">假日和季节性旅游</option>
+                            <option value="放纵和豪华旅游">放纵和豪华旅游</option>
+                            <option value="户外活动">户外活动</option>
+                            <option value="休闲之旅">休闲之旅</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="email-data-down">
+                    <div class="day">
+                        <label for="day">期间</label>
+                        <select class="input-item" name="day">
+                            <option value="任何">任何</option>
+                            <option value="1日游">1日游</option>
+                            <option value="2~4日游">2~4日游</option>
+                            <option value="5~7日游">5~7日游</option>
+                            <option value="7+日游">7+日游</option>
+                        </select>
+                    </div>
+                    <div class="time">
+                        <label for="time" id="scene">时间</label>
+                        <input class="input-item" type="date" name="date" placeholder="年/月/日">
+                    </div>
+                    <div class="email-submit">
+                        <!-- TODO:表单提交功能 -->
+                        <label for="submit">提交</label>
+                        <button name="userdata" value="<%= userphone %>&<%= username %>" class="input-item"
+                            type="submit">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- TODO:a 改图，链接 景点 -->
+    <div class="scene">
+        <div class="scene-left">
+            <div class="scene-img">
+                <img src="/img/guiling/scene1.jpg" alt="1">
+            </div>
+            <div class="scene-info">
+                <div class="scene-title">
+                    <a href="#">夜之景</a>
+                </div>
+                <div class="scene-content">
+                    桂林山水秀美，素有“天下独奇”的美誉。它的山是险峻而多姿多彩的，有层峦叠嶂、云雾缭绕的世外桃源形象；它的水则沁人心脾，碧绿，清澈，婉约，有水墨画般的一片轻盈。
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="scene-right">
+            <div class="scene-right-up">
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="/img/guiling/s2.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="#">奇峰峭</a>
+                        </div>
+                        <div class="scene-content">
+                            青山绿水形成无数景色。山石嶙峋、溪水淙淙、翠竹葱茏，仿佛置身于一个天然的绿色乐园。
+                        </div>
+                    </div>
+                </div>
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="/img/guiling/s3.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="#">恍如境</a>
+                        </div>
+                        <div class="scene-content">
+                            欣赏大自然的美景，饱览群山巍峨、流水飘逸的壮美景色。绝对是一个值得一生中一游的绝美胜地
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- d -->
+            <div class="scene-right-down">
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="/img/guiling/s4.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="#">水如画</a>
+                        </div>
+                        <div class="scene-content">
+                            清澈蜿蜒的河流。漓江被誉为是中国最美丽的一条江，您可以乘船漫游，欣赏到壮美的山水风光。
+                        </div>
+                    </div>
+                </div>
+                <div class="scene-left">
+                    <div class="scene-img">
+                        <img class="scene-img" src="/img/guiling/s5.jpg" alt="1">
+                    </div>
+                    <div class="scene-info">
+                        <div class="scene-title">
+                            <a href="#">青山间</a>
+                        </div>
+                        <div class="scene-content">
+                            在这里您可以感受到大自然的魅力，漫步在山间，呼吸着清新的空气，欣赏着山间秀美的景象。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TODO:链接 地点 -->
+    <hr id="region" class="point">
+    <div class="goods">
+        <div class="goods-top">
+            <div class="region-title">
+                <span>热门旅游目的地</span>
+            </div>
+            <div class="region-content">
+                <span>
+                    自然探险和文化体验等。您可以在不同的地方发现不同的奇妙之处，感受到大自然的神奇与美好。
+                    我们的旅游计划期待与您相遇。
+                </span>
+            </div>
+        </div>
+        <div class="region-content-box">
+            <!-- 盒子内容1 -->
+            <div class="region-box">
+                <div class="region-img">
+                    <img src="/img/t1/t1.jpg" alt="1">
+                </div>
+                <div class="region-info">
+                    <p class="info-title">象鼻山</p>
+                    <div class="info-time">
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
+                    </div>
+                    <div class="info-content">
+                        <span>
+                            位于桂林市漓江，以其独特的山形和悠久的历史成为桂林城徽标志。
+                        </span>
+                    </div>
+                    <div class="region-account">
+                        <div class="account">
+                            <span>从￥<b>55</b> 起</span>
+                        </div>
+                        <div class="go">
+                            <a href="#">
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 盒子内容2 -->
+            <div class="region-box">
+                <div class="region-img">
+                    <img src="/img/t1/t2.jpg" alt="1">
+                </div>
+                <div class="region-info">
+                    <p class="info-title">四湖环城</p>
+                    <div class="info-time">
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
+                    </div>
+                    <div class="info-content">
+                        <span>
+                            榕湖、杉湖、桂湖和木龙湖、漓江、桃花江所构成的桂林环城水系
+                        </span>
+                    </div>
+                    <div class="region-account">
+                        <div class="account">
+                            <span>从￥<b>55</b> 起</span>
+                        </div>
+                        <div class="go">
+                            <a href="#">
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 盒子内容3 -->
+            <div class="region-box">
+                <div class="region-img">
+                    <img src="/img/t1/t3.jpg" alt="1">
+                </div>
+                <div class="region-info">
+                    <p class="info-title">漓江</p>
+                    <div class="info-time">
+                        <div class="info-day">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>7天</span>
+                        </div>
+                        <div class="info-count">
+                            <ion-icon name="airplane-outline"></ion-icon>
+                            <span>最多人数：700</span>
+                        </div>
+                    </div>
+                    <div class="info-content">
+                        <span>
+                            漓江风光和溶洞为代表的山水景观有山青、水秀、洞奇、石美“四绝”之誉。
+                        </span>
+                    </div>
+                    <div class="region-account">
+                        <div class="account">
+                            <span>从￥<b>55</b> 起</span>
+                        </div>
+                        <div class="go">
+                            <a href="#">
+                                <ion-icon name="arrow-forward-circle-outline">
+                                    <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                                </ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 4 -->
+        </div>
+        <div class="region-readme-box">
+            <div class="readme-img">
+                <img src="/img/t1/t4.jpg" alt="1">
+            </div>
+            <div class="readme-info">
+                <div class="readme-title">
+                    <span>为您提供独家度假套餐和旅行服务。</span>
+                </div>
+                <div class="readme-content">
+                    在旅途中，如果你错过了一个城市，也许你只是错过了一个地方。
+                    古往今来，三百六十行，走得最多的一种就是旅游。让我们一起探索世界的精彩！
+                </div>
+                <div class="readme-button">
+                    <button type="button">
+                        <a href="#">
+                            阅读更多
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <hr id="ended" class="point">
+    <div class="ended">
+        <div class="ended-img">
+            <img src="/img/guiling/ended.jpg" alt="1">
+        </div>
+        <div class="ended-box">
+            <div class="ended-box-title">
+                我们与您在旅程的每个
+                <br>
+                阶段都与您同在
+            </div>
+            <div class="ended-box-content">
+                无论是寻找刺激、挑战自我，还是追求放松、享受生活，我们都能为您提供最好的旅游体验。快来加入我们的旅行队伍，让心灵穿越时空，在旅途中找到属于自己的那片天地。
+            </div>
+            <div class="ended-box-subscribe">
+                <button type="button">
+                    <a href="#">预订您的旅行</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="container-left">
+                <div class="menu">
+                    <div class="title">联系我们</div>
+                    <div class="positions">
+                        <ion-icon name="compass-outline"></ion-icon>
+                        <span>中国广西桂林市，#54**00 桂林桂林 桂林漓江景区。</span>
+                    </div>
+                    <div class="phones">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <span>+86 188******25</span>
+                    </div>
+                    <div class="emails">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <span>EmailG animator70@outlook.com</span>
+                    </div>
+                    <div class="icons">
+                        <a title="GitHup" href="https://github.com/oldboy-next/Go-Trip/tree/dev" target="_blank">
+                            <ion-icon name="logo-github">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="热门拍照">
+                            <ion-icon name="camera-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="微信">
+                            <ion-icon name="logo-wechat">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="支付宝">
+                            <ion-icon name="logo-alipay">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="暂时仅支持PC端">
+                            <ion-icon name="logo-windows">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="#" title="移动端测试">
+                            <ion-icon name="phone-portrait-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                        <a href="https://ionic.io/ionicons" target="_blank" title="图标网站ion">
+                            <ion-icon name="extension-puzzle-outline">
+                                <img class="loading" src="/img/svg/icon_loading.svg" alt="loading..">
+                            </ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="type">
+                    <div class="title">类别</div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#">活动旅行</a>
+                            </li>
+                            <li>
+                                <a href="#">假日旅行</a>
+                            </li>
+                            <li>
+                                <a href="#">度假套餐</a>
+                            </li>
+                            <li>
+                                <a href="#">团体旅游</a>
+                            </li>
+                            <li>
+                                <a href="#">间隔年</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 右边 -->
+            <div class="container-right">
+                <div class="new-img">
+                    <div class="title">热门景点</div>
+                    <div class="free-img">
+                        <div class="free-img-item">
+                            <img src="/img/other/l1.jpg" alt="1">
+                            <img src="/img/other/l2.jpg" alt="2">
+                            <img src="/img/other/l3.jpg" alt="3">
+                        </div>
+                        <div class="free-img-item">
+                            <img src="/img/other/l4.jpg" alt="4">
+                            <img src="/img/other/l5.jpg" alt="5">
+                            <img src="/img/other/l6.jpg" alt="6">
+                        </div>
+                        <div class="free-img-item">
+                            <img src="/img/other/l7.jpg" alt="4">
+                            <img src="/img/other/l8.jpg" alt="5">
+                            <img src="/img/other/l9.jpg" alt="6">
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="type">
+                    <div class="title">旅游</div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/c0b3e711-9692-4a1d-b396-46fae65a7cd6?q=%E6%BC%93%E6%B1%9F">漓江游玩</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/aa61ece9-843e-4a70-8eb2-a7080a84fe67?q=%E5%9B%9B%E6%B9%96%E7%8E%AF%E5%9F%8E">四湖环城</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/a8389912-6529-43e7-ae81-867fbc556722?q=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/f980afbe-172f-4d18-8da7-5bc6146f9dd3?q=%E6%A1%82%E6%9E%97%E9%BE%99%E8%83%9C%E6%A2%AF%E7%94%B0">龙胜梯田</a>
+                            </li>
+                            <li>
+                                <a target="_blank"
+                                    href="https://www.skypixel.com/photo360s/8a411c64-cb01-4553-8b98-4ea814ead479?q=%E9%81%87%E9%BE%99%E6%B2%B3">遇龙河</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 版本信息 -->
+        <div class="version">
+            <hr>
+            <div class="version-info">
+                <span>&copy;` 2023 去旅行。
+                    <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
+                        title="前往仓库查看版本">v-5.4.0</a>
+                </span>
+                <ion-icon name="leaf-outline"></ion-icon>
+                <span>徐家国 | 网页</span>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts -->
+    <script>
+        // 获取元素
+        const box = document.querySelector(".view");
+        const item = document.querySelector(".view-item");
+        // 禁止图片拖拽
+        const scrollItems = document.querySelectorAll(".scroll img");
+        scrollItems.forEach(item => item.setAttribute("draggable", "false"));
+
+        let itemWidth = item.clientWidth;
+        // 原点坐标
+        box.scrollLeft = itemWidth * 3;
+
+        // 监听盒子滚动
+        let boxScroll = function (event)
+        {
+            if (!event instanceof Event) return;
+            let pos = box.scrollLeft - itemWidth * 3;
+            if (Math.abs(pos) === itemWidth * 3)
+            {
+                // 回到原点
+                box.classList.remove("smooth");
+                box.scrollTo(itemWidth * 3, 0);
+            }
+        }
+
+        // 事件注册盒子滚动
+        box.addEventListener("scroll", boxScroll);
+
+        // 鼠标按下
+        let mouseDown = function (event)
+        {
+            // 移除过渡
+            if (!event instanceof MouseEvent) return;
+            // console.log("down");
+            // 是否是在滑动的元素上 移除监听
+            if (event.target.classList.item(0) === "scroll")
+            {
+                box.classList.remove("smooth");
+                // console.log(event.target.classList.item(0));
+                window.addEventListener("mousemove", mouseMove);
+            }
+            else
+            {
+                // console.log("class is null");
+                window.removeEventListener("mousemove", mouseMove);
+            }
+        }
+        // 鼠标抬起
+        let mouseUp = function (event)
+        {
+            // 添加过渡
+            if (!event instanceof MouseEvent) return;
+            // console.log("up");
+            box.classList.add("smooth");
+            // 返回方向
+            window.removeEventListener("mousemove", mouseMove);
+            box.scrollLeft = next();
+
+        }
+        // 鼠标移动
+        let mouseMove = function (event)
+        {
+            if (event instanceof MouseEvent)
+            {
+                // 限制最大滑动
+                let moveX = Math.min(Math.abs(event.movementX), 100);
+                direction = event.movementX > 0 ? -moveX : moveX;
+                // 移动
+                box.scrollBy(direction, 0);
+            }
+        }
+
+        // 事件注册
+        window.addEventListener("mousedown", mouseDown);
+        window.addEventListener("mouseup", mouseUp);
+        window.addEventListener("blur", e => window.removeEventListener("mousemove", mouseMove));
+
+        // 自动回滚方法
+        function next()
+        {
+            let current = box.scrollLeft % itemWidth;
+
+            let target = 0;
+            // 求余，得到哪边的距离较近
+            if (current <= itemWidth / 2)
+            {
+                target = box.scrollLeft - current;
+            }
+            else
+            {
+                target = itemWidth - current + box.scrollLeft;
+            }
+            // 返回
+            return target;
+        }
+
+        // 窗口改变监听
+        window.addEventListener("resize", function (e)
+        {
+            // 重新计算盒子宽度
+            itemWidth = item.clientWidth;
+            // 回到原点
+            box.scrollLeft = itemWidth * 3;
+        })
+
+        // 移动端开始-拖-结束 测试
+        window.addEventListener("touchstart", e => box.classList.remove("smooth"));
+        // window.addEventListener("touchstart", function (event)
+        // {
+        //     console.log("touchstart");
+        // })
+        window.addEventListener("touchend", function ()
+        {
+            box.classList.add("smooth");
+            box.scrollLeft = next();
+        })
+
+
+    </script>
+    <script>
+        // 提交检测
+        const phoneReg = /^1[3-9]\d{9}$/;
+        function Action()
+        {
+            let value = [];
+            let submitBtn = document.querySelector(".email-submit button");
+            let datas = document.querySelectorAll(".email-data form input");
+
+            datas.forEach(item => value.push(item.value.trim()));
+
+            if (submitBtn.value === "Login&")
+            {
+                window.alert("你还没有登录!");
+                return false;
+            }
+            if (value[0] === "")
+            {
+                window.alert("请填写名称");
+                return false;
+            }
+            if (value[1] === "")
+            {
+                window.alert("请填写目的地");
+                return false;
+            }
+            if (value[2] === "")
+            {
+                window.alert("请填写日期");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

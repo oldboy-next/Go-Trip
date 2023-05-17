@@ -1,0 +1,168 @@
+/* 文本框默认样式 */
+input[type="date"] {
+    text-indent: 5px;
+    border: 1px rgb(122, 122, 122) solid;
+}
+
+input[type="text"] {
+    text-indent: 10px;
+    border: 1px rgb(122, 122, 122) solid;
+}
+
+select.input-item {
+    text-indent: 10px;
+    border: 1px rgb(122, 122, 122) solid;
+}
+
+.email {
+    --email-width: 1000px;
+    --email-height: 430px;
+    /* border: red solid 1px; */
+    width: var(--email-width);
+    height: var(--email-height);
+    position: relative;
+    margin: 85px auto;
+}
+
+.email label::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.email label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--title-color);
+    padding: 5px;
+}
+
+/* 标题盒子 */
+.email-top {
+    /* background-color: green; */
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+
+.email-title {
+    /* background-color: plum; */
+    width: 600px;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    color: var(--title-color);
+    font-size: var(--title-font-size, 15px);
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.email-content {
+    /* background-color: skyblue; */
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    width: 600px;
+    height: 60%;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    line-height: 25px;
+    color: var(--content-color);
+    font-size: var(--content-font-size);
+    padding: 0 20px;
+}
+
+/* 输入框 */
+.email-data {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 65%;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* padding: 0 20px; */
+}
+
+.email form {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 输入框上下盒子 */
+.email-data-up,
+.email-data-down {
+    /* border: blue solid 1px; */
+    width: 100%;
+    height: 120px;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* 标题
+.email-title,
+.region-title {
+    width: 500px;
+    height: 50px;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bolder;
+    color: whitesmoke;
+    padding: 10px 10px;
+}
+
+.email-content,
+.region-content {
+    width: 500px;
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 25px;
+    color: rgb(163, 163, 163);
+    padding: 10px 10px;
+    padding-bottom: 50px;
+} */
+
+/* 输入框样式 */
+.input-item {
+    border: none;
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 17px;
+    margin-top: 12px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.email-submit button {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    background: rgb(92, 179, 204);
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px rgb(122, 122, 122) solid;
+}
+
+/* 动画 */
+
+.email-submit>.input-item:hover {
+    background: rgb(251, 218, 65);
+    border: 1px rgb(122, 122, 122) solid;
+    color: #000;
+}
+
+.input-item:hover {
+    transform: scale(1.1);
+    border: 1px gainsboro solid;
+}

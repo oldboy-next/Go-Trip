@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/img/svg/navigate-circle-outline.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/format.css">
+    <!-- 外部图标库 -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .container {
+            border: 4px solid rgb(146, 146, 146);
+            width: 70%;
+            height: 90vh;
+            margin: 80px auto 10px auto;
+            box-sizing: border-box;
+            border-radius: 7px;
+            overflow-y: auto;
+            box-shadow: 35px 25px 40px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgb(22, 22, 22);
+            min-width: 300px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --back-image: url(../img/bg/bg2.jpg);
+        }
+
+        .container::before {
+            content: "暂无...";
+            width: 30%;
+            height: 30%;
+            position: absolute;
+            font-size: 80px;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (min-width:1400px) {
+            ::-webkit-scrollbar {
+                width: 10px;
+                height: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: var(--background-color-dark, #000);
+                border-radius: 3px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: var(--background-color-light, #fff);
+                border-radius: 3px;
+            }
+        }
+
+        body {
+            background-color: rgb(27, 27, 27);
+            /* background-image: var(--back-image); */
+        }
+
+        .container .title-box {
+            width: 100%;
+            height: 15%;
+            /* background-color: skyblue; */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 50px 20px 50px 0px rgba(0, 0, 0, 0.9);
+        }
+
+        .container .content-box {
+            width: 100%;
+            height: 85%;
+            /* background-color: plum; */
+        }
+
+        .container .title-box .title-box-title {
+            width: 100%;
+            height: 40%;
+            /* background-color: palegoldenrod; */
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding-top: 25px;
+        }
+
+        .container .title-box .title-box-content {
+            width: 100%;
+            height: 60%;
+            /* background-color: gray; */
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(158, 158, 158);
+            letter-spacing: 2px;
+            padding: 0 40px;
+        }
+
+        .container .content-box ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .container .content-box ul li {
+            /* border: blue 1px solid; */
+            list-style: none;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            position: relative;
+            top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .container .content-box ul li .item {
+            /* background-color: chocolate; */
+            width: 88%;
+            height: 90%;
+            border-radius: 20px;
+            background-image: var(--back-image);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            position: relative;
+            z-index: 10;
+            position: relative;
+            top: 26px;
+            box-shadow: 40px 25px 40px 5px rgba(0, 0, 0, 0.75);
+            transition: box-shadow 0.3s linear, transform 0.3s linear;
+        }
+
+        .container .content-box ul li .item:hover {
+            box-shadow: 10px 5px 20px 5px rgba(0, 0, 0, 0.5);
+            transform: scale(0.98);
+        }
+
+        .container .content-box ul li .item::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .data-title,
+        .data-content,
+        .data-date {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .data-title {
+            /* background-color: green; */
+            height: 30%;
+            padding: 0 20px;
+            font-size: 20px;
+            color: #fff;
+            justify-content: flex-start;
+            font-weight: 500;
+        }
+
+        .data-content {
+            /* background-color: purple; */
+            height: 45%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .data-content>div {
+            /* background-color: skyblue; */
+            width: 10%;
+            height: 90%;
+            font-size: 18px;
+            font-weight: lighter;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-date {
+            /* background-color: cadetblue; */
+            width: 100%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: flex-end;
+            color: #fff;
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+        .data-date span {
+            padding: 0 5px;
+        }
+
+        .top {
+            width: 100%;
+            height: 67px;
+            background-color: rgba(44, 44, 44, 0.7);
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 300px;
+        }
+
+        .top .logo a {
+            /* background-color: red; */
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            fill: #fff;
+            position: relative;
+            left: 80px;
+        }
+
+        .top .phone {
+            width: 400px;
+            height: 65px;
+            background-color: rgba(54, 54, 54, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 10px;
+            position: relative;
+            letter-spacing: 1px;
+            right: 80px;
+        }
+
+        .top .phone span,
+        .top .phone ion-icon {
+            vertical-align: middle;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .item .clear {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .item .clear a {
+            text-decoration: none;
+            color: rgba(122, 122, 122, 1);
+            font-size: 20px;
+            transition: color 0.3s linear, transform 0.2s linear;
+        }
+
+        .item .clear a:hover {
+            color: #fff;
+            transform: scale(1.4);
+        }
+
+        .item .clear a:active {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @media (max-width:1400px) {
+            .container {
+                width: 98%;
+                margin-top: 40px;
+                border: 2px solid rgb(146, 146, 146);
+            }
+
+            .container::before {
+                width: 80%;
+                font-size: 40px;
+            }
+
+            .container .title-box .title-box-title {
+                /* background-color: palegoldenrod; */
+                height: 30%;
+                font-size: 10px;
+                padding-top: 0px;
+            }
+
+            .container .title-box .title-box-content {
+                width: 100%;
+                height: 50%;
+                font-size: 8px;
+                color: rgb(158, 158, 158);
+                letter-spacing: 0px;
+                padding: 0 5px;
+            }
+
+            .container .content-box ul li .item {
+                width: 92%;
+                height: 80%;
+                border-radius: 20px;
+            }
+
+            .container .content-box ul li {
+                /* border: blue 1px solid; */
+                top: 0px;
+                margin-bottom: 15px;
+            }
+
+            .data-title {
+                /* background-color: green; */
+                height: 25%;
+                padding: 0 10px;
+                font-size: 16px;
+            }
+
+            .data-content>div {
+                /* background-color: skyblue; */
+                width: 22%;
+                height: 88%;
+                font-size: 15px;
+            }
+
+            .data-date {
+                /* background-color: cadetblue; */
+                width: 100%;
+                height: 25%;
+                padding: 0 10px;
+                font-size: 10px;
+                letter-spacing: 0px;
+            }
+
+            .top {
+                height: 30px;
+            }
+
+            .top .logo a {
+                /* background-color: red; */
+                width: 20px;
+                height: 20px;
+                left: 40px;
+            }
+
+            .top .phone {
+                height: 22px;
+                width: 240px;
+                border-radius: 5px;
+                right: 30px;
+            }
+
+            .top .phone span,
+            .top .phone ion-icon {
+                vertical-align: middle;
+                font-size: 10px;
+                color: #fff;
+            }
+
+            .item .clear {
+                width: 17px;
+                height: 17px;
+            }
+
+            .item .clear a:active {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+    <title>users</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">
+            <a href="/index?name=<%= username %>&phone=<%= userphone %>">
+                <svg t="1684073542453" class="icon-logo" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2468" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="200" height="200">
+                    <path d="M66.782609 267.130435 66.782609 1024 333.913043 801.391304 333.913043 44.521739Z"
+                        p-id="2469">
+                    </path>
+                    <path d="M690.086957 222.608696 690.086957 979.478261 957.217391 756.869565 957.217391 0Z"
+                        p-id="2470">
+                    </path>
+                    <path d="M378.434783 44.521739 378.434783 801.391304 645.565217 1024 645.565217 267.130435Z"
+                        p-id="2471">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div class="phone">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>+86 <%= userphone %></span>
+            <ion-icon name="person-outline"></ion-icon>
+            <span>
+                <%= username %>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title-box">
+            <div class="title-box-title">
+                <h1>我的订阅</h1>
+            </div>
+            <div class="title-box-content">
+                <p>我们的旅游计划旨在为您提供一个难忘的旅行体验。在这个旅游计划中，您将会有机会探索世界各地的美景、文化和风景。
+                    我们的旅游计划期待与您相遇，让我们一起探索世界的精彩！
+                </p>
+            </div>
+        </div>
+        <div class="content-box">
+            <!-- 模板 -->
+            <ul>
+                <li>
+                    <div class="item">
+                        <div class="clear">
+                            <a href="#">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </a>
+                        </div>
+                        <div class="data-title">
+                            <span>
+                                <%= title %>
+                            </span>
+                        </div>
+                        <div class="data-content">
+                            <div class="data-region">
+                                <span>
+                                    <%= region %>
+                                </span>
+                            </div>
+                            <div class="data-activity">
+                                <span>
+                                    <%= activity %>
+                                </span>
+                            </div>
+                            <div class="data-day">
+                                <span>
+                                    <%= day %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="data-date">
+                            <span>
+                                <%= year %>
+                            </span>
+                            年
+                            <span>
+                                <%= month %>
+                            </span>
+                            月
+                            <span>
+                                <%= sunday %>
+                            </span>
+                            日
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

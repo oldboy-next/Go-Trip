@@ -1,5 +1,6 @@
 img/
 .vscode/
 node_modules/
-server/
 test/
+data/
+*.exe

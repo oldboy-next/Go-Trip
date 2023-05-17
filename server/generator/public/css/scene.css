@@ -1,0 +1,138 @@
+/* 响应布局*/
+@media (min-width:1500px) {
+    .scene {
+        /* border: red 1px solid; */
+        width: 100%;
+        height: 800px;
+        display: flex;
+        position: relative;
+    }
+}
+
+.scene img {
+    width: 100%;
+    height: 100%;
+}
+
+.scene-right,
+.scene-left {
+    /* border: blue 1px solid; */
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.scene-left .scene-img {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.scene-left .scene-info {
+    /* background-color: green; */
+    position: absolute;
+    z-index: 2;
+    width: 85%;
+    height: 50%;
+    bottom: 0;
+}
+
+/* 统一样式 */
+.scene-left .scene-info .scene-title {
+    /* background-color: plum; */
+    width: 100%;
+    height: 20%;
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    color: var(--title-text-color);
+    text-shadow: 8px 8px 2px rgba(0, 0, 0, 0.6);
+    padding: 0 22px;
+    box-sizing: border-box;
+}
+
+.scene-left .scene-info .scene-content {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: 60%;
+    color: #fff;
+    font-size: calc(1px + var(--content-font-size));
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    overflow-y: auto;
+    padding: 0 22px;
+    box-sizing: border-box;
+    opacity: 0.5;
+    transition: opacity 0.3s linear;
+}
+
+.scene-left .scene-info .scene-content:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* 单独设置右边的布局 */
+.scene-right .scene-info .scene-title {
+    /* background-color: red; */
+    width: 100%;
+    height: 30%;
+}
+
+.scene-right .scene-info {
+    /* background-color: palevioletred; */
+    width: 100%;
+    height: 40%;
+}
+
+.scene-right .scene-info .scene-content {
+    /* background-color: green; */
+    width: 100%;
+    height: 70%;
+}
+
+/* 右边盒子 */
+.scene-right .scene-right-up,
+.scene-right .scene-right-down {
+    /* border: red solid 1px; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+@media (max-width:1500px) {
+    .scene {
+        /* border: red 1px solid; */
+        width: 1000px;
+        height: 450px;
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .scene-left .scene-info .scene-title {
+        font-size: 25px;
+    }
+
+    .scene-left .scene-info .scene-content {
+        font-size: 15px;
+        opacity: 0.7;
+    }
+
+    .scene-right .scene-info {
+        /* background-color: palevioletred; */
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* 动画 */
+
+.scene-title>a:hover {
+    color: rgb(251, 218, 65);
+    text-shadow: 0px 0px 12px rgb(177, 155, 59);
+}

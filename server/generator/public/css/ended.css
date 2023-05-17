@@ -1,0 +1,390 @@
+.ended {
+    /* border: red 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 响应布局*/
+@media (min-width:1000px) {
+    .ended {
+        /* border: red 1px solid; */
+        height: 580px;
+        width: 100%;
+    }
+}
+
+@media (max-width:1000px) {
+    .ended {
+        /* border: red 1px solid; */
+        height: 450px;
+        width: 1000px;
+    }
+}
+
+.ended-img {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.ended-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.ended-box {
+    /* border: blue 1px solid; */
+    height: 90%;
+    width: 40%;
+    position: relative;
+    z-index: 10;
+}
+
+.ended-box .ended-box-title {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: 30%;
+    color: #fff;
+    font-size: var(--title-font-size, 40px);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ended-box .ended-box-content {
+    /* background-color: plum; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-size: calc(2px + var(--content-font-size, 15px));
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 3px;
+    line-height: 30px;
+}
+
+.ended-box .ended-box-subscribe {
+    /* background-color: green; */
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ended-box .ended-box-subscribe button {
+    background-color: rgb(48, 158, 189);
+    width: 140px;
+    height: 55px;
+    border-radius: 7px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s linear;
+}
+
+.ended-box .ended-box-subscribe :hover {
+    background: rgb(196, 164, 24);
+}
+
+/* ---结尾--- */
+.footer {
+    /* border: red 1px solid; */
+    width: 1000px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 响应布局 */
+@media (max-width:1500px) {
+    .footer {
+        /* border: red 1px solid; */
+        width: 1000px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        margin: 80px auto 0px auto;
+    }
+}
+
+@media (min-width:1500px) {
+    .footer {
+        /* border: red 1px solid; */
+        width: 1000px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto 0px auto;
+    }
+}
+
+/* 更多链接盒子 */
+.footer .container {
+    /* background-color: coral; */
+    width: 100%;
+    height: 75%;
+    position: relative;
+    display: flex;
+}
+
+.footer .container-left,
+.footer .container-right {
+    /* border: blue 1px solid; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 联系菜单 */
+.footer .container-left .menu {
+    /* background-color: skyblue; */
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 标题盒子 */
+.container .title {
+    /* background-color: gray; */
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--title-color);
+    box-sizing: border-box;
+}
+
+/* 地区的盒子 */
+.footer .container-left .menu .positions {
+    /* background-color: plum; */
+    width: 100%;
+    height: 45%;
+    font-size: calc(2px + var(--content-font-size, 15px));
+    line-height: 25px;
+    overflow-y: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+/* 联系电话 邮箱 */
+.footer .container-left .menu .phones,
+.footer .container-left .menu .emails {
+    /* background-color: cadetblue; */
+    width: 100%;
+    height: 10%;
+    font-size: calc(2px + var(--content-font-size, 15px));
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* 外接链接盒子 */
+.footer .container-left .menu .icons {
+    /* background-color: salmon; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0px 5px 0px 13px;
+}
+
+.footer .container-left .menu .icons a {
+    /* border: red 1px solid; */
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+/* 图标文字对齐 文字颜色 */
+.footer .container-left div ion-icon,
+.footer .container-left div span {
+    vertical-align: middle;
+    border-radius: 3px;
+    transition: all 0.4s linear;
+    color: var(--content-color);
+}
+
+/* 类型列表 */
+.footer .container .type {
+    /* background-color: brown; */
+    width: 20%;
+    height: 100%;
+}
+
+.footer .container .type .list {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: 85%;
+}
+
+.footer .container .type ul {
+    /* border: red 1px solid; */
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .container .type .title {
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.footer .container .type ul li {
+    width: 100%;
+    height: calc(100% / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1px + var(--content-font-size, 15px));
+}
+
+.footer .container .type ul li a {
+    color: var(--content-color);
+}
+
+.footer .container .type ul li a:hover {
+    color: #fff;
+}
+
+/* 右边图片盒子 */
+.footer .container-right .new-img {
+    /* background-color: chocolate; */
+    width: 80%;
+    height: 100%;
+}
+
+.footer .container-right .new-img .free-img {
+    /* background-color: green; */
+    width: 100%;
+    height: 85%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 0 8px;
+}
+
+.footer .container-right .new-img .free-img .free-img-item {
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer .free-img-item img {
+    /* background-color: saddlebrown; */
+    display: block;
+    width: 30%;
+    height: 85%;
+    border-radius: 8px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.footer .free-img-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 联系菜单动画*/
+.menu>div:last-child>a:first-child ion-icon:hover {
+    background: rgb(80, 80, 136);
+}
+
+.menu>div:last-child>a:nth-child(2) ion-icon:hover {
+    background: rgb(226, 193, 124);
+    color: #000;
+}
+
+.menu>div:last-child>a:nth-child(3) ion-icon:hover {
+    background: rgb(56, 139, 91);
+}
+
+.menu>div:last-child>a:nth-child(4) ion-icon:hover {
+    background: rgb(17, 115, 196);
+}
+
+.menu>div:last-child>a:nth-child(5) ion-icon:hover {
+    color: rgb(39, 140, 255);
+}
+
+.menu>div:last-child>a:nth-child(6) ion-icon:hover {
+    color: rgb(228, 89, 96);
+}
+
+.menu>div:last-child>a:last-child ion-icon:hover {
+    background: rgb(224, 142, 235);
+    color: var(--content-color);
+}
+
+
+/* 末尾-> 版本信息 */
+/* 版权盒子 */
+.footer .version {
+    /* background-color: purple; */
+    width: 100%;
+    height: 25%;
+}
+
+.footer .version .version-info {
+    /* background-color: green; */
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.footer .version .version-info span:first-child,
+.footer .version .version-info span:first-child a {
+    font-size: var(--content-font-size);
+    color: rgb(105, 105, 105);
+    padding: 0 10px;
+}
+
+.footer .version .version-info span:first-child a:hover {
+    color: var(--title-color)
+}
+
+.footer .version .version-info ion-icon {
+    color: var(--content-color);
+}
+
+.footer .version .version-info span:last-child {
+    color: var(--content-color);
+}
+
+.footer .version hr {
+    background-color: rgba(119, 119, 119, 0.5);
+    border: none;
+    width: 90%;
+    height: 2px;
+    margin: 5px auto;
+}

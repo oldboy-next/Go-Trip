@@ -1,0 +1,100 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const app = require('../app');
+const debug = require('debug')('generator:server');
+const http = require('http');
+// 配置文件
+const { PORT } = require("../model/Config");
+
+/**
+ * Express 框架
+ */
+
+const port = normalizePort(process.env.PORT || PORT);
+app.set('port', port);
+
+
+// 创建路由服务
+const server = http.createServer(app);
+
+// 监听端口
+server.listen(port, () =>
+{
+  const ip = require("../model/IpGet");
+  console.log(`服务启动...`);
+  console.log(`本机访问IP地址\t127.0.0.1`);
+  console.log(`局域访问IP地址\t${ip}`);
+  console.log(`http 端口 ~ ${PORT}`);
+
+});
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+// 初始化端口
+function normalizePort(val)
+{
+  const port = parseInt(val, 10);
+
+  if (isNaN(port))
+  {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0)
+  {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+// 错误
+function onError(error)
+{
+  if (error.syscall !== 'listen')
+  {
+    throw error;
+  }
+
+  const bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code)
+  {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening()
+{
+  const addr = server.address();
+  const bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

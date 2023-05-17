@@ -1,0 +1,32 @@
+.loading {
+    display: block;
+    width: 30px;
+    height: 30px;
+    animation: 2s run linear infinite;
+}
+
+@keyframes run {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    20% {
+        transform: scale(1.2) rotate(90deg);
+    }
+
+    40% {
+        transform: scale(1.3) rotate(180deg);
+    }
+
+    60% {
+        transform: scale(1.2) rotate(270deg);
+    }
+
+    80% {
+        transform: scale(1.1) rotate(360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

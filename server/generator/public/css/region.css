@@ -1,0 +1,295 @@
+.goods {
+    /* border: red solid 1px; */
+    width: 1000px;
+    height: 1000px;
+    margin: 80px auto;
+}
+
+/* 顶部盒子 */
+.goods-top {
+    /* background-color: green; */
+    width: 100%;
+    height: 15%;
+    padding: 0 20px;
+}
+
+/* 标题盒子 */
+.goods-top .region-title {
+    /* background-color: skyblue; */
+    width: 60%;
+    height: 40%;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    color: var(--title-color);
+    font-size: var(--title-font-size, 15px);
+}
+
+/* 标题文字盒子 */
+.goods-top .region-content {
+    /* background-color: pink; */
+    width: 60%;
+    height: 60%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    line-height: 25px;
+    color: var(--content-color);
+    font-size: var(--content-font-size);
+}
+
+/* 内容盒子 */
+.region-content-box {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: calc((100% - 15%) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 外盒子 */
+.region-box {
+    background-color: rgb(57, 55, 51);
+    width: 29%;
+    height: 90%;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    margin: 20px 20px;
+}
+
+/* 图片盒子 */
+.region-box .region-img {
+    /* border: red 1px solid; */
+    width: 93%;
+    height: 45%;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.5s;
+    position: relative;
+    top: 10px;
+}
+
+/* 信息盒子 */
+.region-box .region-info {
+    /* border: blue 1px solid; */
+    width: 93%;
+    height: 45%;
+    /* overflow: hidden; */
+    position: relative;
+    top: 10px;
+    color: #fff;
+}
+
+/* 标题 */
+.region-info .info-title {
+    /* background-color: skyblue; */
+    font-size: 20px;
+    font-weight: bolder;
+    width: 100%;
+    height: 17%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--title-text-color);
+    overflow: hidden;
+}
+
+/* 时间信息 */
+.info-time {
+    /* border: red 1px solid; */
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 天 */
+.info-time .info-day {
+    /* background-color: plum; */
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--content-text-color, #fff);
+    font-size: calc(var(--content-font-size) - 2px);
+}
+
+/* 人数 */
+.info-time .info-count {
+    overflow: hidden;
+    /* background-color: green; */
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--content-text-color, #fff);
+    font-size: calc(var(--content-font-size) - 2px);
+}
+
+/* 描述 */
+.region-info .info-content {
+    /* background-color: chocolate; */
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    color: var(--content-text-color, #fff);
+    font-size: calc(var(--content-font-size) - 1px);
+}
+
+/* 价格 */
+.region-info .region-account {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 30%;
+    display: flex;
+}
+
+.region-account .account {
+    /* background-color: skyblue; */
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: calc(var(--content-font-size) + 3px);
+    font-weight: bolder;
+    color: rgb(8, 161, 243);
+}
+
+.region-account .go {
+    /* background-color: green; */
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 32px;
+}
+
+/* 图片 */
+.region-box .region-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 底部盒子 */
+.region-readme-box {
+    /* background-color: skyblue; */
+    width: 100%;
+    height: calc((100% - 15%) / 2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.region-readme-box .readme-img {
+    /* border: red 1px solid; */
+    overflow: hidden;
+    width: 46%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.region-readme-box .readme-info {
+    /* border: red 1px solid; */
+    width: 46%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 10px rgba(57, 55, 51, 0.25);
+}
+
+.region-readme-box .readme-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.region-readme-box .readme-info .readme-title {
+    /* background-color: plum; */
+    width: 100%;
+    height: 15%;
+    font-size: 25px;
+    color: var(--title-color);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.region-readme-box .readme-info .readme-content {
+    /* background-color: chocolate; */
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    color: var(--content-color);
+    font-size: 17px;
+    overflow-y: auto;
+    padding: 0 10px;
+    text-align: left;
+    text-indent: 2em;
+}
+
+.region-readme-box .readme-info .readme-button {
+    /* background-color: green; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.readme-button>button {
+    background: rgb(56, 145, 170);
+    border: none;
+    border-radius: 10px;
+    width: 110px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    font-weight: bolder;
+    transition: all 1s;
+}
+
+/* 动画 */
+.region-account .go a ion-icon {
+    transition: all 0.3s linear;
+}
+
+.region-account .go a ion-icon:hover {
+    background-color: rgb(254, 184, 7);
+    border-radius: 35px;
+    color: rgb(54, 52, 51);
+    box-shadow: 0px 0px 20px 10px rgba(254, 184, 7, 0.3);
+}
+
+.readme-button>button:hover {
+    background: rgb(196, 164, 24);
+}
+
+hr.point {
+    height: 20px;
+    border: none;
+    background-color: var(--background-color);
+    transition: background-color 0.3s linear;
+}
+
+.region-img:hover {
+    transform: scale(1.2);
+}
