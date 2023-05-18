@@ -1,2 +1,4 @@
 # Go-Trip
-旅游网站 -> master -> dev
+旅游网站 main -> master -> dev
+              |
+               -- - - ->  server
