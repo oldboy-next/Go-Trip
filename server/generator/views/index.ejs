@@ -792,8 +792,8 @@
             <hr>
             <div class="version-info">
                 <span>&copy;` 2023 去旅行。
-                    <a href="https://github.com/oldboy-next/Go-Trip/commits/dev" target="_blank"
-                        title="前往仓库查看版本">v-5.5.0</a>
+                    <a href="https://github.com/oldboy-next/Go-Trip/commits/server" target="_blank"
+                        title="前往仓库查看版本">v-5.6.0</a>
                 </span>
                 <ion-icon name="leaf-outline"></ion-icon>
                 <span>徐家国 | 网页</span>
@@ -922,36 +922,44 @@
     </script>
     <script>
         // 提交检测
+
         const phoneReg = /^1[3-9]\d{9}$/;
         function Action()
         {
+            // 拿到 input 的 value
             let value = [];
-            let submitBtn = document.querySelector(".email-submit button");
             let datas = document.querySelectorAll(".email-data form input");
-
             datas.forEach(item => value.push(item.value.trim()));
 
-            if (submitBtn.value === "Login&")
+            console.log(value);
+            //  判断是否登录
+            let [key, userphone] = document.cookie.split("=");
+            if (key === "userphone" && phoneReg.test(userphone))
             {
-                window.alert("你还没有登录!");
+                // 已经登录
+                if (value[0] === "")
+                {
+                    window.alert("请填写名称");
+                    return false;
+                }
+                if (value[1] === "")
+                {
+                    window.alert("请填写目的地");
+                    return false;
+                }
+                if (value[2] === "")
+                {
+                    window.alert("请填写日期");
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                window.alert("你未登录!");
+
                 return false;
             }
-            if (value[0] === "")
-            {
-                window.alert("请填写名称");
-                return false;
-            }
-            if (value[1] === "")
-            {
-                window.alert("请填写目的地");
-                return false;
-            }
-            if (value[2] === "")
-            {
-                window.alert("请填写日期");
-                return false;
-            }
-            return true;
         }
     </script>
 </body>
